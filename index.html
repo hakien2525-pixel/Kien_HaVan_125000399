@@ -17,8 +17,13 @@
   <!-- Thư viện Animate.css (Theo chuẩn Tuần 5 & Barem chấm thi) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
-  <!-- Internal Cascading Style Sheets (MVC Architecture - Pure CSS) -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Cascading Style Sheets (Modular Pure CSS Architecture - Cascade Order) -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/sections.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 <body>
 
@@ -218,7 +223,7 @@
                     <h4 class="back-name">Thầy Bùi Xuân Cảnh</h4>
                     <span class="back-title">Giảng Viên Hướng Dẫn Học Phần</span>
                     <p class="back-bio">
-                      Cố vấn chuyên môn và dẫn dắt đội ngũ ADLEY tiếp cận phương pháp học đảo ngược (Flipped Classroom), tư duy Vibe Coding kết hợp chuẩn Semantic HTML5 & CSS3.
+                      Cố vấn chuyên môn và dẫn dắt đội ngũ ADLEY tiếp cận phương pháp học đảo ngược (Flipped Classroom), tư duy Vibe Coding kết hợp chuẩn Semantic HTML5, CSS Variables và rèn luyện kỹ năng phân tầng dự án chuyên nghiệp.
                     </p>
                   </div>
                   <div class="skills-wrapper">
@@ -227,11 +232,10 @@
                       <span class="skill-tag">Web Standards</span>
                       <span class="skill-tag">Vibe Coding Mentorship</span>
                       <span class="skill-tag">System Architecture</span>
-                      <span class="skill-tag">Agile/Scrum Flow</span>
                     </div>
                   </div>
                   <div class="member-contact-links">
-                    <a href="#modal-canh" class="modal-open-link">Xem Thông Tin Cố Vấn</a>
+                    <a href="#contact" class="btn btn-primary btn-full">Kết Nối Với Cố Vấn</a>
                   </div>
                 </div>
               </div>
@@ -258,7 +262,7 @@
                     <h4 class="back-name">Hà Văn Kiên</h4>
                     <span class="back-title">Team Leader & Kiến Trúc Sư Hệ Thống</span>
                     <p class="back-bio">
-                      Chịu trách nhiệm hoạch định kiến trúc MVC, kiểm soát chất lượng chuẩn Semantic HTML5, hệ thống CSS Variables và chỉ đạo quy trình Prompt Engineering.
+                      Đảm nhiệm vai trò Trưởng nhóm, hoạch định toàn bộ luồng Semantic HTML5, hệ màu CSS Variables, loại bỏ triệt để Javascript theo đúng đề bài và quản lý chất lượng nhật ký Prompt Engineering.
                     </p>
                   </div>
                   <div class="skills-wrapper">
@@ -267,11 +271,10 @@
                       <span class="skill-tag">System Design</span>
                       <span class="skill-tag">Semantic HTML5</span>
                       <span class="skill-tag">CSS Grid / Flexbox</span>
-                      <span class="skill-tag">Vibe Coding</span>
                     </div>
                   </div>
                   <div class="member-contact-links">
-                    <a href="#modal-kien" class="modal-open-link">Xem Hồ Sơ Đầy Đủ</a>
+                    <a href="#contact" class="btn btn-primary btn-full">Liên Hệ Trưởng Nhóm</a>
                   </div>
                 </div>
               </div>
@@ -297,20 +300,19 @@
                     <h4 class="back-name">Hoàng Minh Phát</h4>
                     <span class="back-title">Chuyên Viên Trải Nghiệm Giao Diện</span>
                     <p class="back-bio">
-                      Chuyên gia kiến tạo trải nghiệm thị giác tinh hoa, quản trị hệ màu, hiệu ứng ánh sáng trắng xanh và chuyển động tương tác.
+                      Phụ trách nghiên cứu giao diện người dùng, lựa chọn các sắc độ màu chuyển tiếp trong variables.css, hiệu chỉnh bóng đổ đổ khối nhẹ nhàng và tối ưu tỷ lệ Typography Roboto chuẩn xác trên máy tính.
                     </p>
                   </div>
                   <div class="skills-wrapper">
                     <div class="skills-heading">Kỹ năng nòng cốt</div>
                     <div class="skill-tags">
                       <span class="skill-tag">CSS Variables</span>
-                      <span class="skill-tag">Keyframes</span>
                       <span class="skill-tag">UI Testing</span>
                       <span class="skill-tag">Figma Flow</span>
                     </div>
                   </div>
                   <div class="member-contact-links">
-                    <a href="#modal-phat" class="modal-open-link">Xem Hồ Sơ Đầy Đủ</a>
+                    <a href="#contact" class="btn btn-primary btn-full">Kết Nối Chuyên Viên</a>
                   </div>
                 </div>
               </div>
@@ -336,7 +338,7 @@
                     <h4 class="back-name">Nguyễn Đinh Khánh Trang</h4>
                     <span class="back-title">Giám Đốc Sáng Tạo Thương Hiệu</span>
                     <p class="back-bio">
-                      Định hình bản sắc trực quan thương hiệu ADLEY, sắp xếp thông điệp truyền tải và tối ưu tính gắn kết của giao diện với tâm lý học người xem.
+                      Xây dựng câu chuyện thương hiệu ADLEY, định hướng hình ảnh sáng sủa, đột phá, truyền cảm hứng đam mê công nghệ cho tập thể và phối hợp xây dựng kịch bản nội dung các mục trên website.
                     </p>
                   </div>
                   <div class="skills-wrapper">
@@ -345,11 +347,10 @@
                       <span class="skill-tag">Creative Concept</span>
                       <span class="skill-tag">Brand Strategy</span>
                       <span class="skill-tag">Storytelling</span>
-                      <span class="skill-tag">UX Writing</span>
                     </div>
                   </div>
                   <div class="member-contact-links">
-                    <a href="#modal-trang" class="modal-open-link">Xem Hồ Sơ Đầy Đủ</a>
+                    <a href="#contact" class="btn btn-primary btn-full">Kết Nối Sáng Tạo</a>
                   </div>
                 </div>
               </div>
@@ -375,7 +376,7 @@
                     <h4 class="back-name">Đặng Thị Tố Ngân</h4>
                     <span class="back-title">Kiến Trúc Sư Tương Tác Trợ Năng</span>
                     <p class="back-bio">
-                      Tối ưu chuẩn trợ năng Accessibility cho người khiếm thị, tinh chỉnh độ tương phản tỷ lệ WCAG AAA và quy tắc công thái học.
+                      Đảm nhiệm thiết kế trợ năng và khả năng phản hồi trực quan. Chuyên trách thử nghiệm khả năng điều hướng bằng bàn phím (tabindex, :focus) và tỷ lệ tương phản chữ theo tiêu chuẩn WCAG AAA.
                     </p>
                   </div>
                   <div class="skills-wrapper">
@@ -384,11 +385,10 @@
                       <span class="skill-tag">WCAG Standards</span>
                       <span class="skill-tag">Ergonomic UI</span>
                       <span class="skill-tag">Visual Contrast</span>
-                      <span class="skill-tag">Semantic Tags</span>
                     </div>
                   </div>
                   <div class="member-contact-links">
-                    <a href="#modal-ngan" class="modal-open-link">Xem Hồ Sơ Đầy Đủ</a>
+                    <a href="#contact" class="btn btn-primary btn-full">Kết Nối Designer</a>
                   </div>
                 </div>
               </div>
@@ -414,7 +414,7 @@
                     <h4 class="back-name">Nguyễn Hoàng Anh</h4>
                     <span class="back-title">Kỹ Sư Cấu Trúc Ngữ Nghĩa DOM</span>
                     <p class="back-bio">
-                      Bảo đảm chuẩn hóa các thẻ Semantic HTML5, triệt tiêu việc lạm dụng thẻ vô nghĩa, nâng cao chỉ số SEO tự nhiên của toàn hệ thống.
+                      Chuyên gia cấu trúc thẻ ngữ nghĩa HTML5, cam kết không dùng các thẻ div bừa bãi. Ứng dụng xuất sắc các thẻ header, main, section, article, figure, summary vào toàn bộ dự án.
                     </p>
                   </div>
                   <div class="skills-wrapper">
@@ -423,11 +423,10 @@
                       <span class="skill-tag">W3C Validation</span>
                       <span class="skill-tag">SEO Architecture</span>
                       <span class="skill-tag">Clean DOM</span>
-                      <span class="skill-tag">Metadata</span>
                     </div>
                   </div>
                   <div class="member-contact-links">
-                    <a href="#modal-anh" class="modal-open-link">Xem Hồ Sơ Đầy Đủ</a>
+                    <a href="#contact" class="btn btn-primary btn-full">Kết Nối Kỹ Sư</a>
                   </div>
                 </div>
               </div>
@@ -453,20 +452,19 @@
                     <h4 class="back-name">Ngô Võ Nam</h4>
                     <span class="back-title">Chuyên Gia Dàn Trang CSS Grid</span>
                     <p class="back-bio">
-                      Thiết kế bố cục lưới ma trận đa chiều, thiết lập các khoảng ngắt thích ứng linh hoạt từ màn hình điện thoại đến màn hình máy tính lớn.
+                      Xây dựng bộ khung dàn trang CSS Grid thông minh theo tuần 3 & 4. Xử lý các điểm ngắt Responsive mượt mà giúp card 9 thành viên hiển thị hoàn hảo ở mọi độ rộng màn hình.
                     </p>
                   </div>
                   <div class="skills-wrapper">
                     <div class="skills-heading">Kỹ năng nòng cốt</div>
                     <div class="skill-tags">
                       <span class="skill-tag">CSS Grid Master</span>
-                      <span class="skill-tag">Nested Flexbox</span>
                       <span class="skill-tag">Fluid Layout</span>
                       <span class="skill-tag">Auto-fit / Minmax</span>
                     </div>
                   </div>
                   <div class="member-contact-links">
-                    <a href="#modal-nam" class="modal-open-link">Xem Hồ Sơ Đầy Đủ</a>
+                    <a href="#contact" class="btn btn-primary btn-full">Kết Nối Kỹ Sư Lưới</a>
                   </div>
                 </div>
               </div>
@@ -492,7 +490,7 @@
                     <h4 class="back-name">Phan Văn Trận</h4>
                     <span class="back-title">Kỹ Sư Kiểm Định Tương Thích Thiết Bị</span>
                     <p class="back-bio">
-                      Rà soát lỗi bố cục trên đa nền tảng trình duyệt (Safari, Chromium, Firefox), kiểm tra cơ chế chống tràn ngang khung nhìn.
+                      Thực hiện kiểm thử tương thích hiển thị trên nhiều thiết bị iPhone, Android và các trình duyệt Chrome, Safari, Firefox. Bảo đảm không có lỗi giật lag hay vỡ bố cục.
                     </p>
                   </div>
                   <div class="skills-wrapper">
@@ -500,12 +498,11 @@
                     <div class="skill-tags">
                       <span class="skill-tag">Cross-Browser</span>
                       <span class="skill-tag">Mobile Testing</span>
-                      <span class="skill-tag">Bug Hunting</span>
                       <span class="skill-tag">Overflow Guard</span>
                     </div>
                   </div>
                   <div class="member-contact-links">
-                    <a href="#modal-tran" class="modal-open-link">Xem Hồ Sơ Đầy Đủ</a>
+                    <a href="#contact" class="btn btn-primary btn-full">Kết Nối QA Lead</a>
                   </div>
                 </div>
               </div>
@@ -531,7 +528,7 @@
                     <h4 class="back-name">Trần Hoài Phương</h4>
                     <span class="back-title">Chuyên Gia Tối Ưu Hình Ảnh Đa Phương Tiện</span>
                     <p class="back-bio">
-                      Xử lý kích thước khung ảnh chân dung, căn chỉnh tỷ lệ khung hình cân xứng và thiết kế các lớp màu chuyển sắc trang nhã.
+                      Chuẩn hóa hệ thống hình ảnh thành viên trong folder assets/images, căn chỉnh tỷ lệ khung hình cân đối, hiệu ứng trượt zoom hình ảnh khi người dùng tương tác lật thẻ.
                     </p>
                   </div>
                   <div class="skills-wrapper">
@@ -540,11 +537,10 @@
                       <span class="skill-tag">Asset Processing</span>
                       <span class="skill-tag">Aspect Ratio</span>
                       <span class="skill-tag">Clean Filters</span>
-                      <span class="skill-tag">Retina Display</span>
                     </div>
                   </div>
                   <div class="member-contact-links">
-                    <a href="#modal-phuong" class="modal-open-link">Xem Hồ Sơ Đầy Đủ</a>
+                    <a href="#contact" class="btn btn-primary btn-full">Kết Nối Media Lead</a>
                   </div>
                 </div>
               </div>
@@ -570,7 +566,7 @@
                     <h4 class="back-name">Trần Quang Huy</h4>
                     <span class="back-title">Quản Lý Phiên Bản Git & Kiểm Định Tiêu Chuẩn</span>
                     <p class="back-bio">
-                      Giám sát lịch sử cam kết Git, biên soạn tài liệu nhật ký Prompt Engineering đầy đủ và đối chiếu từng tiêu chí chấm thi của Giảng viên.
+                      Theo dõi nhật ký commit Git, kiểm tra tài liệu PROMPT_LOG.md và README.md, đối chiếu với barem 10 điểm của đề thi giữa kỳ nhằm đảm bảo chất lượng bài thi đạt điểm tuyệt đối.
                     </p>
                   </div>
                   <div class="skills-wrapper">
@@ -578,12 +574,11 @@
                     <div class="skill-tags">
                       <span class="skill-tag">Git Flow</span>
                       <span class="skill-tag">Prompt Auditing</span>
-                      <span class="skill-tag">Documentation</span>
                       <span class="skill-tag">Rubric Check</span>
                     </div>
                   </div>
                   <div class="member-contact-links">
-                    <a href="#modal-huy" class="modal-open-link">Xem Hồ Sơ Đầy Đủ</a>
+                    <a href="#contact" class="btn btn-primary btn-full">Kết Nối Audit Lead</a>
                   </div>
                 </div>
               </div>
@@ -912,11 +907,11 @@
           </div>
 
           <div>
-            <h4 class="footer-col-title">Tài Liệu Học Phần</h4>
+            <h4 class="footer-col-title">Tài Liệu & Khám Phá</h4>
             <ul class="footer-link-list">
               <li><a href="PROMPT_LOG.md">Nhật Ký Prompt Log</a></li>
-              <li><a href="models/project_model.html">Model Dữ Liệu Dự Án</a></li>
-              <li><a href="models/team_model.html">Model Dữ Liệu Nhân Sự</a></li>
+              <li><a href="#projects">Dự Án Trọng Điểm</a></li>
+              <li><a href="#team">Hội Đồng Thành Viên</a></li>
               <li><a href="#hero">Lên Đầu Trang ↑</a></li>
             </ul>
           </div>
@@ -937,254 +932,6 @@
     </a>
 
   </div> <!-- End .site-wrapper -->
-
-
-  <!-- ==========================================================================
-       PURE CSS MODALS (<dialog class="modal-overlay"> - :target ZERO JS)
-       ========================================================================== -->
-
-  <!-- Modal Advisor: Thầy Bùi Xuân Cảnh -->
-  <dialog id="modal-canh" class="modal-overlay">
-    <div class="modal-box">
-      <a href="#team" class="modal-close-btn" aria-label="Đóng popup">&times;</a>
-      <div class="modal-content-grid">
-        <img src="assets/images/bui-xuan-canh.png" alt="Thầy Bùi Xuân Cảnh" class="modal-avatar">
-        <div>
-          <span class="member-badge-modal-advisor">GIẢNG VIÊN HƯỚNG DẪN</span>
-          <h3 class="member-name">Thầy Bùi Xuân Cảnh</h3>
-          <p class="member-mssv">Khoa Công Nghệ Thông Tin - Đại Học Lạc Hồng</p>
-          <p class="member-headline">
-            Giảng viên hướng dẫn trực tiếp học phần Thiết kế Web. Định hướng sinh viên phương pháp Vibe Coding, làm chủ các công cụ AI, tuân thủ chặt chẽ tiêu chuẩn Semantic HTML5, CSS Variables và rèn luyện kỹ năng phân tầng dự án chuyên nghiệp.
-          </p>
-          <div class="skills-wrapper">
-            <div class="skill-tags">
-              <span class="skill-tag">Web Technologies</span>
-              <span class="skill-tag">Vibe Coding Mentorship</span>
-              <span class="skill-tag">Curriculum Lead</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </dialog>
-
-  <!-- Modal 1: Hà Văn Kiên -->
-  <dialog id="modal-kien" class="modal-overlay">
-    <div class="modal-box">
-      <a href="#team" class="modal-close-btn" aria-label="Đóng popup">&times;</a>
-      <div class="modal-content-grid">
-        <img src="assets/images/ha-van-kien.png" alt="Hà Văn Kiên" class="modal-avatar">
-        <div>
-          <span class="member-badge-modal-leader">LEADER</span>
-          <h3 class="member-name">Hà Văn Kiên</h3>
-          <p class="member-mssv">Lớp: 25CT111 • Vai trò: Tech Lead & Architect</p>
-          <p class="member-headline">
-            Đảm nhiệm vai trò Trưởng nhóm, người khởi tạo cấu trúc dự án MVC, hoạch định toàn bộ luồng Semantic HTML5, hệ màu CSS Variables, loại bỏ triệt để Javascript theo đúng đề bài và quản lý file PROMPT_LOG.md.
-          </p>
-          <div class="skills-wrapper">
-            <div class="skill-tags">
-              <span class="skill-tag">MVC Design</span>
-              <span class="skill-tag">HTML5 Semantics</span>
-              <span class="skill-tag">CSS Flex & Grid</span>
-              <span class="skill-tag">Vibe Coding</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </dialog>
-
-  <!-- Modal 2: Hoàng Minh Phát -->
-  <dialog id="modal-phat" class="modal-overlay">
-    <div class="modal-box">
-      <a href="#team" class="modal-close-btn" aria-label="Đóng popup">&times;</a>
-      <div class="modal-content-grid">
-        <img src="assets/images/hoang-minh-phat.png" alt="Hoàng Minh Phát" class="modal-avatar">
-        <div>
-          <h3 class="member-name">Hoàng Minh Phát</h3>
-          <p class="member-mssv">Lớp: 25CT111 • MSSV: <!-- TODO: nhập MSSV đúng cho Hoàng Minh Phát --> [Chờ cập nhật] • Vai trò: UI/UX Specialist</p>
-          <p class="member-headline">
-            Phụ trách nghiên cứu giao diện người dùng, lựa chọn các sắc độ màu chuyển tiếp trong variables.css, hiệu chỉnh bóng đổ đổ khối nhẹ nhàng và tối ưu tỷ lệ Typography Roboto chuẩn xác trên máy tính.
-          </p>
-          <div class="skills-wrapper">
-            <div class="skill-tags">
-              <span class="skill-tag">Color Theory</span>
-              <span class="skill-tag">Roboto Typography</span>
-              <span class="skill-tag">Micro-transitions</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </dialog>
-
-  <!-- Modal 3: Nguyễn Đinh Khánh Trang -->
-  <dialog id="modal-trang" class="modal-overlay">
-    <div class="modal-box">
-      <a href="#team" class="modal-close-btn" aria-label="Đóng popup">&times;</a>
-      <div class="modal-content-grid">
-        <img src="assets/images/nguyen-dinh-khanh-trang.png" alt="Nguyễn Đinh Khánh Trang" class="modal-avatar">
-        <div>
-          <h3 class="member-name">Nguyễn Đinh Khánh Trang</h3>
-          <p class="member-mssv">Lớp: 25EC111 • Vai trò: Creative Director</p>
-          <p class="member-headline">
-            Xây dựng câu chuyện thương hiệu ADLEY, định hướng hình ảnh sáng sủa, đột phá, truyền cảm hứng đam mê công nghệ cho tập thể và phối hợp xây dựng kịch bản nội dung các mục trên website.
-          </p>
-          <div class="skills-wrapper">
-            <div class="skill-tags">
-              <span class="skill-tag">Creative Concept</span>
-              <span class="skill-tag">Brand Strategy</span>
-              <span class="skill-tag">Digital Copywriting</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </dialog>
-
-  <!-- Modal 4: Đặng Thị Tố Ngân -->
-  <dialog id="modal-ngan" class="modal-overlay">
-    <div class="modal-box">
-      <a href="#team" class="modal-close-btn" aria-label="Đóng popup">&times;</a>
-      <div class="modal-content-grid">
-        <img src="assets/images/dang-thi-to-ngan.png" alt="Đặng Thị Tố Ngân" class="modal-avatar">
-        <div>
-          <h3 class="member-name">Đặng Thị Tố Ngân</h3>
-          <p class="member-mssv">Lớp: 24MC112 • Vai trò: Product Designer</p>
-          <p class="member-headline">
-            Đảm nhiệm thiết kế trợ năng và khả năng phản hồi trực quan. Chuyên trách thử nghiệm khả năng điều hướng bằng bàn phím (tabindex, :focus) và tỷ lệ tương phản chữ.
-          </p>
-          <div class="skills-wrapper">
-            <div class="skill-tags">
-              <span class="skill-tag">Accessibility a11y</span>
-              <span class="skill-tag">WCAG Standards</span>
-              <span class="skill-tag">Focus States</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </dialog>
-
-  <!-- Modal 5: Nguyễn Hoàng Anh -->
-  <dialog id="modal-anh" class="modal-overlay">
-    <div class="modal-box">
-      <a href="#team" class="modal-close-btn" aria-label="Đóng popup">&times;</a>
-      <div class="modal-content-grid">
-        <img src="assets/images/nguyen-hoang-anh.png" alt="Nguyễn Hoàng Anh" class="modal-avatar">
-        <div>
-          <h3 class="member-name">Nguyễn Hoàng Anh</h3>
-          <p class="member-mssv">Lớp: CT111 • Vai trò: Semantic Engineer</p>
-          <p class="member-headline">
-            Chuyên gia cấu trúc thẻ ngữ nghĩa HTML5, cam kết không dùng các thẻ div bừa bãi. Ứng dụng xuất sắc các thẻ header, main, section, article, figure, summary vào dự án.
-          </p>
-          <div class="skills-wrapper">
-            <div class="skill-tags">
-              <span class="skill-tag">Semantic HTML5</span>
-              <span class="skill-tag">SEO Schema</span>
-              <span class="skill-tag">Clean DOM</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </dialog>
-
-  <!-- Modal 6: Ngô Võ Nam -->
-  <dialog id="modal-nam" class="modal-overlay">
-    <div class="modal-box">
-      <a href="#team" class="modal-close-btn" aria-label="Đóng popup">&times;</a>
-      <div class="modal-content-grid">
-        <img src="assets/images/ngo-vo-nam.png" alt="Ngô Võ Nam" class="modal-avatar">
-        <div>
-          <h3 class="member-name">Ngô Võ Nam</h3>
-          <p class="member-mssv">Lớp: 25CT111 • MSSV: <!-- TODO: nhập MSSV đúng cho Ngô Võ Nam --> [Chờ cập nhật] • Vai trò: Layout Architect</p>
-          <p class="member-headline">
-            Xây dựng bộ khung dàn trang CSS Grid thông minh theo tuần 3 & 4. Xử lý các điểm ngắt Responsive mượt mà giúp card 9 thành viên hiển thị hoàn hảo ở mọi độ rộng màn hình.
-          </p>
-          <div class="skills-wrapper">
-            <div class="skill-tags">
-              <span class="skill-tag">CSS Grid System</span>
-              <span class="skill-tag">Adaptive Layout</span>
-              <span class="skill-tag">Flexbox Alignment</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </dialog>
-
-  <!-- Modal 7: Phan Văn Trận -->
-  <dialog id="modal-tran" class="modal-overlay">
-    <div class="modal-box">
-      <a href="#team" class="modal-close-btn" aria-label="Đóng popup">&times;</a>
-      <div class="modal-content-grid">
-        <img src="assets/images/phan-van-tran.png" alt="Phan Văn Trận" class="modal-avatar">
-        <div>
-          <h3 class="member-name">Phan Văn Trận</h3>
-          <p class="member-mssv">Lớp: 23EC111 • Vai trò: QA & Device Profiler</p>
-          <p class="member-headline">
-            Thực hiện kiểm thử tương thích hiển thị trên nhiều thiết bị iPhone, Android và các trình duyệt Chrome, Safari, Firefox. Bảo đảm không có lỗi giật lag hay vỡ bố cục.
-          </p>
-          <div class="skills-wrapper">
-            <div class="skill-tags">
-              <span class="skill-tag">Cross Browser QA</span>
-              <span class="skill-tag">DevTools Profiling</span>
-              <span class="skill-tag">Mobile Optimization</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </dialog>
-
-  <!-- Modal 8: Trần Hoài Phương -->
-  <dialog id="modal-phuong" class="modal-overlay">
-    <div class="modal-box">
-      <a href="#team" class="modal-close-btn" aria-label="Đóng popup">&times;</a>
-      <div class="modal-content-grid">
-        <img src="assets/images/tran-hoai-phuong.png" alt="Trần Hoài Phương" class="modal-avatar">
-        <div>
-          <h3 class="member-name">Trần Hoài Phương</h3>
-          <p class="member-mssv">Lớp: 25MC111 • Vai trò: Media Optimizer</p>
-          <p class="member-headline">
-            Chuẩn hóa hệ thống hình ảnh thành viên trong folder assets/images, căn chỉnh tỷ lệ khung hình cân đối, hiệu ứng trượt zoom hình ảnh khi người dùng tương tác lật thẻ.
-          </p>
-          <div class="skills-wrapper">
-            <div class="skill-tags">
-              <span class="skill-tag">Asset Processing</span>
-              <span class="skill-tag">Responsive Media</span>
-              <span class="skill-tag">Object Fit Master</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </dialog>
-
-  <!-- Modal 9: Trần Quang Huy -->
-  <dialog id="modal-huy" class="modal-overlay">
-    <div class="modal-box">
-      <a href="#team" class="modal-close-btn" aria-label="Đóng popup">&times;</a>
-      <div class="modal-content-grid">
-        <img src="assets/images/tran-quang-huy.png" alt="Trần Quang Huy" class="modal-avatar">
-        <div>
-          <h3 class="member-name">Trần Quang Huy</h3>
-          <p class="member-mssv">Lớp: 25CT111 • MSSV: <!-- TODO: nhập MSSV đúng cho Trần Quang Huy --> [Chờ cập nhật] • Vai trò: Git & Audit Lead</p>
-          <p class="member-headline">
-            Theo dõi nhật ký commit Git, kiểm tra tài liệu PROMPT_LOG.md và README.md, đối chiếu với barem 10 điểm của đề thi giữa kỳ nhằm đảm bảo chất lượng bài thi đạt điểm tuyệt đối.
-          </p>
-          <div class="skills-wrapper">
-            <div class="skill-tags">
-              <span class="skill-tag">Git Management</span>
-              <span class="skill-tag">Rubric Audit</span>
-              <span class="skill-tag">Tech Docs</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </dialog>
 
 </body>
 </html>

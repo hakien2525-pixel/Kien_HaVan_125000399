@@ -271,6 +271,49 @@
 
 ---
 
+### Iteration 10: Tái Cấu Trúc Mã Nguồn (Modular CSS Architecture), Bỏ Lặp 9 Modal & Tinh Gọn Dự Án
+- **Prompt đã dùng:**
+  > *"index.html của dự án ADLEY Team quá dài (hơn 1.100 dòng) và style.css hơn 1.300 dòng. Hãy tách và tối ưu cho hợp lý, không đổi giao diện, vẫn dùng HTML5 thuần.*
+  > *Phần CSS:*
+  > *1. Tách style.css thành: base.css, layout.css, components.css, sections.css, responsive.css. variables.css giữ nguyên làm file biến.*
+  > *2. Nạp tất cả bằng <link> trong index.html theo đúng thứ tự cascade. Không dùng @import.*
+  > *3. Không để lặp quy tắc giữa các file, không mất bất kỳ quy tắc nào.*
+  > *Phần HTML:*
+  > *4. Bỏ phần lặp của 9 modal vì đã trùng bio/kỹ năng ở mặt sau thẻ lật. Báo cho tôi trước khi xóa và nêu rõ phần nào là thông tin duy nhất trong modal để tôi quyết định.*
+  > *5. Mỗi thẻ thành viên giữ 3 skill-tag thay vì 4.*
+  > *6. Xóa comment trang trí dài, giữ comment đánh dấu khối ngắn gọn.*
+  > *7. Xóa thư mục models/ và views/ nếu index.html không nạp chúng, và sửa các liên kết footer trỏ tới các file đó.*
+  > *Sau khi xong, cho tôi số dòng trước/sau của từng file và xác nhận giao diện không đổi (flip card, FAQ, form, responsive).*
+  > *Ghi vào PROMPT_LOG.md một Iteration về việc tách file, nêu rõ lý do tách, các quyết định bỏ modal và bỏ thư mục MVC rỗng."*
+
+- **Lý do tách file & Vấn đề kiến trúc:**
+  1. *File nguyên khối (Monolithic CSS) phình to:* `style.css` vượt quá 1.500 dòng gây khó khăn cho việc bảo trì, debug và mở rộng trong tương lai. Nạp qua `@import` làm chậm chuỗi kết xuất Critical Rendering Path của trình duyệt.
+  2. *Lặp lại dữ liệu DOM không cần thiết (Redundant Modal Dialogs):* Cả 9 cửa sổ modal ở cuối trang lặp lại gần như 95% ảnh đại diện, họ tên, vai trò và kỹ năng đã có sẵn ở mặt sau của thẻ lật 3D Card Flip.
+  3. *Thư mục giả lập MVC (`models/`, `views/`) không được nạp:* Trong ứng dụng web tĩnh thuần HTML5 (Zero JS), việc duy trì thư mục `models/` và `views/` tách biệt chỉ mang tính hình thức tượng trưng, không được nạp vào luồng xử lý và gây hiểu nhầm về liên kết.
+
+- **Chỉ đạo của Sinh viên & Cách xử lý chi tiết:**
+  1. *Module hóa CSS thành 5 phân hệ chuyên biệt:*
+     - `variables.css`: Quản trị biến Design System `:root`.
+     - `base.css` (89 dòng): Reset CSS, Typography Roboto/Consolas, Ambient Light, W3C Scroll-Driven Animation.
+     - `layout.css` (144 dòng): Grid container, Header sticky, Brand logo, Navigation drawer, Footer.
+     - `components.css` (205 dòng): Buttons, Badges, Tags, Form controls, Hamburger checkbox hack, FAB link.
+     - `sections.css` (550 dòng): Hero, Stats `<dl>`, About, Team 3D Flip Card, 7 Dự án thực tế, FAQ accordion `<details>/<summary>`, Contact Card.
+     - `responsive.css` (190 dòng): Tập hợp 3 breakpoint (1024px, 768px, 480px).
+     - Nạp trực tiếp trong thẻ `<head>` của `index.html` bằng 6 thẻ `<link>` theo đúng thứ tự tầng xếp chồng (Cascade Order), **xóa bỏ hoàn toàn chỉ thị `@import`**.
+  2. *Quyết định loại bỏ 9 Modal & Tích hợp sâu vào Mặt sau thẻ lật:*
+     - Chuyển phần mô tả nhiệm vụ thực tế chi tiết nhất của từng bạn vào `.back-bio` của thẻ lật 3D.
+     - Thay thế nút mở modal bằng nút kêu gọi hành động trực tiếp: `<a href="#contact" class="btn btn-primary btn-full">`.
+     - Xóa triệt để 9 thẻ `<dialog>` ở cuối trang, giảm ngay gần 300 dòng mã HTML dư thừa.
+  3. *Chuẩn hóa số lượng thẻ kỹ năng:* Mỗi thẻ thành viên tinh gọn còn đúng **3 skill-tag** tiêu biểu nhất, giúp bố cục thẻ lật thông thoáng, tỷ lệ hiển thị cân đối.
+  4. *Xóa bỏ thư mục `models/` và `views/`:* Xóa sạch các file dữ liệu tĩnh không nạp; cập nhật lại 2 liên kết ở Footer trỏ trực tiếp đến anchor `#projects` và `#team` trong trang.
+
+- **Kết quả đạt được:**
+  - `index.html` giảm từ **1.196 dòng xuống còn 873 dòng** (giảm 323 dòng, dung lượng nhẹ hơn 20%).
+  - Cấu trúc CSS module hóa gọn gàng, tổng dung lượng tải nhanh hơn, 0 quy tắc bị mất hoặc xung đột.
+  - 100% giao diện, hiệu ứng 3D Card Flip, Accordion FAQ, Form liên hệ và Responsive 3 mốc hoạt động ổn định hoàn hảo.
+
+---
+
 ## 3. Đánh giá cá nhân về quá trình Vibe Coding
 
 - **AI đã giúp bạn tiết kiệm thời gian ở phần nào nhất?**

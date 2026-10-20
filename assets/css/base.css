@@ -1,0 +1,100 @@
+/* ==========================================================================
+   BASE.CSS - Reset & Base Styles, Typography, Smooth Scroll & Ambient Light
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.65;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Ambient Soft Blue Gradient */
+.ambient-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  background: 
+    radial-gradient(circle at 10% 15%, rgba(56, 189, 248, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(37, 99, 235, 0.06) 0%, transparent 45%),
+    linear-gradient(180deg, var(--bg-main) 0%, var(--bg-surface) 100%);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+ul, dl {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Orphan Word Prevention */
+h1, h2, h3, h4, h5, h6,
+.hero-title, .section-title, .project-title, .member-name {
+  text-wrap: balance;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+p, .hero-description, .section-description, .project-desc, .faq-content, .back-bio {
+  text-wrap: pretty;
+  overflow-wrap: break-word;
+  word-break: normal;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+.no-orphan {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* Scroll-Driven Animations */
+@supports (animation-timeline: view()) {
+  .team-card-wrapper, .project-card, .value-card, .faq-item {
+    animation: scrollFadeIn linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 30%;
+  }
+
+  @keyframes scrollFadeIn {
+    from {
+      opacity: 0.3;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

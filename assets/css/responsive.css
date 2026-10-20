@@ -1,0 +1,208 @@
+/* ==========================================================================
+   RESPONSIVE.CSS - Breakpoints: 1024px (Tablet), 768px (Mobile), 480px (Small Mobile)
+   ========================================================================== */
+
+/* 1. Màn hình Tablet & Laptop nhỏ (<= 1024px) */
+@media (max-width: 1024px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 2. Màn hình Tablet dọc & Mobile (<= 768px) */
+@media (max-width: 768px) {
+  :root {
+    --font-5xl: 2.25rem;
+    --font-4xl: 1.85rem;
+    --header-height: 68px;
+  }
+  
+  .hamburger-btn {
+    display: flex;
+  }
+  
+  .nav-desktop {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+    background: var(--bg-card);
+    flex-direction: column;
+    padding: var(--space-8);
+    transform: translateX(-100%);
+    transition: transform var(--transition-normal);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  #nav-toggle:checked ~ .site-wrapper .nav-desktop {
+    transform: translateX(0);
+  }
+  
+  #nav-toggle:checked ~ .site-wrapper .hamburger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  #nav-toggle:checked ~ .site-wrapper .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+  
+  #nav-toggle:checked ~ .site-wrapper .hamburger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: var(--space-4);
+  }
+  
+  .nav-link {
+    font-size: var(--font-base);
+    display: block;
+    width: 100%;
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-card {
+    grid-template-columns: 1fr;
+    padding: var(--space-6);
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stat-item {
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .stat-item:last-child {
+    border-bottom: none;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 3. Mốc Breakpoint Điện Thoại Nhỏ (<= 480px - Mobile First Guard) */
+@media (max-width: 480px) {
+  :root {
+    --font-5xl: 1.85rem;
+    --font-4xl: 1.5rem;
+    --font-3xl: 1.35rem;
+    --font-2xl: 1.2rem;
+    --font-xl: 1.1rem;
+    --container-padding: 1rem;
+  }
+  
+  html, body {
+    overflow-x: hidden;
+  }
+
+  .container {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+
+  /* Value Card không tràn viền */
+  .value-list {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .value-card {
+    padding: var(--space-4);
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Thẻ lật thành viên & Mặt sau */
+  .team-card-wrapper {
+    height: 520px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .card-front, .card-back {
+    padding: var(--space-4);
+  }
+
+  .card-back {
+    overflow-y: auto;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .back-bio {
+    font-size: var(--font-xs);
+    line-height: 1.5;
+  }
+
+  .skill-tags {
+    gap: 4px;
+  }
+
+  .skill-tag {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+  }
+
+  /* FAQ Accordion */
+  .faq-summary {
+    padding: 0.85rem 1rem;
+    font-size: var(--font-sm);
+    word-break: break-word;
+  }
+
+  .faq-content {
+    padding: var(--space-3) 1rem 1rem 1rem;
+    font-size: var(--font-sm);
+    line-height: 1.6;
+    word-break: break-word;
+  }
+
+  /* Form Liên hệ & Button */
+  .contact-card {
+    padding: var(--space-4);
+  }
+
+  .contact-form {
+    width: 100%;
+  }
+
+  .form-input, .form-textarea {
+    max-width: 100%;
+    font-size: var(--font-sm);
+  }
+
+  .btn, .btn-block, .btn-full {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: var(--font-sm);
+    text-align: center;
+  }
+}
