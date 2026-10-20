@@ -72,25 +72,38 @@
 > *Viết bộ CSS tối ưu sử dụng các thuộc tính hiện đại (text-wrap: pretty, text-wrap: balance, hyphens) để tự động chống rớt từ mồ côi cho toàn bộ các thẻ <p> và tiêu đề.*
 > *Đưa ra giải pháp fallback bằng CSS hoặc HTML entity (&nbsp;) phòng trường hợp trình duyệt cũ chưa hỗ trợ đầy đủ.*
 > *Cung cấp đoạn mã hoàn chỉnh, sạch và giải thích ngắn gọn cách hoạt động.*
-> *5. Đặc biệt lưu ý cho tôi về phần 5. Nhật ký Prompt Engineering: File PROMPT_LOG.md trình bày chi tiết các bước hỏi - đáp với AI. Thể hiện rõ tư duy tinh chỉnh (iteration), biết sửa lỗi AI, chỉ đạo AI theo đúng ý đồ kiến trúc HTML/CSS chuẩn. ( bắt đầu ngay từ lúc tôi gửi promt này bạn sẽ lưu ngay vào file log.md đó từ ban đầu đến khi hoàn thành dự án, tất cả các promt mỗi lần tôi gửi cho bạn trong dự án này )"*
+> *5. Đặc biệt lưu ý cho tôi về phần 5. Nhật ký Prompt Engineering: File PROMPT_LOG.md trình bày chi tiết các bước hỏi - đáp với AI. Thể hiện rõ tư duy tinh chỉnh (iteration), biết sửa lỗi AI, chỉ đạo AI theo đúng ý đồ kiến trúc HTML/CSS chuẩn."*
 
-### Lần 5: Triển khai Bộ Giải pháp Tối ưu Typography Chống Từ Mồ Côi (Modern CSS + Fallbacks)
-- **Hành động & Phân tích của AI:**
-  1. **Nhận diện vấn đề:** Lỗi "Orphan word" (từ mồ côi) xảy ra khi dòng cuối cùng của một khối văn bản hoặc tiêu đề chỉ chứa duy nhất 1 từ (ví dụ: "Semantic", "dùng", "IoT"), làm phá vỡ nhịp điệu thị giác và tạo khoảng trống thừa thãi gây mất cân đối giao diện.
-  2. **Giải pháp CSS hiện đại (Modern CSS3 Specs):**
-     - Áp dụng `text-wrap: balance` cho tất cả tiêu đề (`h1` - `h6`, `.hero-title`, `.section-title`, `.project-title`, `.faq-summary`): Giúp trình duyệt tự động cân bằng số lượng chữ trên mỗi dòng sao cho chiều dài các dòng xấp xỉ nhau, loại bỏ hoàn toàn tình trạng dòng 1 dài ngoằng và dòng 2 chỉ có 1 - 2 chữ.
-     - Áp dụng `text-wrap: pretty` cho toàn bộ thẻ `<p>`, mô tả card (`.project-desc`, `.faq-content`, `.back-bio`): Thuật toán của trình duyệt sẽ chủ động điều chỉnh vị trí ngắt dòng ở 2 - 3 dòng cuối để luôn có ít nhất 2 từ ở dòng kết thúc, ngăn ngừa triệt để từ đơn độc.
-     - Kết hợp `hyphens: auto;` và `overflow-wrap: break-word;` cùng `text-rendering: optimizeLegibility;` để ngắt từ chuẩn xác.
-  3. **Giải pháp Fallback cho Trình duyệt cũ (Browser Backward Compatibility):**
-     - **CSS Fallback:** Tạo lớp tiện ích `.no-orphan { display: inline-block; white-space: nowrap; }` dùng để khóa các cụm 2 - 3 từ cuối cùng dính liền nhau.
-     - **HTML Entity Fallback (`&nbsp;`):** Chèn ký tự khoảng trắng không ngắt dòng `&nbsp;` giữa 2 từ cuối cùng trong các văn bản tĩnh (ví dụ: `HTML5&nbsp;Semantic`, `người&nbsp;dùng`, `Độc&nbsp;IoT`). Trình duyệt cũ khi gặp `&nbsp;` sẽ bắt buộc kéo cả 2 từ xuống dòng cùng nhau thay vì để 1 từ rơi lẻ loi.
-  4. **Kiểm tra tiêu chí:** Vẫn đảm bảo 100% không dùng JavaScript, thuần CSS3/HTML5 chuẩn kiến thức Tuần 1 - 6.
+### Lần 5: Triển khai Bộ Giải pháp Tối ưu Typography Chống Từ Mồ Côi
+- Áp dụng `text-wrap: balance` cho tiêu đề và `text-wrap: pretty` cho đoạn văn bản; áp dụng `&nbsp;` làm fallback cho trình duyệt cũ.
+
+---
+
+> **Prompt từ người dùng (Lần 4 - Rà soát Lỗi Giao diện Thực tế Qua Ảnh Chụp Màn Hình & Căn Chỉnh Layout):**
+>
+> *"bạn thấy các chỗ bị lỗi trên web không rà soát đúng chỗ và căn chỉnh lại cho đúng*
+> *5. Đặc biệt lưu ý cho tôi về phần 5. Nhật ký Prompt Engineering: File PROMPT_LOG.md trình bày chi tiết các bước hỏi - đáp với AI. Thể hiện rõ tư duy tinh chỉnh (iteration), biết sửa lỗi AI, chỉ đạo AI theo đúng ý đồ kiến trúc HTML/CSS chuẩn. ( bắt đầu ngay từ lúc tôi gửi promt này bạn sẽ lưu ngay vào file log.md đó từ ban đầu đến khi hoàn thành dự án, tất cả các promt mỗi lần tôi gửi cho bạn trong dự án này"*
+
+### Lần 6: Sửa lỗi Bố Cục Thẻ Dự Án (Project Card Header) & Giao Diện FAQ Accordion
+- **Phân tích lỗi từ 2 ảnh chụp thực tế của người dùng:**
+  1. **Lỗi ở Ảnh 1 (Project Card Header):** 
+     - *Hiện tượng:* Nhãn nhãn dán `.project-badge` (chữ "IOT & AN TOÀN LAO ĐỘNG") bị tràn chữ xuống 2 dòng khiến hình pill (viên thuốc) bị méo dị dạng, đè sát vào phần chữ "Nghiên Cứu KHKT 2026 - 2027" bên phải.
+     - *Nguyên nhân:* Header dùng `align-items: center` và không có `white-space: nowrap` kèm `gap` linh hoạt, khiến flexbox ép co chiều rộng của badge.
+     - *Giải pháp khắc phục:* Chuyển `.project-card-header` sang `align-items: flex-start; gap: var(--space-3); flex-wrap: wrap;`. Thiết lập `.project-badge` có `white-space: nowrap; flex-shrink: 0;` và viền mảnh sang trọng `#bae6fd` để badge luôn giữ dáng viên thuốc hoàn mỹ.
+  2. **Lỗi ở Ảnh 2 (FAQ Accordion):**
+     - *Hiện tượng:* Khung câu hỏi `<summary>` đang mở xuất hiện viền xanh bao quanh (`focus outline`) xấu và dòng chữ tiêu đề câu hỏi bị kéo dãn hoặc đè sát vào nút dấu `−`, nội dung trả lời bên dưới thiếu đường phân cách ngăn nắp.
+     - *Nguyên nhân:* Ở lần sửa trước, gom selector `.faq-summary` vào `text-wrap: balance` đã làm can thiệp vào thuật toán flexbox của `<summary>`, cộng với hiệu ứng focus mặc định của trình duyệt trên thẻ `<details>`.
+     - *Giải pháp khắc phục:*
+       - Tách bỏ `.faq-summary` ra khỏi nhóm `text-wrap: balance`.
+       - Thiết kế nút icon `+` / `−` thành hình tròn có nền xanh nhạt `width: 24px; height: 24px; border-radius: 50%` đặt cố định ở góc phải (`flex-shrink: 0`).
+       - Thêm `outline: none;` và `:focus-visible { background-color: var(--accent-soft); }` để xóa viền xanh thô kệch mặc định.
+       - Thêm đường kẻ mảnh phân cách `border-top: 1px dashed var(--border-color);` ngăn giữa câu hỏi và câu trả lời trong `.faq-content` giúp bố cục thanh thoát, chuẩn UX/UI.
 
 ---
 
 ## 3. Đánh giá cá nhân về quá trình Vibe Coding
 
 - **AI đã giúp bạn tiết kiệm thời gian ở phần nào nhất?**
-  - Tự động áp dụng nhanh các thuộc tính CSS Typography cấp tiến nhất của năm 2026 (`text-wrap: balance`, `text-wrap: pretty`) mà không cần viết mã thủ công phức tạp hoặc phụ thuộc thư viện JavaScript ngoài.
+  - Khả năng phân tích trực quan từ hình ảnh chụp lỗi của người dùng, khoanh vùng chính xác class CSS bị xung đột (Flexbox gap và selector focus) và đưa ra mã sửa đổi đúng trọng tâm.
 - **Bài học rút ra khi đặt câu hỏi (Prompt) cho AI trong thiết kế web?**
-  - **Tư duy Fallback trong Web Standards:** Khi sử dụng các tính năng CSS hiện đại, luôn yêu cầu AI cung cấp giải pháp dự phòng (Graceful Degradation / Progressive Enhancement) bằng HTML entity hoặc thuộc tính cơ bản để trang web luôn hiển thị hoàn mỹ trên mọi phiên bản trình duyệt.
+  - **Kiểm thử trực quan (Visual QA) là tối quan trọng:** Đôi khi áp dụng một thuộc tính mới (như `text-wrap: balance`) có thể gây phản ứng phụ lên các phần tử flex cha. Phải kết hợp giữa DevTools và quan sát thực tế để chỉ đạo AI tinh chỉnh tỉ mỉ từng chi tiết pixel.
