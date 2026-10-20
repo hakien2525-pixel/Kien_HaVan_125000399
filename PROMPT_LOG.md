@@ -1,10 +1,10 @@
 # NHẬT KÝ PROMPT ENGINEERING (VIBE CODING LOG)
 
 - **Họ và tên:** Hà Văn Kiên
-- **MSSV:** 25CT111
+- **MSSV:** 125000399
 - **Lớp:** 25CT111
 - **Tên đề tài Website:** Website Giới Thiệu Đội Ngũ ADLEY Team & Hệ Thống Dự Án Nghiên Cứu Đột Phá
-- **Tên Repository theo chuẩn đề thi:** `Kien_HaVan_25CT111`
+- **Tên Repository theo chuẩn đề thi:** `Kien_HaVan_125000399`
 - **Công cụ AI đã sử dụng:** Gemini / Antigravity AI Assistant
 
 ---
