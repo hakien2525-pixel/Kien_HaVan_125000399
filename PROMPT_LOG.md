@@ -314,6 +314,33 @@
 
 ---
 
+### Iteration 11: Tự Động Đồng Bộ Hình Ảnh Thực Tế Cho Toàn Bộ 7 Dự Án Từ Thư Mục `image/`
+- **Prompt đã dùng:**
+  > *"truy cập vào file image hãy tự động thêm các hình ảnh dự án vào đúng các dự án được view lên web"*
+
+- **Lỗi & Tình trạng ban đầu:**
+  1. *Thiếu ảnh trực quan cho các card dự án:* Các dự án ban đầu chỉ có huy hiệu và khối văn bản, thiếu hình ảnh minh họa dẫn đến bố cục chưa thực sự bắt mắt và sinh động.
+  2. *Ảnh trong thư mục `image/` có dấu cách và tiếng Việt:* Các tệp như `Ảnh dự án xe trinh sát.png`, `Ảnh dự án your Voice.png`, `Ảnh dự án Sắc Việt.png`, `Ảnh dự án smartfind .png`, `Ảnh dự án gia sư ảo.png`, `Ảnh dự án đo không khí độ sâu.png`, `Ảnh dự án alpha mini.png` nếu gọi trực tiếp trên web hosting/GitHub Pages sẽ dễ lỗi đường dẫn mã hóa URL `%20`.
+
+- **Chỉ đạo của Sinh viên & Cách xử lý chi tiết:**
+  1. *Khảo sát và sao chép chuẩn hóa vào `assets/images/`:*
+     - `Ảnh dự án xe trinh sát.png` $\rightarrow$ `assets/images/project-cornweed-scout.png` (Gắn vào Dự án 1: CORNWEED-SCOUT).
+     - `Ảnh dự án your Voice.png` $\rightarrow$ `assets/images/project-your-voice.png` (Gắn vào Dự án 2: YourVoice).
+     - `Ảnh dự án Sắc Việt.png` $\rightarrow$ `assets/images/project-sac-viet.png` (Gắn vào Dự án 3: Sắc Việt).
+     - `Ảnh dự án smartfind .png` $\rightarrow$ `assets/images/project-smartfinguard.png` (Gắn vào Dự án 4: SmartFin-Guard).
+     - `Ảnh dự án gia sư ảo.png` $\rightarrow$ `assets/images/project-gia-su-ao.png` (Gắn vào Dự án 5: Gia Sư Ảo).
+     - `Ảnh dự án đo không khí độ sâu.png` $\rightarrow$ `assets/images/project-canh-bao-khi-doc.png` (Gắn vào Dự án 6: Thiết Bị Cảnh Báo Khí Độc IoT).
+     - `Ảnh dự án alpha mini.png` $\rightarrow$ `assets/images/project-alpha-mini.png` (Gắn vào Dự án 7: Smart Robot Assistant Alpha Mini).
+  2. *Nhúng thẻ `<img>` chuẩn Semantic HTML5:*
+     - Thêm class `.project-thumbnail` với thuộc tính `object-fit: cover; height: 180px; width: 100%;` tạo tỷ lệ khung hình đồng nhất.
+     - Sử dụng thuộc tính `loading="lazy"` tối ưu tốc độ tải trang và `alt` mô tả trực quan hỗ trợ công nghệ trợ năng Screen Reader.
+
+- **Kết quả đạt được:**
+  - 100% cả 7 dự án nghiên cứu của đội ngũ đều có ảnh minh họa thực tế sắc nét, chuyên nghiệp.
+  - Tên file chuẩn kebab-case không dấu, sẵn sàng nộp bài và deploy GitHub Pages mà không bao giờ gặp lỗi 404.
+
+---
+
 ## 3. Đánh giá cá nhân về quá trình Vibe Coding
 
 - **AI đã giúp bạn tiết kiệm thời gian ở phần nào nhất?**
