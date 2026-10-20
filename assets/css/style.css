@@ -460,54 +460,60 @@ ul {
 .value-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-4);
-  margin-top: var(--space-6);
+  gap: var(--space-5);
+  margin-top: var(--space-8);
 }
 
 .value-card {
   background: #ffffff;
-  padding: var(--space-5);
+  padding: 1.5rem 1.5rem;
   border-radius: var(--radius-md);
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-card);
   transition: all var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 120px;
 }
 
 .value-card:hover {
   border-color: var(--primary-light);
   transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.1);
 }
 
 .value-title {
   font-size: var(--font-base);
   font-weight: 700;
   color: var(--text-main);
-  margin-bottom: var(--space-1);
+  margin-bottom: var(--space-2);
+  line-height: 1.4;
 }
 
 .value-desc {
   font-size: var(--font-xs);
   color: var(--text-muted);
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .about-banner {
   background: #ffffff;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
-  padding: var(--space-6);
+  padding: 1.5rem;
   box-shadow: var(--shadow-md);
 }
 
 .code-preview-box {
   background: #0f172a;
   border-radius: var(--radius-md);
-  padding: var(--space-5);
+  padding: 1.5rem;
   font-family: 'Roboto', monospace;
   font-size: var(--font-xs);
   color: #38bdf8;
-  line-height: 1.7;
+  line-height: 1.8;
+  overflow-x: auto;
 }
 
 /* ==========================================================================

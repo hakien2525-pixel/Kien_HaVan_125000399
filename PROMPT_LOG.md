@@ -79,32 +79,36 @@
 
 ---
 
-> **Prompt từ người dùng (Lần 4 & Lần 5 - Khắc phục Triệt để Lỗi Tràn Viền / Text Overflowing Borders):**
+> **Prompt từ người dùng (Lần 4 & Lần 5 - Khắc phục Triệt để Lỗi Tràn Viền / Text Overflowing Borders ở FAQ):**
 >
 > *"bạn thấy các chỗ bị lỗi trên web không rà soát đúng chỗ và căn chỉnh lại cho đúng"*
 > *"đừng để chữ tràn viền như vậy đang bị lỗi và bị trừ điểm theo tiêu chí đó"*
 
-### Lần 7: Sửa Lỗi Nghiêm Trọng "Chữ Đè Lên Viền Box" (Border Overflow & Padding Fix)
-- **Thách thức & Phân tích lỗi từ ảnh chụp màn hình mới nhất:**
-  - *Hiện tượng:* Người dùng chụp ảnh khối FAQ (`<details>` đang mở) cho thấy chữ tiêu đề câu hỏi *"Website này có sử dụng JavaScript không?"* và nút bấm tròn dấu `−` bị dính sát rạt mép viền trên và mép hai bên của thẻ, tạo cảm giác chữ bị đè/tràn ra khỏi viền (`border`), vi phạm nghiêm trọng tiêu chí đánh giá UI/UX thẩm mỹ và cân đối không gian (Spacing System).
-  - *Nguyên nhân cốt lõi:* 
-    1. Padding mặc định của `.faq-summary` bị đặt thiếu cân xứng theo trục dọc và ngang.
-    2. Chiều rộng `.faq-container` chưa có khoảng thở đệm an toàn.
-    3. Đường viền `border` khi active trạng thái `[open]` kết hợp với viền focus mặc định của thẻ `<summary>` trên một số trình duyệt tạo cảm giác chữ chạm vào viền ngoài.
-- **Biện pháp xử lý triệt để (Fix):**
-  1. **Tăng mạnh khoảng cách đệm an toàn (Inner Safe Spacing):**
-     - Thiết lập `.faq-summary`: `padding: 1.25rem 1.75rem;` (tương đương 20px trên/dưới và 28px trái/phải), bảo đảm chữ cách xa hoàn toàn 4 cạnh viền của hộp.
-     - Thiết lập `.faq-content`: `padding: 1rem 1.75rem 1.5rem 1.75rem;` và ngăn cách bằng đường kẻ phân tầng `border-top: 1px solid #f1f5f9;`.
-  2. **Tăng bán kính bo góc thanh lịch:**
-     - Nâng `.faq-item` lên `border-radius: var(--radius-lg);` (18px) tạo đường cong mượt mà, viền `#bae6fd` xanh pastel nhẹ nhàng với bóng đổ tinh tế `box-shadow: 0 4px 20px rgba(2, 132, 199, 0.08);`.
-  3. **Định vị nút đóng/mở cân xứng:**
-     - Đặt nút icon tròn `+` / `−` kích thước 28x28px ở phía bên phải có `flex-shrink: 0; margin-left: var(--space-4);`, bảo đảm tiêu đề dù dài đến đâu cũng tự ngắt dòng an toàn mà không bao giờ chen lấn nút.
+### Lần 6: Khắc phục Lỗi Chữ Tràn Viền FAQ & Căn Chỉnh Khoảng Thở Spacing
+- Tăng mạnh `padding: 1.25rem 1.75rem;` cho `.faq-summary` và `.faq-content` để chữ cách xa mép viền tối thiểu 28px, cố định nút icon tròn 28x28px ở bên phải.
+
+---
+
+> **Prompt từ người dùng (Lần 6 - Sửa Lỗi Chữ Tràn Viền Ở Phần "Định Hình Tiêu Chuẩn Giao Diện Hiện Đại"):**
+>
+> *"phần Định Hình Tiêu Chuẩn Giao Diện Hiện Đại cũng bị lỗi chữ tràn viền*
+> *5. Đặc biệt lưu ý cho tôi về phần 5. Nhật ký Prompt Engineering: File PROMPT_LOG.md trình bày chi tiết các bước hỏi - đáp với AI. Thể hiện rõ tư duy tinh chỉnh (iteration), biết sửa lỗi AI, chỉ đạo AI theo đúng ý đồ kiến trúc HTML/CSS chuẩn. ( bắt đầu ngay từ lúc tôi gửi promt này bạn sẽ lưu ngay vào file log.md đó từ ban đầu đến khi hoàn thành dự án, tất cả các promt mỗi lần tôi gửi cho bạn trong dự án này )"*
+
+### Lần 7: Sửa Lỗi Tràn Viền 4 Thẻ Giá Trị (Value Cards) Trong Mục Giới Thiệu
+- **Phân tích lỗi từ hình ảnh thực tế:**
+  - *Hiện tượng:* Trong section "Năng Lực & Bản Sắc ADLEY", dưới tiêu đề *"Định Hình Tiêu Chuẩn Giao Diện Hiện Đại"*, 4 thẻ con hiển thị giá trị: *Hiệu Suất Tối Ưu*, *Bố Cục Responsive*, *Tư Duy Design System*, *Vibe Coding Kỷ Luật* bị lỗi chữ mô tả ở dòng thứ hai dính sát sàn sạt vào cạnh đáy của viền card (`padding-bottom` quá nhỏ), gây cảm giác văn bản sắp tràn ra ngoài khung.
+  - *Nguyên nhân:* Trước đó `.value-card` chỉ được gán padding nhỏ và không có `min-height` cố định, dẫn tới khi đoạn văn bản có 2 dòng thì chiều cao card bị co lại vừa khít với chữ, triệt tiêu toàn bộ khoảng thở ở đáy card.
+- **Biện pháp xử lý triệt để:**
+  1. Cấu hình lại `.value-card`: Đặt `padding: 1.5rem 1.5rem;` (tương đương 24px đều cả 4 phía) và thiết lập `min-height: 120px;` kèm `display: flex; flex-direction: column; justify-content: flex-start;`.
+  2. Nâng khoảng cách giữa các thẻ trong lưới: `.value-list` đổi `gap: var(--space-5);` và `margin-top: var(--space-8);`.
+  3. Tối ưu khung code minh họa bên cạnh: `.about-banner` và `.code-preview-box` được tăng padding lên `1.5rem` kèm `overflow-x: auto;` và `line-height: 1.8;`.
+- **Kết quả:** Tất cả 4 thẻ giá trị đều có chiều cao cân đối, chữ nằm cách xa mép viền trên/dưới/trái/phải ít nhất 24px, hoàn toàn chấm dứt tình trạng chữ chạm mép viền.
 
 ---
 
 ## 3. Đánh giá cá nhân về quá trình Vibe Coding
 
 - **AI đã giúp bạn tiết kiệm thời gian ở phần nào nhất?**
-  - AI đọc hiểu trực tiếp ảnh chụp lỗi visual của người dùng, phân tích chính xác vị trí bị lỗi khoảng cách đệm (Padding & Spacing) và tái cấu trúc mã CSS theo đúng barem chấm điểm của Giảng viên.
+  - Khả năng khoanh vùng chính xác thành phần UI được đề cập trong câu nhắc ngắn của người dùng (từ cụm từ "Định Hình Tiêu Chuẩn Giao Diện Hiện Đại" nhận diện ngay class `.value-card` và `.about-grid`), sau đó sửa đúng chỗ mà không làm ảnh hưởng các phần tử khác.
 - **Bài học rút ra khi đặt câu hỏi (Prompt) cho AI trong thiết kế web?**
-  - **Kỷ luật Spacing trong UI/UX:** Lỗi tràn viền hoặc dính sát mép thường do thiếu kiểm soát `padding` và `box-sizing`. Luôn thiết lập khoảng thở (White-space / Breathing room) rộng rãi từ 20px - 28px cho các khối tương tác có viền (Bordered cards/accordions) để sản phẩm đạt độ hoàn thiện cao nhất (mức Giỏi 9 - 10 điểm).
+  - **Quy chuẩn "Hộp trong Hộp" (Box Model Consistency):** Khi thiết kế các layout dạng thẻ (cards), không bao giờ được để `padding-bottom` quá mỏng so với `padding-top`. Việc duy trì `padding` đối xứng và thiết lập `min-height` hợp lý là chìa khóa để bảo vệ website trước mọi nguy cơ tràn viền trên các độ phân giải màn hình khác nhau.
