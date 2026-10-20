@@ -28,7 +28,7 @@ Dự án bài thi Giữa kỳ Học phần **Thiết kế Web** - Khoa Công ngh
 3. **Hiệu Ứng Chuyển Động & Thư Viện (1.5 Điểm):**
    - Thư viện `Animate.css` cho phần Hero với hiệu ứng so le `animate__delay-1s`.
    - **W3C CSS Scroll-Driven Animation** (`animation-timeline: view()`): Tạo hiệu ứng cuộn trang mượt mà như AOS mà vẫn tuân thủ nghiêm ngặt nguyên tắc **0% JavaScript**.
-   - Hiệu ứng **3D Card Flip (Lật thẻ 180 độ)** hiển thị tiểu sử chuyên sâu và kỹ năng của 9 thành viên khi tương tác.
+   - Hiệu ứng **3D Card Flip (Lật thẻ 180 độ)** dùng kỹ thuật CSS Checkbox Hack kết hợp bàn phím `:focus-visible` và nút "Lật lại" tiện lợi, hoàn toàn không dính lỗi tự lật khi hover.
    - Nút liên hệ nổi **Floating Action Button (FAB)** với hiệu ứng nhịp tim `pulse animation`.
 4. **Hệ Thống 7 Dự Án Nghiên Cứu Thực Tế Từ Ổ D:**
    - Đầy đủ 7 công trình nghiên cứu: *CORNWEED-SCOUT, YourVoice, Sắc Việt, SmartFin-Guard, Gia Sư Ảo, Thiết Bị Cảnh Báo Khí Độc IoT, Smart Robot Assistant Alpha Mini*.
@@ -37,7 +37,7 @@ Dự án bài thi Giữa kỳ Học phần **Thiết kế Web** - Khoa Công ngh
    - 100% file ảnh được chuẩn hóa dạng kebab-case không dấu, không dấu cách (`ha-van-kien.png`, `project-cornweed-scout.png`...).
    - Mọi liên kết nội bộ (`#hero`, `#about`, `#team`, `#projects`, `#faq`, `#contact`, `PROMPT_LOG.md`) đều trỏ chính xác, phân biệt hoa/thường an toàn trên Linux/GitHub Pages.
 6. **Nhật Ký Prompt Engineering (3.0 Điểm):**
-   - Tệp [PROMPT_LOG.md](PROMPT_LOG.md) ghi lại đầy đủ 11 lần tinh chỉnh (Iteration), thể hiện năng lực điều phối, phát hiện lỗi và sửa lỗi AI bài bản.
+   - Tệp [PROMPT_LOG.md](PROMPT_LOG.md) ghi lại đầy đủ 13 lần tinh chỉnh (Iteration), thể hiện năng lực điều phối, phát hiện lỗi và sửa lỗi AI bài bản.
 
 ---
 
