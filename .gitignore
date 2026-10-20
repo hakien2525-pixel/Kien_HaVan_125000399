@@ -1,0 +1,21 @@
+# Hệ điều hành & IDE rác
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Log files & debug
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Node modules / dependency
+node_modules/
+dist/
+build/
+.tmp/
+tmp/
