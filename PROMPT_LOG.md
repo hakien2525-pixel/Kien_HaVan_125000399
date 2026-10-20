@@ -59,21 +59,38 @@
 > *6. Lưu ý nữa các kiến thức cấu trúc của môn thiết kế web tôi đã để ở trong đó nhớ áp dụng đến buổi số 6 thôi nhé, đừng dùng java chỉ được dùng HTML5"*
 
 ### Lần 4: Refactor toàn diện Giao diện Sáng Trắng Xanh & Font Roboto 100%
+- Đã quét ổ D và trích xuất 6 dự án nghiên cứu thực tế (.docx, .md) thành `models/project_model.html` và `views/projects_view.html`.
+- Chuyển toàn bộ kiểu chữ sang Google Font `Roboto`.
+- Chuyển hệ màu sang Trắng Tuyết & Xanh Dương Ocean Blue, dọn sạch toàn bộ sticker/icon emoji màu mè.
+
+---
+
+> **Prompt từ người dùng (Lần 3 - Tối ưu Typography & Xử lý Triệt để Lỗi Từ Mồ Côi / Orphan Words):**
+>
+> *"Tôi đang tối ưu Typography và UI cho website. Đoạn văn bản trong các component (như FAQ accordion, card description) đang gặp lỗi từ mồ côi (orphan word / bad line wrap) khiến từ cuối cùng bị rớt dòng trơ trọi, làm bố cục mất cân đối.*
+> *Hãy giúp tôi:*
+> *Viết bộ CSS tối ưu sử dụng các thuộc tính hiện đại (text-wrap: pretty, text-wrap: balance, hyphens) để tự động chống rớt từ mồ côi cho toàn bộ các thẻ <p> và tiêu đề.*
+> *Đưa ra giải pháp fallback bằng CSS hoặc HTML entity (&nbsp;) phòng trường hợp trình duyệt cũ chưa hỗ trợ đầy đủ.*
+> *Cung cấp đoạn mã hoàn chỉnh, sạch và giải thích ngắn gọn cách hoạt động.*
+> *5. Đặc biệt lưu ý cho tôi về phần 5. Nhật ký Prompt Engineering: File PROMPT_LOG.md trình bày chi tiết các bước hỏi - đáp với AI. Thể hiện rõ tư duy tinh chỉnh (iteration), biết sửa lỗi AI, chỉ đạo AI theo đúng ý đồ kiến trúc HTML/CSS chuẩn. ( bắt đầu ngay từ lúc tôi gửi promt này bạn sẽ lưu ngay vào file log.md đó từ ban đầu đến khi hoàn thành dự án, tất cả các promt mỗi lần tôi gửi cho bạn trong dự án này )"*
+
+### Lần 5: Triển khai Bộ Giải pháp Tối ưu Typography Chống Từ Mồ Côi (Modern CSS + Fallbacks)
 - **Hành động & Phân tích của AI:**
-  1. **Khảo sát ổ D:** AI quét trực tiếp thư mục `D:\` và tìm thấy các dự án nghiên cứu có thật của tác giả: `Dự Án CORNWEED-SCOUT`, `Dự Án Your Voice`, `Dự Án Sắc Việt`, `SmartFinGuard-Extension`, `duan-giasuao`, `Dự Án IOT mới`. Đã đọc các tài liệu thuyết minh (.docx, .md) để trích xuất thông tin kỹ thuật chính xác nhất.
-  2. **Tách tầng Model mới theo MVC:** Tạo file `models/project_model.html` để lưu trữ dữ liệu thực thể của 6 dự án thực tế; tạo `views/projects_view.html` và tích hợp vào `index.html`.
-  3. **Chuyển đổi Typography:** Nhúng font Google `Roboto` (các trọng lượng 300, 400, 500, 700, 900) vào `index.html` và thiết lập `--font-family: 'Roboto', sans-serif;` phủ sóng 100% tất cả các phần tử.
-  4. **Thiết kế lại Bảng màu Sáng Trắng Xanh Dương:** Cập nhật `assets/css/variables.css` với nền trắng tuyết (`#f8fafc`, `#ffffff`), xanh đại dương (`#0284c7`), xanh da trời (`#38bdf8`), viền sáng nhẹ (`#e2e8f0`).
-  5. **Loại bỏ Sticker/Emoji:** Dọn sạch toàn bộ các icon emoji màu mè (🚀, 🌐, 💬, ⚡, 🤖...) ở phần Showcase, Value Cards, nút FAB và Header. Thay bằng các khối nhãn chữ (badge/tags) tối giản, chuyên nghiệp và đúng chuẩn phong cách học thuật.
-  6. **Kiểm tra Zero JS:** Chạy công cụ rà soát mã nguồn tự động, khẳng định `index.html` và toàn bộ các view đạt **0 thẻ script** và **0 inline event**, tuyệt đối tuân thủ yêu cầu đề bài.
+  1. **Nhận diện vấn đề:** Lỗi "Orphan word" (từ mồ côi) xảy ra khi dòng cuối cùng của một khối văn bản hoặc tiêu đề chỉ chứa duy nhất 1 từ (ví dụ: "Semantic", "dùng", "IoT"), làm phá vỡ nhịp điệu thị giác và tạo khoảng trống thừa thãi gây mất cân đối giao diện.
+  2. **Giải pháp CSS hiện đại (Modern CSS3 Specs):**
+     - Áp dụng `text-wrap: balance` cho tất cả tiêu đề (`h1` - `h6`, `.hero-title`, `.section-title`, `.project-title`, `.faq-summary`): Giúp trình duyệt tự động cân bằng số lượng chữ trên mỗi dòng sao cho chiều dài các dòng xấp xỉ nhau, loại bỏ hoàn toàn tình trạng dòng 1 dài ngoằng và dòng 2 chỉ có 1 - 2 chữ.
+     - Áp dụng `text-wrap: pretty` cho toàn bộ thẻ `<p>`, mô tả card (`.project-desc`, `.faq-content`, `.back-bio`): Thuật toán của trình duyệt sẽ chủ động điều chỉnh vị trí ngắt dòng ở 2 - 3 dòng cuối để luôn có ít nhất 2 từ ở dòng kết thúc, ngăn ngừa triệt để từ đơn độc.
+     - Kết hợp `hyphens: auto;` và `overflow-wrap: break-word;` cùng `text-rendering: optimizeLegibility;` để ngắt từ chuẩn xác.
+  3. **Giải pháp Fallback cho Trình duyệt cũ (Browser Backward Compatibility):**
+     - **CSS Fallback:** Tạo lớp tiện ích `.no-orphan { display: inline-block; white-space: nowrap; }` dùng để khóa các cụm 2 - 3 từ cuối cùng dính liền nhau.
+     - **HTML Entity Fallback (`&nbsp;`):** Chèn ký tự khoảng trắng không ngắt dòng `&nbsp;` giữa 2 từ cuối cùng trong các văn bản tĩnh (ví dụ: `HTML5&nbsp;Semantic`, `người&nbsp;dùng`, `Độc&nbsp;IoT`). Trình duyệt cũ khi gặp `&nbsp;` sẽ bắt buộc kéo cả 2 từ xuống dòng cùng nhau thay vì để 1 từ rơi lẻ loi.
+  4. **Kiểm tra tiêu chí:** Vẫn đảm bảo 100% không dùng JavaScript, thuần CSS3/HTML5 chuẩn kiến thức Tuần 1 - 6.
 
 ---
 
 ## 3. Đánh giá cá nhân về quá trình Vibe Coding
 
 - **AI đã giúp bạn tiết kiệm thời gian ở phần nào nhất?**
-  - AI đọc hiểu cực nhanh các file tài liệu đồ án phức tạp (.docx) trên ổ D, trích xuất tức thì các giải pháp nghiên cứu (như CNN-LSTM, RTK GNSS, Groq API, Edge AI) và chuyển đổi thành giao diện thẻ card chuẩn Semantic HTML5.
-  - Tái cấu trúc (refactoring) toàn bộ hệ thống màu sắc và font chữ trong vài giây thông qua sức mạnh tập trung của CSS Variables.
+  - Tự động áp dụng nhanh các thuộc tính CSS Typography cấp tiến nhất của năm 2026 (`text-wrap: balance`, `text-wrap: pretty`) mà không cần viết mã thủ công phức tạp hoặc phụ thuộc thư viện JavaScript ngoài.
 - **Bài học rút ra khi đặt câu hỏi (Prompt) cho AI trong thiết kế web?**
-  - **Sự chặt chẽ trong rào cản kỹ thuật:** Việc liên tục nhắc lại "Zero JavaScript", "Tuân thủ Buổi 1 đến Buổi 6" giúp AI tập trung vào các giải pháp CSS tinh vi (như `:target`, checkbox hack, `:focus-within`) thay vì đi đường tắt bằng JS.
-  - **Kiến trúc phân tầng sạch sẽ:** Việc áp dụng MVC ngay từ đầu giúp khi bổ sung thêm các dự án mới từ ổ D, AI chỉ cần tạo `models/project_model.html` và `views/projects_view.html` mà không làm đảo lộn cấu trúc tổng thể.
+  - **Tư duy Fallback trong Web Standards:** Khi sử dụng các tính năng CSS hiện đại, luôn yêu cầu AI cung cấp giải pháp dự phòng (Graceful Degradation / Progressive Enhancement) bằng HTML entity hoặc thuộc tính cơ bản để trang web luôn hiển thị hoàn mỹ trên mọi phiên bản trình duyệt.

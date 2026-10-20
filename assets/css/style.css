@@ -23,9 +23,38 @@ body {
   position: relative;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  /* Chống rớt chữ và ngắt dòng tối ưu toàn trang */
+  text-rendering: optimizeLegibility;
 }
 
-/* Background Soft Blue Ambient Grid (Pure CSS Gradient) */
+/* ==========================================================================
+   CHỐNG TỪ MỒ CÔI (ORPHAN WORD PREVENTION - MODERN CSS & FALLBACKS)
+   ========================================================================== */
+/* Cân bằng dòng cho tất cả các cấp tiêu đề (Heading Balance) */
+h1, h2, h3, h4, h5, h6,
+.hero-title, .section-title, .project-title, .member-name, .faq-summary {
+  text-wrap: balance;
+  /* Fallback cho trình duyệt cũ */
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+/* Chống rớt chữ lẻ loi ở dòng cuối đoạn văn (Body Paragraphs & Descriptions) */
+p, .hero-description, .section-description, .project-desc, .faq-content, .back-bio {
+  text-wrap: pretty;
+  /* Tránh ngắt từ bừa bãi và hỗ trợ ngắt âm tiết tự nhiên khi cần */
+  overflow-wrap: break-word;
+  word-break: normal;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+/* Helper class bảo vệ các cụm từ quan trọng không bao giờ bị ngắt đôi */
+.no-orphan {
+  display: inline-block;
+  white-space: nowrap;
+}
 .ambient-glow {
   position: fixed;
   top: 0;
