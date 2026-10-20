@@ -147,6 +147,51 @@
 
 ---
 
+### Iteration 7: Rà Soát Kỹ Thuật Chuyên Sâu Theo Đơn Đặt Hàng (style.css & variables.css)
+- **Prompt đã dùng:**
+  > *"Rà soát style.css và variables.css của dự án ADLEY Team.*
+  > *Vấn đề đã phát hiện:*
+  > *- style.css dùng var(--space-5) và var(--space-20) nhưng variables.css chưa định nghĩa. Vì vậy .value-list { gap } bị vô hiệu và gap về 0.*
+  > *- Có khoảng 40 mã màu hex viết cứng (#ffffff, #0f172a, #38bdf8...) nằm ngoài biến.*
+  > *- font-family 'Roboto', monospace dùng cho khối code là sai, vì Roboto không phải font monospace.*
+  > *- variables.css bị nạp trùng: vừa @import trong style.css vừa <link> trong index.html. Font Roboto cũng bị nạp hai lần.*
+  > *- Khối #contrast-toggle trong variables.css là mã chết vì HTML không có input đó.*
+  > *Hãy:*
+  > *1. Thêm --space-5: 1.25rem và --space-20: 5rem vào variables.css.*
+  > *2. Thay toàn bộ màu hex cứng trong style.css bằng biến (tạo thêm biến mới nếu cần, ví dụ --bg-code, --text-code).*
+  > *3. Thêm --font-mono (Consolas, 'Courier New', monospace) và dùng cho khối code.*
+  > *4. Chỉ giữ một cách nạp variables.css và một cách nạp Roboto.*
+  > *5. Xóa khối #contrast-toggle.*
+  > *6. Không đổi giao diện hiện tại, không dùng thêm JavaScript.*
+  > *Sau khi sửa, liệt kê chính xác biến nào đã thêm và chỗ nào đã thay.*
+  > *Ghi mục này vào PROMPT_LOG.md như một Iteration mới, theo cấu trúc: Prompt đã dùng, Lỗi AI/lỗi ban đầu, Cách sửa, Kết quả."*
+
+- **Lỗi AI / Lỗi ban đầu:**
+  1. *Biến chưa định nghĩa:* `style.css` gọi `var(--space-5)` cho `.value-list { gap }` và `var(--space-20)` cho padding `.faq-section`, nhưng file `variables.css` chỉ có các biến 1, 2, 3, 4, 6, 8, 12, 16, 24 khiến thuộc tính bị vô hiệu, gap tụt về 0.
+  2. *Hardcoded Colors:* Tồn tại khoảng 40 mã màu hex viết cứng nằm rải rác ngoài Design System (`#ffffff`, `#0f172a`, `#38bdf8`, `#e2e8f0`, `#ef4444`...).
+  3. *Sai font monospace:* Định nghĩa `.code-preview-box { font-family: 'Roboto', monospace; }` là sai nguyên tắc vì Roboto là sans-serif, không có tính chất độ rộng ký tự cố định của monospace.
+  4. *Nạp trùng lặp tài nguyên (Redundant HTTP Requests):* `variables.css` vừa được `@import` ở đầu file `style.css` vừa được gọi bằng thẻ `<link>` trong `index.html`. Font Roboto cũng bị nạp 2 lần ở cả CSS và HTML.
+  5. *Mã chết (Dead Code):* Khối selector `#contrast-toggle:checked ~ .site-wrapper` tồn tại trong `variables.css` dù HTML không hề có phần tử input này.
+
+- **Cách sửa chi tiết:**
+  1. *Bổ sung biến Spacing vào `variables.css`:* Thêm `--space-5: 1.25rem;` (20px) và `--space-20: 5rem;` (80px).
+  2. *Định nghĩa biến màu tập trung & Thay thế toàn bộ hex cứng trong `style.css`:*
+     - Tạo mới các biến: `--code-bg: #0f172a;`, `--code-text: #38bdf8;`, `--danger: #ef4444;`, `--border-badge: #bae6fd;`, `--border-separator: #f1f5f9;`, `--footer-bg: #0f172a;`, `--footer-border: #1e293b;`, `--footer-text-muted: #94a3b8;`, `--footer-bottom-text: #64748b;`, `--modal-backdrop: rgba(15, 23, 42, 0.6);`.
+     - Thay thế 100% mã màu hex trong `style.css` bằng `var(...)`. Kiểm tra bằng regex không còn bất kỳ mã màu hex cứng nào trong `style.css`.
+  3. *Tạo biến `--font-mono`:* Khai báo `--font-mono: Consolas, 'Courier New', monospace;` trong `variables.css` và áp dụng trực tiếp cho `.code-preview-box`.
+  4. *Chuẩn hóa nạp tài nguyên (Single Source of Truth):*
+     - Chỉ nạp Font qua thẻ `<link>` tối ưu trong `index.html`.
+     - Trong `index.html` chỉ nạp một file CSS duy nhất: `<link rel="stylesheet" href="assets/css/style.css">`. File `style.css` sẽ `@import url('./variables.css');`.
+  5. *Xóa mã chết:* Loại bỏ hoàn toàn khối `#contrast-toggle:checked ~ .site-wrapper` khỏi `variables.css`.
+
+- **Kết quả đạt được:**
+  - `style.css` đạt chuẩn 100% sử dụng CSS Variables (0 mã màu hex cứng).
+  - Thuộc tính `.value-list { gap: var(--space-5); }` hoạt động chính xác với khoảng cách 20px tiêu chuẩn.
+  - Khối code `<pre><code>` hiển thị bằng font Consolas/Courier New căn cột hoàn hảo.
+  - Tải trang tối ưu, không có request nạp trùng lặp. Giữ nguyên 100% giao diện sáng trắng xanh và cam kết tuyệt đối 0% JavaScript.
+
+---
+
 ## 3. Đánh giá cá nhân về quá trình Vibe Coding
 
 - **AI đã giúp bạn tiết kiệm thời gian ở phần nào nhất?**
