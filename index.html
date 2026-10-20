@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ADLEY Team - Đội ngũ sáng tạo và phát triển giải pháp công nghệ kỹ thuật số hàng đầu. Giới thiệu 9 chuyên gia công nghệ và thiết kế.">
+  <meta name="keywords" content="ADLEY, ADLEY Team, Thiết kế Web, Vibe Coding, Prompt Engineering, HTML5, CSS3, LHU">
+  <meta name="author" content="Hà Văn Kiên - 25CT111">
+  
+  <title>ADLEY Team | Đội Ngũ Sáng Tạo & Đột Phá Công Nghệ</title>
+
+  <!-- External Animation Libraries (Theo chuẩn tuần 5 & Đề thi) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- Internal Cascading Style Sheets (MVC Architecture) -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       PURE CSS INTERACTION CONTROLS (THEME & HAMBURGER - ZERO JAVASCRIPT)
+       ========================================================================== -->
+  <input type="checkbox" id="theme-toggle" class="css-control-input" aria-label="Toggle Dark and Light Mode">
+  <input type="checkbox" id="nav-toggle" class="css-control-input" aria-label="Toggle Mobile Navigation Drawer">
+
+  <!-- Ambient Light Effect -->
+  <div class="ambient-glow" aria-hidden="true"></div>
+
+  <div class="site-wrapper">
+
+    <!-- ========================================================================
+         HEADER COMPONENT (<header>, <nav>)
+         ======================================================================== -->
+    <header class="site-header" role="banner">
+      <div class="container header-container">
+        <a href="#hero" class="brand-logo" title="ADLEY Innovation Studio">
+          ADLEY <span class="brand-badge">STUDIO</span>
+        </a>
+
+        <!-- Desktop & Mobile Navigation (Driven by CSS Checkbox Hack) -->
+        <nav class="nav-desktop" role="navigation" aria-label="Main Navigation">
+          <ul class="nav-links">
+            <li><a href="#hero" class="nav-link">Trang Chủ</a></li>
+            <li><a href="#about" class="nav-link">Giới Thiệu</a></li>
+            <li><a href="#team" class="nav-link">Đội Ngũ ADLEY</a></li>
+            <li><a href="#projects" class="nav-link">Dự Án</a></li>
+            <li><a href="#faq" class="nav-link">Hỏi & Đáp</a></li>
+            <li><a href="#contact" class="nav-link">Liên Hệ</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <!-- Pure CSS Dark/Light Theme Button -->
+          <label for="theme-toggle" class="theme-btn" title="Chuyển chế độ Sáng / Tối (Pure CSS)">
+            <span class="theme-icon-moon">🌙</span>
+            <span class="theme-icon-sun">☀️</span>
+          </label>
+
+          <!-- Mobile Hamburger Toggle Button -->
+          <label for="nav-toggle" class="hamburger-btn" aria-label="Mở Menu Mobile">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </label>
+        </div>
+      </div>
+    </header>
+
+    <!-- ========================================================================
+         MAIN CONTENT AREA (<main>)
+         ======================================================================== -->
+    <main role="main">
+
+      <!-- HERO SECTION -->
+      <section id="hero" class="hero-section" aria-labelledby="hero-title">
+        <div class="container">
+          <div class="hero-tag animate__animated animate__fadeInDown">
+            <span class="pulse-dot"></span>
+            ADLEY CREATIVE CREW • BỨT PHÁ GIỚI HẠN
+          </div>
+
+          <h1 id="hero-title" class="hero-title animate__animated animate__zoomIn">
+            Kiến Tạo Tương Lai Cùng <br>
+            <span class="hero-gradient-text">Đội Ngũ Đột Phá ADLEY</span>
+          </h1>
+
+          <p class="hero-description animate__animated animate__fadeInUp">
+            Tập hợp những tài năng sáng tạo, kỹ sư kiến trúc giao diện và chuyên gia trải nghiệm số tại LHU. 
+            Chúng tôi định hình các chuẩn mực thiết kế hiện đại trên nền tảng HTML5 ngữ nghĩa và CSS thuần khiết.
+          </p>
+
+          <div class="hero-cta-group animate__animated animate__fadeInUp">
+            <a href="#team" class="btn btn-primary">
+              Khám Phá Thành Viên 
+              <span aria-hidden="true">→</span>
+            </a>
+            <a href="#about" class="btn btn-secondary">
+              Văn Hóa ADLEY
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- STATS COUNTER SECTION -->
+      <section class="stats-section" aria-label="Key Team Statistics">
+        <div class="container">
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div class="stat-value">09</div>
+              <div class="stat-label">Chuyên Gia Tài Năng</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">100%</div>
+              <div class="stat-label">HTML5 & CSS3 Thuần</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">0%</div>
+              <div class="stat-label">Phụ Thuộc Javascript</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">25+</div>
+              <div class="stat-label">Ý Tưởng Đột Phá 2026</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT SECTION -->
+      <section id="about" class="about-section" aria-labelledby="about-heading">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-subtitle">VỀ CHÚNG TÔI</div>
+            <h2 id="about-heading" class="section-title">Năng Lực & Bản Sắc ADLEY</h2>
+            <p class="section-description">
+              Đội ngũ kết hợp hoàn hảo giữa thẩm mỹ tinh tế, tư duy logic cấu trúc và tinh thần kỷ luật cao trong phát triển web.
+            </p>
+          </div>
+
+          <div class="about-grid">
+            <div class="about-content">
+              <h3>Định Hình Tiêu Chuẩn Giao Diện Thông Minh</h3>
+              <p>
+                Được thành lập với sứ mệnh tiên phong làm chủ các kỹ thuật thiết kế web theo tiêu chuẩn học thuật hiện đại. 
+                Chúng tôi khai thác tối đa sức mạnh của <strong>Semantic HTML5</strong> để mang lại khả năng tiếp cận hoàn hảo cho công cụ tìm kiếm và trình đọc màn hình.
+              </p>
+              <p>
+                Đặc biệt, hệ thống giao diện được kiểm soát chặt chẽ bằng <strong>CSS Variables (:root)</strong>, 
+                đảm bảo sự đồng bộ tuyệt đối về màu sắc, tỷ lệ typographic và trải nghiệm chuyển dịch tương tác mượt mà.
+              </p>
+
+              <div class="value-list">
+                <article class="value-card">
+                  <span class="value-icon">⚡</span>
+                  <h4 class="value-title">Hiệu Suất Tối Ưu</h4>
+                  <p class="value-desc">Loại bỏ hoàn toàn chi phí tải JS, phản hồi tức thời chỉ với CSS native.</p>
+                </article>
+                <article class="value-card">
+                  <span class="value-icon">📐</span>
+                  <h4 class="value-title">Bố Cục Responsive</h4>
+                  <p class="value-desc">Làm chủ CSS Grid 2 chiều kết hợp Flexbox cho mọi kích thước thiết bị.</p>
+                </article>
+                <article class="value-card">
+                  <span class="value-icon">🎨</span>
+                  <h4 class="value-title">Tư Duy Design System</h4>
+                  <p class="value-desc">Đồng bộ biến màu sắc, bóng mờ glassmorphism và nhịp điệu tương phản.</p>
+                </article>
+                <article class="value-card">
+                  <span class="value-icon">🤖</span>
+                  <h4 class="value-title">Vibe Coding Kỷ Luật</h4>
+                  <p class="value-desc">Kiểm soát và điều phối AI chính xác, ghi lại tiến trình lặp chuẩn xác.</p>
+                </article>
+              </div>
+            </div>
+
+            <aside class="about-banner" aria-label="Code Architecture Preview">
+              <div class="code-preview-box">
+                <code>
+                  /* ADLEY Architecture Stack */<br>
+                  :root {<br>
+                  &nbsp;&nbsp;--team: "ADLEY Crew";<br>
+                  &nbsp;&nbsp;--members: 9;<br>
+                  &nbsp;&nbsp;--architecture: "MVC";<br>
+                  &nbsp;&nbsp;--javascript: none !important;<br>
+                  &nbsp;&nbsp;--html-standard: "HTML5 Semantic";<br>
+                  &nbsp;&nbsp;--css-mastery: "Grid + Flexbox";<br>
+                  &nbsp;&nbsp;--status: "Ready for Midterm 10/10";<br>
+                  }
+                </code>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- TEAM MEMBERS SECTION (CSS GRID + CARD FLIP 3D EFFECT) -->
+      <section id="team" class="team-section" aria-labelledby="team-heading">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-subtitle">GẶP GỠ NHỮNG GƯƠNG MẶT ĐẠI DIỆN</div>
+            <h2 id="team-heading" class="section-title">Hội Đồng Thành Viên ADLEY</h2>
+            <p class="section-description">
+              Rê chuột (hoặc chạm trên điện thoại) vào từng thẻ để khám phá chuyên môn, hoặc click "Chi Tiết" để mở bảng lý lịch độc lập.
+            </p>
+          </div>
+
+          <div class="team-grid">
+
+            <!-- MENTOR / GIẢNG VIÊN HƯỚNG DẪN: Thầy Bùi Xuân Cảnh -->
+            <article class="team-card-wrapper" tabindex="0">
+              <div class="team-card">
+                <div class="card-front">
+                  <figure class="member-image-box">
+                    <img src="assets/images/Bùi Xuân Cảnh - Giáo Viên Hướng Dẫn .png" alt="Thầy Bùi Xuân Cảnh - Giáo Viên Hướng Dẫn" class="member-photo" loading="lazy">
+                    <span class="member-badge-leader" style="background: linear-gradient(135deg, #10b981, #06b6d4);">👨‍🏫 ADVISOR</span>
+                    <span class="member-badge-role">Giảng Viên Hướng Dẫn</span>
+                  </figure>
+                  <div class="member-info-front">
+                    <h3 class="member-name">Bùi Xuân Cảnh</h3>
+                    <div class="member-mssv" style="color: #10b981;">Khoa Công Nghệ Thông Tin - LHU</div>
+                    <p class="member-headline">Giảng Viên Phụ Trách Học Phần Thiết Kế Web</p>
+                    <div class="flip-hint"><span>🔄 Lật thẻ xem định hướng</span></div>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <div class="back-header">
+                    <h4 class="back-name">Thầy Bùi Xuân Cảnh</h4>
+                    <span class="back-title">Giảng Viên Hướng Dẫn Học Phần</span>
+                    <p class="back-bio">
+                      Cố vấn chuyên môn và dẫn dắt đội ngũ ADLEY tiếp cận phương pháp học đảo ngược (Flipped Classroom), tư duy Vibe Coding kết hợp chuẩn Semantic HTML5 & CSS3.
+                    </p>
+                  </div>
+                  <div class="skills-wrapper">
+                    <div class="skills-heading">Chuyên môn học phần</div>
+                    <div class="skill-tags">
+                      <span class="skill-tag">Web Standards</span>
+                      <span class="skill-tag">Vibe Coding Mentorship</span>
+                      <span class="skill-tag">System Architecture</span>
+                      <span class="skill-tag">Agile/Scrum Flow</span>
+                    </div>
+                  </div>
+                  <div class="member-contact-links">
+                    <a href="#modal-canh" class="modal-open-link">Xem Thông Tin Cố Vấn →</a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- MEMBER 1: Hà Văn Kiên (Leader) -->
+            <article class="team-card-wrapper" tabindex="0">
+              <div class="team-card">
+                <!-- Mặt trước -->
+                <div class="card-front">
+                  <figure class="member-image-box">
+                    <img src="assets/images/Hà Văn Kiên - 25CT111 ( tôi ).png" alt="Chân dung Hà Văn Kiên" class="member-photo" loading="lazy">
+                    <span class="member-badge-leader">👑 LEADER</span>
+                    <span class="member-badge-role">Tech Lead</span>
+                  </figure>
+                  <div class="member-info-front">
+                    <h3 class="member-name">Hà Văn Kiên</h3>
+                    <div class="member-mssv">MSSV: 25CT111</div>
+                    <p class="member-headline">Full-Stack Architect & AI-First Engineer</p>
+                    <div class="flip-hint"><span>🔄 Lật thẻ xem năng lực</span></div>
+                  </div>
+                </div>
+                <!-- Mặt sau -->
+                <div class="card-back">
+                  <div class="back-header">
+                    <h4 class="back-name">Hà Văn Kiên</h4>
+                    <span class="back-title">Team Leader & Kiến Trúc Sư Hệ Thống</span>
+                    <p class="back-bio">
+                      Chịu trách nhiệm hoạch định kiến trúc MVC, kiểm soát chất lượng chuẩn Semantic HTML5, hệ thống CSS Variables và chỉ đạo quy trình Prompt Engineering.
+                    </p>
+                  </div>
+                  <div class="skills-wrapper">
+                    <div class="skills-heading">Kỹ năng nòng cốt</div>
+                    <div class="skill-tags">
+                      <span class="skill-tag">System Design</span>
+                      <span class="skill-tag">Semantic HTML5</span>
+                      <span class="skill-tag">CSS Grid / Flexbox</span>
+                      <span class="skill-tag">Vibe Coding</span>
+                    </div>
+                  </div>
+                  <div class="member-contact-links">
+                    <a href="#modal-kien" class="modal-open-link">Xem Hồ Sơ Đầy Đủ →</a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- MEMBER 2: Hoàng Minh Phát -->
+            <article class="team-card-wrapper" tabindex="0">
+              <div class="team-card">
+                <div class="card-front">
+                  <figure class="member-image-box">
+                    <img src="assets/images/Hoàng Minh Phát -25CT111.png" alt="Chân dung Hoàng Minh Phát" class="member-photo" loading="lazy">
+                    <span class="member-badge-role">UI/UX Specialist</span>
+                  </figure>
+                  <div class="member-info-front">
+                    <h3 class="member-name">Hoàng Minh Phát</h3>
+                    <div class="member-mssv">MSSV: 25CT111</div>
+                    <p class="member-headline">Design System, Visual Interaction & Animations</p>
+                    <div class="flip-hint"><span>🔄 Lật thẻ xem năng lực</span></div>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <div class="back-header">
+                    <h4 class="back-name">Hoàng Minh Phát</h4>
+                    <span class="back-title">Chuyên Viên Trải Nghiệm Giao Diện</span>
+                    <p class="back-bio">
+                      Chuyên gia kiến tạo trải nghiệm thị giác tinh hoa, quản trị hệ màu, hiệu ứng ánh sáng Glassmorphism và chuyển động tương tác.
+                    </p>
+                  </div>
+                  <div class="skills-wrapper">
+                    <div class="skills-heading">Kỹ năng nòng cốt</div>
+                    <div class="skill-tags">
+                      <span class="skill-tag">CSS Variables</span>
+                      <span class="skill-tag">Keyframes</span>
+                      <span class="skill-tag">UI Testing</span>
+                      <span class="skill-tag">Figma Flow</span>
+                    </div>
+                  </div>
+                  <div class="member-contact-links">
+                    <a href="#modal-phat" class="modal-open-link">Xem Hồ Sơ Đầy Đủ →</a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- MEMBER 3: Nguyễn Đinh Khánh Trang -->
+            <article class="team-card-wrapper" tabindex="0">
+              <div class="team-card">
+                <div class="card-front">
+                  <figure class="member-image-box">
+                    <img src="assets/images/Nguyễn Đinh Khánh Trang - 25 EC111.png" alt="Chân dung Nguyễn Đinh Khánh Trang" class="member-photo" loading="lazy">
+                    <span class="member-badge-role">Creative Director</span>
+                  </figure>
+                  <div class="member-info-front">
+                    <h3 class="member-name">Nguyễn Đinh Khánh Trang</h3>
+                    <div class="member-mssv">MSSV: 25EC111</div>
+                    <p class="member-headline">Creative Branding & Digital User Flow</p>
+                    <div class="flip-hint"><span>🔄 Lật thẻ xem năng lực</span></div>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <div class="back-header">
+                    <h4 class="back-name">Nguyễn Đinh Khánh Trang</h4>
+                    <span class="back-title">Giám Đốc Sáng Tạo Thương Hiệu</span>
+                    <p class="back-bio">
+                      Định hình bản sắc trực quan thương hiệu ADLEY, sắp xếp thông điệp truyền tải và tối ưu tính gắn kết của giao diện với tâm lý học người xem.
+                    </p>
+                  </div>
+                  <div class="skills-wrapper">
+                    <div class="skills-heading">Kỹ năng nòng cốt</div>
+                    <div class="skill-tags">
+                      <span class="skill-tag">Creative Concept</span>
+                      <span class="skill-tag">Brand Strategy</span>
+                      <span class="skill-tag">Storytelling</span>
+                      <span class="skill-tag">UX Writing</span>
+                    </div>
+                  </div>
+                  <div class="member-contact-links">
+                    <a href="#modal-trang" class="modal-open-link">Xem Hồ Sơ Đầy Đủ →</a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- MEMBER 4: Đặng Thị Tố Ngân -->
+            <article class="team-card-wrapper" tabindex="0">
+              <div class="team-card">
+                <div class="card-front">
+                  <figure class="member-image-box">
+                    <img src="assets/images/Đặng Thị Tố Ngân - 24MC112.png" alt="Chân dung Đặng Thị Tố Ngân" class="member-photo" loading="lazy">
+                    <span class="member-badge-role">Product Designer</span>
+                  </figure>
+                  <div class="member-info-front">
+                    <h3 class="member-name">Đặng Thị Tố Ngân</h3>
+                    <div class="member-mssv">MSSV: 24MC112</div>
+                    <p class="member-headline">Interaction Architecture & Accessibility</p>
+                    <div class="flip-hint"><span>🔄 Lật thẻ xem năng lực</span></div>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <div class="back-header">
+                    <h4 class="back-name">Đặng Thị Tố Ngân</h4>
+                    <span class="back-title">Kiến Trúc Sư Tương Tác Trợ Năng</span>
+                    <p class="back-bio">
+                      Tối ưu chuẩn trợ năng Accessibility cho người khiếm thị, tinh chỉnh độ tương phản tỷ lệ WCAG AAA và quy tắc công thái học.
+                    </p>
+                  </div>
+                  <div class="skills-wrapper">
+                    <div class="skills-heading">Kỹ năng nòng cốt</div>
+                    <div class="skill-tags">
+                      <span class="skill-tag">WCAG Standards</span>
+                      <span class="skill-tag">Ergonomic UI</span>
+                      <span class="skill-tag">Visual Contrast</span>
+                      <span class="skill-tag">Semantic Tags</span>
+                    </div>
+                  </div>
+                  <div class="member-contact-links">
+                    <a href="#modal-ngan" class="modal-open-link">Xem Hồ Sơ Đầy Đủ →</a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- MEMBER 5: Nguyễn Hoàng Anh -->
+            <article class="team-card-wrapper" tabindex="0">
+              <div class="team-card">
+                <div class="card-front">
+                  <figure class="member-image-box">
+                    <img src="assets/images/Nguyễn Hoàng Anh - CT111.png" alt="Chân dung Nguyễn Hoàng Anh" class="member-photo" loading="lazy">
+                    <span class="member-badge-role">Semantic Engineer</span>
+                  </figure>
+                  <div class="member-info-front">
+                    <h3 class="member-name">Nguyễn Hoàng Anh</h3>
+                    <div class="member-mssv">MSSV: CT111</div>
+                    <p class="member-headline">HTML5 Semantics, Clean DOM & SEO</p>
+                    <div class="flip-hint"><span>🔄 Lật thẻ xem năng lực</span></div>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <div class="back-header">
+                    <h4 class="back-name">Nguyễn Hoàng Anh</h4>
+                    <span class="back-title">Kỹ Sư Cấu Trúc Ngữ Nghĩa DOM</span>
+                    <p class="back-bio">
+                      Bảo đảm chuẩn hóa các thẻ Semantic HTML5, triệt tiêu việc lạm dụng thẻ vô nghĩa, nâng cao chỉ số SEO tự nhiên của toàn hệ thống.
+                    </p>
+                  </div>
+                  <div class="skills-wrapper">
+                    <div class="skills-heading">Kỹ năng nòng cốt</div>
+                    <div class="skill-tags">
+                      <span class="skill-tag">W3C Validation</span>
+                      <span class="skill-tag">SEO Architecture</span>
+                      <span class="skill-tag">Clean DOM</span>
+                      <span class="skill-tag">Metadata</span>
+                    </div>
+                  </div>
+                  <div class="member-contact-links">
+                    <a href="#modal-anh" class="modal-open-link">Xem Hồ Sơ Đầy Đủ →</a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- MEMBER 6: Ngô Võ Nam -->
+            <article class="team-card-wrapper" tabindex="0">
+              <div class="team-card">
+                <div class="card-front">
+                  <figure class="member-image-box">
+                    <img src="assets/images/Ngô Võ Nam - 25CT111.png" alt="Chân dung Ngô Võ Nam" class="member-photo" loading="lazy">
+                    <span class="member-badge-role">Layout Architect</span>
+                  </figure>
+                  <div class="member-info-front">
+                    <h3 class="member-name">Ngô Võ Nam</h3>
+                    <div class="member-mssv">MSSV: 25CT111</div>
+                    <p class="member-headline">CSS Grid Specialist & Multi-breakpoint Align</p>
+                    <div class="flip-hint"><span>🔄 Lật thẻ xem năng lực</span></div>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <div class="back-header">
+                    <h4 class="back-name">Ngô Võ Nam</h4>
+                    <span class="back-title">Chuyên Gia Dàn Trang CSS Grid</span>
+                    <p class="back-bio">
+                      Thiết kế bố cục lưới ma trận đa chiều, thiết lập các khoảng ngắt thích ứng thích ứng linh hoạt từ màn hình 320px đến 4K.
+                    </p>
+                  </div>
+                  <div class="skills-wrapper">
+                    <div class="skills-heading">Kỹ năng nòng cốt</div>
+                    <div class="skill-tags">
+                      <span class="skill-tag">CSS Grid Master</span>
+                      <span class="skill-tag">Nested Flexbox</span>
+                      <span class="skill-tag">Fluid Layout</span>
+                      <span class="skill-tag">Auto-fit / Minmax</span>
+                    </div>
+                  </div>
+                  <div class="member-contact-links">
+                    <a href="#modal-nam" class="modal-open-link">Xem Hồ Sơ Đầy Đủ →</a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- MEMBER 7: Phan Văn Trận -->
+            <article class="team-card-wrapper" tabindex="0">
+              <div class="team-card">
+                <div class="card-front">
+                  <figure class="member-image-box">
+                    <img src="assets/images/Phan Văn Trận - 23EC111.png" alt="Chân dung Phan Văn Trận" class="member-photo" loading="lazy">
+                    <span class="member-badge-role">QA & Device Profiler</span>
+                  </figure>
+                  <div class="member-info-front">
+                    <h3 class="member-name">Phan Văn Trận</h3>
+                    <div class="member-mssv">MSSV: 23EC111</div>
+                    <p class="member-headline">Cross-Browser Testing & Responsive QA</p>
+                    <div class="flip-hint"><span>🔄 Lật thẻ xem năng lực</span></div>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <div class="back-header">
+                    <h4 class="back-name">Phan Văn Trận</h4>
+                    <span class="back-title">Kỹ Sư Kiểm Định Tương Thích Thiết Bị</span>
+                    <p class="back-bio">
+                      Rà soát lỗi vỡ layout trên đa nền tảng trình duyệt (Safari, Chromium, Firefox), kiểm tra cơ chế chống tràn ngang viewport.
+                    </p>
+                  </div>
+                  <div class="skills-wrapper">
+                    <div class="skills-heading">Kỹ năng nòng cốt</div>
+                    <div class="skill-tags">
+                      <span class="skill-tag">Cross-Browser</span>
+                      <span class="skill-tag">Mobile Testing</span>
+                      <span class="skill-tag">Bug Hunting</span>
+                      <span class="skill-tag">Overflow Guard</span>
+                    </div>
+                  </div>
+                  <div class="member-contact-links">
+                    <a href="#modal-tran" class="modal-open-link">Xem Hồ Sơ Đầy Đủ →</a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- MEMBER 8: Trần Hoài Phương -->
+            <article class="team-card-wrapper" tabindex="0">
+              <div class="team-card">
+                <div class="card-front">
+                  <figure class="member-image-box">
+                    <img src="assets/images/Trần Hoài Phương - 25MC111.png" alt="Chân dung Trần Hoài Phương" class="member-photo" loading="lazy">
+                    <span class="member-badge-role">Media Optimizer</span>
+                  </figure>
+                  <div class="member-info-front">
+                    <h3 class="member-name">Trần Hoài Phương</h3>
+                    <div class="member-mssv">MSSV: 25MC111</div>
+                    <p class="member-headline">High-DPI Asset Encoding & Aspect Ratios</p>
+                    <div class="flip-hint"><span>🔄 Lật thẻ xem năng lực</span></div>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <div class="back-header">
+                    <h4 class="back-name">Trần Hoài Phương</h4>
+                    <span class="back-title">Chuyên Gia Tối Ưu Hình Ảnh Đa Phương Tiện</span>
+                    <p class="back-bio">
+                      Xử lý kích thước khung ảnh chân dung, căn chỉnh tỷ lệ khung hình cân xứng và thiết kế các lớp phủ chuyển sắc mờ ảo.
+                    </p>
+                  </div>
+                  <div class="skills-wrapper">
+                    <div class="skills-heading">Kỹ năng nòng cốt</div>
+                    <div class="skill-tags">
+                      <span class="skill-tag">Asset Compression</span>
+                      <span class="skill-tag">Aspect Ratio</span>
+                      <span class="skill-tag">Gradient Filters</span>
+                      <span class="skill-tag">Retina Display</span>
+                    </div>
+                  </div>
+                  <div class="member-contact-links">
+                    <a href="#modal-phuong" class="modal-open-link">Xem Hồ Sơ Đầy Đủ →</a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- MEMBER 9: Trần Quang Huy -->
+            <article class="team-card-wrapper" tabindex="0">
+              <div class="team-card">
+                <div class="card-front">
+                  <figure class="member-image-box">
+                    <img src="assets/images/Trần Quang Huy - 25CT111.png" alt="Chân dung Trần Quang Huy" class="member-photo" loading="lazy">
+                    <span class="member-badge-role">Git & Audit Lead</span>
+                  </figure>
+                  <div class="member-info-front">
+                    <h3 class="member-name">Trần Quang Huy</h3>
+                    <div class="member-mssv">MSSV: 25CT111</div>
+                    <p class="member-headline">Version Control, Prompt Log & Compliance</p>
+                    <div class="flip-hint"><span>🔄 Lật thẻ xem năng lực</span></div>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <div class="back-header">
+                    <h4 class="back-name">Trần Quang Huy</h4>
+                    <span class="back-title">Quản Lý Phiên Bản Git & Kiểm Định Tiêu Chuẩn</span>
+                    <p class="back-bio">
+                      Giám sát lịch sử cam kết Git, biên soạn tài liệu nhật ký Prompt Engineering đầy đủ và đối chiếu từng tiêu chí chấm thi của Giảng viên.
+                    </p>
+                  </div>
+                  <div class="skills-wrapper">
+                    <div class="skills-heading">Kỹ năng nòng cốt</div>
+                    <div class="skill-tags">
+                      <span class="skill-tag">Git Flow</span>
+                      <span class="skill-tag">Prompt Auditing</span>
+                      <span class="skill-tag">Documentation</span>
+                      <span class="skill-tag">Rubric Check</span>
+                    </div>
+                  </div>
+                  <div class="member-contact-links">
+                    <a href="#modal-huy" class="modal-open-link">Xem Hồ Sơ Đầy Đủ →</a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS SHOWCASE SECTION -->
+      <section id="projects" class="showcase-section" aria-labelledby="projects-heading">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-subtitle">DỰ ÁN TIÊU BIỂU</div>
+            <h2 id="projects-heading" class="section-title">Những Thành Tựu Của ADLEY</h2>
+            <p class="section-description">
+              Minh chứng năng lực thiết kế giao diện hiện đại và tính ứng dụng thực tiễn cao của toàn đội ngũ.
+            </p>
+          </div>
+
+          <div class="projects-grid">
+            <article class="project-card">
+              <div class="project-thumb">🚀</div>
+              <div class="project-body">
+                <span class="project-tag">Design System</span>
+                <h3 class="project-title">CyberGlass UI Kit</h3>
+                <p class="project-desc">Bộ giao diện CSS kính mờ đa tầng phục vụ các nền tảng phân tích tài chính số và Web3 Dashboard.</p>
+                <div class="project-footer">
+                  <span>Stack: CSS Grid + Variables</span>
+                  <time datetime="2026-03">03/2026</time>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-thumb">🌐</div>
+              <div class="project-body">
+                <span class="project-tag">E-Commerce</span>
+                <h3 class="project-title">Adley Storefront</h3>
+                <p class="project-desc">Trang thương mại điện tử chuyên ngành thiết bị công nghệ với tương tác lật sản phẩm 3D không dùng JS.</p>
+                <div class="project-footer">
+                  <span>Stack: HTML5 + CSS3</span>
+                  <time datetime="2026-02">02/2026</time>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-thumb">⚡</div>
+              <div class="project-body">
+                <span class="project-tag">AI Integration</span>
+                <h3 class="project-title">Vibe Coding Hub</h3>
+                <p class="project-desc">Hệ thống thư viện hướng dẫn kỹ nghệ ra lệnh AI (Prompt Engineering) chuyên sâu cho sinh viên ngành CNTT.</p>
+                <div class="project-footer">
+                  <span>Stack: Semantic HTML + Docs</span>
+                  <time datetime="2026-01">01/2026</time>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ SECTION (<details> and <summary>) -->
+      <section id="faq" class="faq-section" aria-labelledby="faq-heading">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-subtitle">HỎI VÀ ĐÁP</div>
+            <h2 id="faq-heading" class="section-title">Giải Đáp Thắc Mắc Kỹ Thuật</h2>
+            <p class="section-description">
+              Tất cả tương tác đóng/mở nội dung bên dưới sử dụng 100% thẻ ngữ nghĩa &lt;details&gt; và &lt;summary&gt; chuẩn HTML5.
+            </p>
+          </div>
+
+          <div class="faq-container">
+            <details class="faq-item" open>
+              <summary class="faq-summary">Website này có sử dụng JavaScript không?</summary>
+              <div class="faq-content">
+                <strong>Hoàn toàn không.</strong> Tất cả tính năng: chuyển đổi Dark/Light mode, hiệu ứng mở menu Mobile, lật thẻ 3D Card Flip, mở cửa sổ Modal thông tin thành viên và thanh điều hướng đều được xây dựng bằng 100% CSS3 hiện đại kết hợp HTML5 Semantic.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-summary">Cấu trúc mã nguồn được phân bổ theo mô hình MVC ra sao?</summary>
+              <div class="faq-content">
+                Dự án chia tách rành mạch:
+                <ul>
+                  <li><strong>Model:</strong> Được định nghĩa trong thư mục <code>models/team_model.html</code> chứa toàn bộ từ điển dữ liệu thực thể của 9 thành viên.</li>
+                  <li><strong>View:</strong> Các khối giao diện trực quan độc lập và các thành phần giao diện mẫu trong thư mục <code>views/</code>.</li>
+                  <li><strong>Controller (Master View):</strong> Tệp <code>index.html</code> đóng vai trò nhạc trưởng tích hợp và điều hướng toàn bộ trải nghiệm người dùng.</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-summary">Làm thế nào để các thẻ card tự động thích ứng trên mọi màn hình?</summary>
+              <div class="faq-content">
+                Nhóm ADLEY sử dụng hệ thống CSS Grid kết hợp Media Queries thông minh. Ở màn hình Desktop lớn, hệ thống hiển thị lưới 3 cột cân đối; trên tablet thu gọn về 2 cột và trên smartphone tự động xếp thành 1 cột trực quan dễ chạm lướt.
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION -->
+      <section id="contact" class="contact-section" aria-labelledby="contact-heading">
+        <div class="container">
+          <div class="contact-card">
+            <div class="contact-info-block">
+              <span class="section-subtitle">KẾT NỐI VỚI CHÚNG TÔI</span>
+              <h3 id="contact-heading">Bắt Đầu Một Dự Án Đột Phá</h3>
+              <p>
+                Bạn có ý tưởng dự án hoặc muốn hợp tác cùng đội ngũ tài năng ADLEY? 
+                Hãy gửi tin nhắn, chúng tôi sẽ phản hồi trong vòng 24 giờ.
+              </p>
+
+              <div class="info-item">
+                <div class="info-icon">📍</div>
+                <div>
+                  <strong>Địa Điểm Học Tập & Làm Việc</strong>
+                  <p>Khoa Công nghệ Thông tin - Trường Đại học Lạc Hồng (LHU)</p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon">✉️</div>
+                <div>
+                  <strong>Hộp Thư Đội Ngũ</strong>
+                  <p>adleyteam.lhu@gmail.com</p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon">👥</div>
+                <div>
+                  <strong>Trưởng Nhóm Liên Hệ</strong>
+                  <p>Hà Văn Kiên (Lớp 25CT111)</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Semantic HTML5 Form -->
+            <form action="#contact" method="get" class="contact-form">
+              <div class="form-group">
+                <label for="contact-name" class="form-label">Họ và tên của bạn</label>
+                <input type="text" id="contact-name" class="form-input" placeholder="Nguyễn Văn A" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email" class="form-label">Địa chỉ Email</label>
+                <input type="email" id="contact-email" class="form-input" placeholder="email@domain.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message" class="form-label">Nội dung trao đổi</label>
+                <textarea id="contact-message" class="form-textarea" rows="4" placeholder="Mô tả ý tưởng hoặc yêu cầu của bạn..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">
+                Gửi Tin Nhắn Ngay
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ========================================================================
+         FOOTER COMPONENT (<footer>)
+         ======================================================================== -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="brand-logo">ADLEY STUDIO</div>
+            <p>
+              Đội ngũ thiết kế & phát triển giao diện hàng đầu LHU. 
+              Sản phẩm phục vụ bài thi Giữa kỳ Học phần Thiết kế Web - Kỹ năng Vibe Coding & Prompt Engineering.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="footer-col-title">Điều Hướng Nhanh</h4>
+            <ul class="footer-link-list">
+              <li><a href="#hero">Trang Chủ</a></li>
+              <li><a href="#about">Văn Hóa ADLEY</a></li>
+              <li><a href="#team">Hội Đồng 9 Thành Viên</a></li>
+              <li><a href="#projects">Dự Án Sáng Tạo</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="footer-col-title">Tiêu Chuẩn Kỹ Thuật</h4>
+            <ul class="footer-link-list">
+              <li><a href="#about">Semantic HTML5 (No Divs)</a></li>
+              <li><a href="#about">Pure CSS3 Architecture</a></li>
+              <li><a href="#about">CSS Variables (:root)</a></li>
+              <li><a href="#about">Zero JavaScript Compliant</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="footer-col-title">Tài Liệu Học Phần</h4>
+            <ul class="footer-link-list">
+              <li><a href="PROMPT_LOG.md">Nhật Ký Prompt Log</a></li>
+              <li><a href="models/team_model.html">Model Dữ Liệu MVC</a></li>
+              <li><a href="https://github.com" target="_blank" rel="noopener">GitHub Repository</a></li>
+              <li><a href="#hero">Lên Đầu Trang ↑</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 ADLEY Team. Bản quyền thuộc về sinh viên Hà Văn Kiên - MSSV 25CT111 - Khoa CNTT Lạc Hồng.</p>
+          <p>Thiết kế đạt chuẩn Kiến trúc Web Buổi 1 - 6 (Giáo trình LHU)</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ========================================================================
+         FLOATING ACTION BUTTON (FAB) - WEEK 5 CURRICULUM
+         ======================================================================== -->
+    <aside class="fab-container" aria-label="Quick Action">
+      <a href="#contact" class="fab-btn" title="Liên hệ nhanh với Trưởng nhóm ADLEY">
+        💬
+      </a>
+    </aside>
+
+  </div> <!-- End .site-wrapper -->
+
+
+  <!-- ==========================================================================
+       PURE CSS MODALS FOR TEAM MEMBERS & MENTOR (:target pseudo-class - ZERO JS)
+       ========================================================================== -->
+
+  <!-- Modal Advisor: Thầy Bùi Xuân Cảnh -->
+  <div id="modal-canh" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-canh-title">
+    <div class="modal-box">
+      <a href="#team" class="modal-close-btn" aria-label="Đóng popup">&times;</a>
+      <div class="modal-content-grid">
+        <img src="assets/images/Bùi Xuân Cảnh - Giáo Viên Hướng Dẫn .png" alt="Thầy Bùi Xuân Cảnh" class="modal-avatar">
+        <div>
+          <span class="member-badge-leader" style="position:static; display:inline-block; margin-bottom:8px; background: linear-gradient(135deg, #10b981, #06b6d4);">GIẢNG VIÊN HƯỚNG DẪN</span>
+          <h3 id="modal-canh-title" class="member-name">Thầy Bùi Xuân Cảnh</h3>
+          <p class="member-mssv" style="color: #10b981;">Khoa Công Nghệ Thông Tin - Đại Học Lạc Hồng</p>
+          <p class="member-headline" style="margin-top:8px;">
+            Giảng viên hướng dẫn trực tiếp học phần Thiết kế Web. Định hướng sinh viên phương pháp Vibe Coding, làm chủ các công cụ AI, tuân thủ chặt chẽ tiêu chuẩn Semantic HTML5, CSS Variables và rèn luyện kỹ năng phân tầng dự án chuyên nghiệp.
+          </p>
+          <div class="skills-wrapper" style="margin-top:12px;">
+            <div class="skill-tags">
+              <span class="skill-tag">Web Technologies</span>
+              <span class="skill-tag">Vibe Coding Mentorship</span>
+              <span class="skill-tag">Curriculum Lead</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 1: Hà Văn Kiên -->
+  <div id="modal-kien" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-kien-title">
+    <div class="modal-box">
+      <a href="#team" class="modal-close-btn" aria-label="Đóng popup">&times;</a>
+      <div class="modal-content-grid">
+        <img src="assets/images/Hà Văn Kiên - 25CT111 ( tôi ).png" alt="Hà Văn Kiên" class="modal-avatar">
+        <div>
+          <span class="member-badge-leader" style="position:static; display:inline-block; margin-bottom:8px;">LEADER</span>
+          <h3 id="modal-kien-title" class="member-name">Hà Văn Kiên</h3>
+          <p class="member-mssv">Lớp: 25CT111 • Vai trò: Tech Lead & Architect</p>
+          <p class="member-headline" style="margin-top:8px;">
+            Đảm nhiệm vai trò Trưởng nhóm, người khởi tạo cấu trúc dự án MVC, hoạch định toàn bộ luồng Semantic HTML5, hệ màu CSS Variables, loại bỏ triệt để Javascript theo đúng đề bài và quản lý file PROMPT_LOG.md.
+          </p>
+          <div class="skills-wrapper" style="margin-top:12px;">
+            <div class="skill-tags">
+              <span class="skill-tag">MVC Design</span>
+              <span class="skill-tag">HTML5 Semantics</span>
+              <span class="skill-tag">CSS Flex & Grid</span>
+              <span class="skill-tag">Vibe Coding</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Hoàng Minh Phát -->
+  <div id="modal-phat" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-phat-title">
+    <div class="modal-box">
+      <a href="#team" class="modal-close-btn" aria-label="Đóng popup">&times;</a>
+      <div class="modal-content-grid">
+        <img src="assets/images/Hoàng Minh Phát -25CT111.png" alt="Hoàng Minh Phát" class="modal-avatar">
+        <div>
+          <h3 id="modal-phat-title" class="member-name">Hoàng Minh Phát</h3>
+          <p class="member-mssv">Lớp: 25CT111 • Vai trò: UI/UX Specialist</p>
+          <p class="member-headline" style="margin-top:8px;">
+            Phụ trách nghiên cứu giao diện người dùng, lựa chọn các sắc độ màu chuyển tiếp trong variables.css, hiệu chỉnh bóng đổ đổ khối glassmorphism và tối ưu tỷ lệ Typography chuẩn xác trên máy tính.
+          </p>
+          <div class="skills-wrapper" style="margin-top:12px;">
+            <div class="skill-tags">
+              <span class="skill-tag">Color Theory</span>
+              <span class="skill-tag">Glassmorphism</span>
+              <span class="skill-tag">Micro-transitions</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Nguyễn Đinh Khánh Trang -->
+  <div id="modal-trang" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-trang-title">
+    <div class="modal-box">
+      <a href="#team" class="modal-close-btn" aria-label="Đóng popup">&times;</a>
+      <div class="modal-content-grid">
+        <img src="assets/images/Nguyễn Đinh Khánh Trang - 25 EC111.png" alt="Nguyễn Đinh Khánh Trang" class="modal-avatar">
+        <div>
+          <h3 id="modal-trang-title" class="member-name">Nguyễn Đinh Khánh Trang</h3>
+          <p class="member-mssv">Lớp: 25EC111 • Vai trò: Creative Director</p>
+          <p class="member-headline" style="margin-top:8px;">
+            Xây dựng câu chuyện thương hiệu ADLEY, định hướng hình ảnh hiện đại, đột phá, truyền cảm hứng đam mê công nghệ cho tập thể và phối hợp xây dựng kịch bản nội dung các mục trên website.
+          </p>
+          <div class="skills-wrapper" style="margin-top:12px;">
+            <div class="skill-tags">
+              <span class="skill-tag">Creative Direction</span>
+              <span class="skill-tag">Brand Strategy</span>
+              <span class="skill-tag">Digital Copywriting</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4: Đặng Thị Tố Ngân -->
+  <div id="modal-ngan" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-ngan-title">
+    <div class="modal-box">
+      <a href="#team" class="modal-close-btn" aria-label="Đóng popup">&times;</a>
+      <div class="modal-content-grid">
+        <img src="assets/images/Đặng Thị Tố Ngân - 24MC112.png" alt="Đặng Thị Tố Ngân" class="modal-avatar">
+        <div>
+          <h3 id="modal-ngan-title" class="member-name">Đặng Thị Tố Ngân</h3>
+          <p class="member-mssv">Lớp: 24MC112 • Vai trò: Product Designer</p>
+          <p class="member-headline" style="margin-top:8px;">
+            Đảm nhiệm thiết kế trợ năng và khả năng phản hồi trực quan. Chuyên trách thử nghiệm khả năng điều hướng bằng bàn phím (tabindex, :focus) và tỷ lệ tương phản chữ.
+          </p>
+          <div class="skills-wrapper" style="margin-top:12px;">
+            <div class="skill-tags">
+              <span class="skill-tag">Accessibility a11y</span>
+              <span class="skill-tag">WCAG Standards</span>
+              <span class="skill-tag">Focus States</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5: Nguyễn Hoàng Anh -->
+  <div id="modal-anh" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-anh-title">
+    <div class="modal-box">
+      <a href="#team" class="modal-close-btn" aria-label="Đóng popup">&times;</a>
+      <div class="modal-content-grid">
+        <img src="assets/images/Nguyễn Hoàng Anh - CT111.png" alt="Nguyễn Hoàng Anh" class="modal-avatar">
+        <div>
+          <h3 id="modal-anh-title" class="member-name">Nguyễn Hoàng Anh</h3>
+          <p class="member-mssv">Lớp: CT111 • Vai trò: Semantic Engineer</p>
+          <p class="member-headline" style="margin-top:8px;">
+            Chuyên gia cấu trúc thẻ ngữ nghĩa HTML5, cam kết không dùng các thẻ div bừa bãi. Ứng dụng xuất sắc các thẻ header, main, section, article, figure, summary vào dự án.
+          </p>
+          <div class="skills-wrapper" style="margin-top:12px;">
+            <div class="skill-tags">
+              <span class="skill-tag">Semantic HTML5</span>
+              <span class="skill-tag">SEO Schema</span>
+              <span class="skill-tag">Clean DOM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 6: Ngô Võ Nam -->
+  <div id="modal-nam" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-nam-title">
+    <div class="modal-box">
+      <a href="#team" class="modal-close-btn" aria-label="Đóng popup">&times;</a>
+      <div class="modal-content-grid">
+        <img src="assets/images/Ngô Võ Nam - 25CT111.png" alt="Ngô Võ Nam" class="modal-avatar">
+        <div>
+          <h3 id="modal-nam-title" class="member-name">Ngô Võ Nam</h3>
+          <p class="member-mssv">Lớp: 25CT111 • Vai trò: Layout Architect</p>
+          <p class="member-headline" style="margin-top:8px;">
+            Xây dựng bộ khung dàn trang CSS Grid thông minh theo tuần 3 & 4. Xử lý các điểm ngắt Responsive mượt mà giúp card 9 thành viên hiển thị hoàn hảo ở mọi độ rộng màn hình.
+          </p>
+          <div class="skills-wrapper" style="margin-top:12px;">
+            <div class="skill-tags">
+              <span class="skill-tag">CSS Grid System</span>
+              <span class="skill-tag">Adaptive Layout</span>
+              <span class="skill-tag">Flexbox Alignment</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 7: Phan Văn Trận -->
+  <div id="modal-tran" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-tran-title">
+    <div class="modal-box">
+      <a href="#team" class="modal-close-btn" aria-label="Đóng popup">&times;</a>
+      <div class="modal-content-grid">
+        <img src="assets/images/Phan Văn Trận - 23EC111.png" alt="Phan Văn Trận" class="modal-avatar">
+        <div>
+          <h3 id="modal-tran-title" class="member-name">Phan Văn Trận</h3>
+          <p class="member-mssv">Lớp: 23EC111 • Vai trò: QA & Device Profiler</p>
+          <p class="member-headline" style="margin-top:8px;">
+            Thực hiện kiểm thử tương thích hiển thị trên nhiều thiết bị iPhone, Android và các trình duyệt Chrome, Safari, Firefox. Bảo đảm không có lỗi giật lag hay vỡ bố cục.
+          </p>
+          <div class="skills-wrapper" style="margin-top:12px;">
+            <div class="skill-tags">
+              <span class="skill-tag">Cross Browser QA</span>
+              <span class="skill-tag">DevTools Profiling</span>
+              <span class="skill-tag">Mobile Optimization</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 8: Trần Hoài Phương -->
+  <div id="modal-phuong" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-phuong-title">
+    <div class="modal-box">
+      <a href="#team" class="modal-close-btn" aria-label="Đóng popup">&times;</a>
+      <div class="modal-content-grid">
+        <img src="assets/images/Trần Hoài Phương - 25MC111.png" alt="Trần Hoài Phương" class="modal-avatar">
+        <div>
+          <h3 id="modal-phuong-title" class="member-name">Trần Hoài Phương</h3>
+          <p class="member-mssv">Lớp: 25MC111 • Vai trò: Media Optimizer</p>
+          <p class="member-headline" style="margin-top:8px;">
+            Chuẩn hóa hệ thống hình ảnh thành viên trong folder assets/images, căn chỉnh tỷ lệ khung hình cân đối, hiệu ứng trượt zoom hình ảnh khi người dùng tương tác lật thẻ.
+          </p>
+          <div class="skills-wrapper" style="margin-top:12px;">
+            <div class="skill-tags">
+              <span class="skill-tag">Asset Processing</span>
+              <span class="skill-tag">Responsive Media</span>
+              <span class="skill-tag">Object Fit Master</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 9: Trần Quang Huy -->
+  <div id="modal-huy" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-huy-title">
+    <div class="modal-box">
+      <a href="#team" class="modal-close-btn" aria-label="Đóng popup">&times;</a>
+      <div class="modal-content-grid">
+        <img src="assets/images/Trần Quang Huy - 25CT111.png" alt="Trần Quang Huy" class="modal-avatar">
+        <div>
+          <h3 id="modal-huy-title" class="member-name">Trần Quang Huy</h3>
+          <p class="member-mssv">Lớp: 25CT111 • Vai trò: Git & Audit Lead</p>
+          <p class="member-headline" style="margin-top:8px;">
+            Theo dõi nhật ký commit Git, kiểm tra tài liệu PROMPT_LOG.md và README.md, đối chiếu với barem 10 điểm của đề thi giữa kỳ nhằm đảm bảo chất lượng bài thi đạt điểm tuyệt đối.
+          </p>
+          <div class="skills-wrapper" style="margin-top:12px;">
+            <div class="skill-tags">
+              <span class="skill-tag">Git Management</span>
+              <span class="skill-tag">Rubric Audit</span>
+              <span class="skill-tag">Tech Docs</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
