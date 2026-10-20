@@ -1105,11 +1105,13 @@ p, .hero-description, .section-description, .project-desc, .faq-content, .back-b
   box-shadow: var(--shadow-md);
 }
 
+.contact-info-block h2,
 .contact-info-block h3 {
   font-size: var(--font-3xl);
   font-weight: 800;
   margin-bottom: var(--space-4);
   color: var(--text-main);
+  text-align: left;
 }
 
 .contact-info-block p {

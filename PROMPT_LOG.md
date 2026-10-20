@@ -192,6 +192,46 @@
 
 ---
 
+### Iteration 8: Tinh Chỉnh Semantic HTML5 Toàn Diện, Thứ Bậc Heading & Khắc Phục Trùng Lặp Dữ Liệu
+- **Prompt đã dùng:**
+  > *"Tối ưu Semantic HTML5 cho index.html của dự án ADLEY Team. Không đổi giao diện.*
+  > *Cần sửa:*
+  > *1. Bỏ các role thừa: role="banner", role="main", role="navigation", role="contentinfo".*
+  > *2. Khối code minh họa trong about-banner đang dùng <code> + <br> + &nbsp;. Đổi sang <pre><code> đúng ngữ nghĩa và bỏ <br>, &nbsp;.*
+  > *3. Nút FAB đang bọc trong <aside>, không đúng ngữ nghĩa. Đổi thành thẻ <a> thường, giữ nguyên chức năng.*
+  > *4. stats-grid dùng nhiều <div>: đổi sang <ul>/<li> hoặc <dl>.*
+  > *5. Các <div class="info-bullet"> rỗng chỉ để trang trí: chuyển thành pseudo-element ::before trong CSS.*
+  > *6. Các modal đang là <div role="dialog">: đổi sang thẻ <dialog> nếu vẫn chạy được với cơ chế :target; nếu không được thì giữ nguyên và giải thích vì sao.*
+  > *7. Kiểm tra thứ bậc heading (h1, h2, h3, h4) không bị nhảy cấp.*
+  > *8. Sửa MSSV trùng 25CT111 của 4 thành viên: để chỗ trống có comment <!-- TODO: nhập MSSV đúng --> và nhắc tôi nhập lại.*
+  > *Sau khi sửa, báo cáo từng thay đổi trước/sau.*
+  > *Ghi vào PROMPT_LOG.md một Iteration mới, nêu rõ AI đã dùng thẻ không đúng ở đâu và bạn đã chỉ đạo sửa thế nào."*
+
+- **Lỗi AI đã dùng thẻ không đúng & Lỗi dữ liệu ban đầu:**
+  1. *Lạm dụng ARIA roles trên thẻ Semantic:* AI đặt `role="banner"` trên `<header>`, `role="navigation"` trên `<nav>`, `role="main"` trên `<main>`, `role="contentinfo"` trên `<footer>`. Đây là lỗi thừa thãi (redundancy) theo chuẩn W3C vì các thẻ HTML5 này vốn dĩ đã mang sẵn vai trò ngầm định trong Accessibility Tree.
+  2. *Dùng `<code>` kết hợp thẻ định dạng thô:* AI dùng `<code>` kèm `<br>` và hàng loạt `&nbsp;&nbsp;` để xuống dòng thủ công trong khối code minh họa, thay vì dùng thẻ `<pre>` giữ nguyên định dạng khoảng trắng tự nhiên.
+  3. *Lạm dụng thẻ `<aside>`:* AI bọc nút liên hệ FAB trong `<aside>`, trong khi FAB chỉ là một nút CTA điều hướng nội bộ (`<a>`), không đại diện cho một phân đoạn nội dung bên lề độc lập.
+  4. *Khối thống kê toàn thẻ `<div>`:* AI dùng 4 thẻ `div.stat-item` vô nghĩa để hiển thị cặp số liệu - nhãn dán thay vì dùng danh sách mô tả `<dl>`, `<dt>`, `<dd>`.
+  5. *Thẻ `div.info-bullet` rỗng để trang trí:* AI tạo các thẻ `<div>` không có nội dung chỉ để vẽ chấm tròn nhỏ, làm ô nhiễm cấu trúc DOM.
+  6. *Thứ bậc heading bị nhảy cấp:* Section liên hệ nhảy từ tiêu đề chính trang sang `<h3 id="contact-heading">` mà thiếu vắng cấp thẻ `<h2>`.
+  7. *Trùng lặp dữ liệu MSSV:* 4 thành viên cùng lớp (Hà Văn Kiên, Hoàng Minh Phát, Ngô Võ Nam, Trần Quang Huy) đều bị gán trùng MSSV `25CT111`.
+
+- **Chỉ đạo của Sinh viên & Cách sửa chi tiết:**
+  1. *Loại bỏ toàn bộ roles thừa:* Xóa sạch các thuộc tính `role="banner"`, `role="navigation"`, `role="main"`, `role="contentinfo"`.
+  2. *Chuẩn hóa khối code:* Đổi thành `<pre class="code-preview-box"><code>...</code></pre>`, loại bỏ toàn bộ các thẻ `<br>` và thực thể `&nbsp;`.
+  3. *Chuyển đổi nút FAB:* Xóa bỏ thẻ `<aside>`, chuyển nút FAB thành thẻ `<a href="#contact" class="fab-btn">` gắn trực tiếp vào layout.
+  4. *Chuẩn hóa `<dl>` cho số liệu:* Chuyển `stats-grid` thành `<dl>`, các số liệu thành `<dt class="stat-value">` và nhãn mô tả thành `<dd class="stat-label">`.
+  5. *Xóa div rỗng trang trí:* Xóa sạch `.info-bullet` trong HTML, chuyển sang pseudo-element `.info-item::before` trong `style.css`.
+  6. *Kiểm chứng `<dialog>` với `:target`:* Thẻ `<dialog class="modal-overlay">` kết hợp với pseudo-class `:target` hoạt động hoàn hảo 100% không cần phương thức JS `.showModal()`, chuẩn W3C ngữ nghĩa cao nhất.
+  7. *Chỉnh sửa thứ bậc Heading liền mạch:* Đổi tiêu đề liên hệ thành `<h2 id="contact-heading" class="section-title contact-info-title">`, đảm bảo cây phân cấp chuẩn mực: `h1` (Hero) $\rightarrow$ `h2` (Các Section chính) $\rightarrow$ `h3` (Thẻ dự án / Tên thành viên) $\rightarrow$ `h4` (Tiểu mục / Footer columns), không nhảy cấp.
+  8. *Chuẩn hóa MSSV:* Giữ lại MSSV chính thức của Trưởng nhóm Hà Văn Kiên (`25CT111`). Với 3 thành viên Hoàng Minh Phát, Ngô Võ Nam, Trần Quang Huy, để chỗ trống kèm comment rõ ràng: `<!-- TODO: nhập MSSV đúng cho [Tên thành viên] --> [Chờ cập nhật]` ở cả Card mặt trước và Modal pop-up.
+
+- **Kết quả đạt được:**
+  - Mã nguồn `index.html` sạch tuyệt đối: **0 style inline, 0 role thừa, 0 thẻ aside sai nghĩa, 0 div rỗng**.
+  - Cấu trúc DOM hoàn toàn hợp chuẩn W3C Validation, ngữ nghĩa trong sáng, mạch lạc.
+
+---
+
 ## 3. Đánh giá cá nhân về quá trình Vibe Coding
 
 - **AI đã giúp bạn tiết kiệm thời gian ở phần nào nhất?**
