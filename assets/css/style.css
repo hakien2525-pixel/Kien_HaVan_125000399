@@ -909,6 +909,14 @@ p, .hero-description, .section-description, .project-desc, .faq-content, .back-b
   box-shadow: var(--shadow-lg);
 }
 
+.project-thumbnail {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-color);
+}
+
 .project-card-header {
   padding: var(--space-6) var(--space-6) 0;
   display: flex;
