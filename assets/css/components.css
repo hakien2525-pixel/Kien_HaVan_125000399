@@ -227,3 +227,122 @@
   50% { transform: scale(1.04); }
   100% { transform: scale(1); }
 }
+
+/* ==========================================================================
+   PURE CSS MODAL (<dialog class="modal-overlay"> - :target fallback)
+   ========================================================================== */
+.modal-open-link {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: 0.65rem 1rem;
+  background: var(--primary);
+  color: var(--text-white);
+  border-radius: var(--radius-md);
+  font-size: var(--font-sm);
+  font-weight: 600;
+  box-shadow: 0 3px 10px rgba(2, 132, 199, 0.2);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.modal-open-link:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  color: var(--text-white);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--modal-backdrop);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity var(--transition-normal), visibility var(--transition-normal);
+  border: none;
+}
+
+.modal-overlay:target {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.modal-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  max-width: 640px;
+  width: 100%;
+  padding: var(--space-8);
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  transform: scale(0.95) translateY(15px);
+  transition: transform var(--transition-normal);
+}
+
+.modal-overlay:target .modal-box {
+  transform: scale(1) translateY(0);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-lg);
+  font-weight: 700;
+  transition: all var(--transition-fast);
+}
+
+.modal-close-btn:hover {
+  background: var(--danger);
+  color: var(--text-white);
+}
+
+.modal-content-grid {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.modal-avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  border: 2px solid var(--primary-light);
+}
+
+.member-badge-modal-leader,
+.member-badge-modal-advisor {
+  display: inline-block;
+  margin-bottom: var(--space-2);
+  background: var(--primary);
+  color: var(--text-white);
+  padding: 3px 12px;
+  border-radius: var(--radius-full);
+  font-size: var(--font-xs);
+  font-weight: 700;
+}
+

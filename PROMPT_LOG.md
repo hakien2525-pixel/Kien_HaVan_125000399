@@ -301,6 +301,36 @@
 
 ---
 
+### Lần 12: Chuyển Đổi Cơ Chế Lật Thẻ Bằng Click/Touch & Tự Động Úp Thẻ Bằng IntersectionObserver
+- **Prompt đã dùng:**
+  > *"Sửa phần 'Hội Đồng Thành Viên ADLEY' (section #team) trong index.html và CSS: thẻ thành viên tự lật khi rê chuột (:hover, :focus-within). Tôi muốn: (a) chỉ lật khi người dùng CLICK/chạm; (b) khi thẻ cuộn ra khỏi màn hình thì tự động úp lại. Yêu cầu: Xóa hover/focus-within flip, hover chỉ nâng thẻ nhẹ translateY(-4px); Lật bằng class .team-card-wrapper.is-flipped .team-card { transform: rotateY(180deg); }, mỗi wrapper là <article tabindex='0' role='button' aria-pressed='false'> lật được bằng Enter/Space; Viết assets/js/team-flip.js dưới 25 dòng có comment tiếng Việt nạp bằng script defer cuối body, dùng IntersectionObserver (threshold 0.1) tự gỡ is-flipped khi ra khỏi màn hình, click a.modal-open-link không lật lại thẻ; Fallback khi tắt JS: mặt trước hiển thị bình thường và link dẫn tới modal :target."*
+- **Kết quả AI tạo ra:**
+  Đã viết file `assets/js/team-flip.js` (21 dòng, thuần Vanilla JS); cập nhật CSS xóa bỏ hoàn toàn xoay thẻ trên `:hover` / `:focus-within` và chỉ kích hoạt `rotateY(180deg)` thông qua class `.is-flipped`; bổ sung 10 modal dialog pure CSS `:target` dự phòng; cập nhật mô tả section hướng dẫn thao tác click.
+- **Lỗi / thách thức gặp phải:**
+  - **Lỗi UX:** Hành vi cũ lật thẻ tự động khi rê chuột (`:hover`) gây khó chịu trên máy tính khi người dùng chỉ vô tình lướt chuột qua. Trên thiết bị di động cảm ứng, `:hover` bị dính trạng thái (sticky hover), người dùng cuộn trang đi nơi khác mà thẻ vẫn bị lật ngửa ở mặt sau gây rối mắt.
+  - **Giới hạn của CSS thuần:** CSS thuần không có cơ chế phát hiện một phần tử đã cuộn ra khỏi khung nhìn (viewport) của màn hình để tự động hoàn nguyên trạng thái.
+  ```css
+  /* TRƯỚC (CSS lật tự động khi hover/focus-within): */
+  .team-card-wrapper:hover .team-card,
+  .team-card-wrapper:focus-within .team-card {
+    transform: rotateY(180deg);
+  }
+
+  /* SAU (CSS chỉ lật khi có class .is-flipped do người dùng chủ động click/phím): */
+  .team-card-wrapper:hover {
+    transform: translateY(-4px);
+  }
+  .team-card-wrapper.is-flipped .team-card {
+    transform: rotateY(180deg);
+  }
+  ```
+- **Nhận xét & Tinh chỉnh của SV:**
+  - **Lý do bổ sung JavaScript có kiểm soát:** CSS hoàn toàn bất lực trong việc nhận diện thẻ đã rời khỏi màn hình. Sinh viên chỉ đạo viết một file script tinh gọn duy nhất `assets/js/team-flip.js` dưới 25 dòng, không dùng bất kỳ thư viện ngoài hay jQuery nào.
+  - **Cơ chế IntersectionObserver:** Khởi tạo `IntersectionObserver` với ngưỡng `threshold: 0.1` (khi dưới 10% diện tích thẻ còn trong khung nhìn). API này theo dõi bất đồng bộ ở cấp render engine trình duyệt, hoàn toàn không lắng nghe sự kiện `window.scroll` liên tục gây giật lag (zero jank). Khi thẻ cuộn ra khỏi tầm mắt, observer tự động gỡ bỏ class `is-flipped` và cập nhật `aria-pressed="false"`.
+  - **Phòng thủ Trợ năng & Graceful Degradation:** Mỗi thẻ bọc trong thẻ `<article tabindex="0" role="button" aria-pressed="false">`, hỗ trợ bàn phím đầy đủ (`Enter` / `Space`). Khi người dùng click vào link "Xem Hồ Sơ Đầy Đủ" (`a.modal-open-link`), sự kiện `event.target.closest('a')` chặn hành vi lật ngược thẻ và kích hoạt modal chi tiết theo cơ chế `:target` của CSS thuần. Nếu trình duyệt tắt JavaScript, toàn bộ mặt trước và hệ thống modal pure CSS vẫn hoạt động 100% trơn tru.
+
+---
+
 ## 3. Đánh giá cá nhân về quá trình Vibe Coding
 
 ### AI đã giúp tiết kiệm thời gian nhất ở đâu?
