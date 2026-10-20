@@ -23,38 +23,10 @@ body {
   position: relative;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
-  /* Chống rớt chữ và ngắt dòng tối ưu toàn trang */
   text-rendering: optimizeLegibility;
 }
 
-/* ==========================================================================
-   CHỐNG TỪ MỒ CÔI (ORPHAN WORD PREVENTION - MODERN CSS & FALLBACKS)
-   ========================================================================== */
-/* Cân bằng dòng cho tất cả các cấp tiêu đề (Heading Balance) */
-h1, h2, h3, h4, h5, h6,
-.hero-title, .section-title, .project-title, .member-name {
-  text-wrap: balance;
-  /* Fallback cho trình duyệt cũ */
-  word-break: normal;
-  overflow-wrap: break-word;
-}
-
-/* Chống rớt chữ lẻ loi ở dòng cuối đoạn văn (Body Paragraphs & Descriptions) */
-p, .hero-description, .section-description, .project-desc, .faq-content, .back-bio {
-  text-wrap: pretty;
-  /* Tránh ngắt từ bừa bãi và hỗ trợ ngắt âm tiết tự nhiên khi cần */
-  overflow-wrap: break-word;
-  word-break: normal;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
-}
-
-/* Helper class bảo vệ các cụm từ quan trọng không bao giờ bị ngắt đôi */
-.no-orphan {
-  display: inline-block;
-  white-space: nowrap;
-}
+/* Background Soft Blue Ambient Grid (Pure CSS Gradient) */
 .ambient-glow {
   position: fixed;
   top: 0;
@@ -66,7 +38,7 @@ p, .hero-description, .section-description, .project-desc, .faq-content, .back-b
   background: 
     radial-gradient(circle at 10% 15%, rgba(56, 189, 248, 0.08) 0%, transparent 40%),
     radial-gradient(circle at 90% 80%, rgba(37, 99, 235, 0.06) 0%, transparent 45%),
-    linear-gradient(180deg, #f8fafc 0%, #f0f9ff 100%);
+    linear-gradient(180deg, var(--bg-main) 0%, var(--bg-surface) 100%);
 }
 
 .site-wrapper {
@@ -89,8 +61,10 @@ a {
   transition: color var(--transition-fast);
 }
 
-ul {
+ul, dl {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
@@ -100,6 +74,52 @@ ul {
   margin-right: auto;
   padding-left: var(--space-4);
   padding-right: var(--space-4);
+}
+
+/* ==========================================================================
+   CHỐNG TỪ MỒ CÔI (ORPHAN WORD PREVENTION - MODERN CSS & FALLBACKS)
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6,
+.hero-title, .section-title, .project-title, .member-name {
+  text-wrap: balance;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+p, .hero-description, .section-description, .project-desc, .faq-content, .back-bio {
+  text-wrap: pretty;
+  overflow-wrap: break-word;
+  word-break: normal;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+.no-orphan {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   CSS SCROLL-DRIVEN ANIMATION (THAY THẾ AOS - 100% PURE CSS KHÔNG JS)
+   ========================================================================== */
+@supports (animation-timeline: view()) {
+  .team-card-wrapper, .project-card, .value-card, .faq-item {
+    animation: scrollFadeIn linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 30%;
+  }
+
+  @keyframes scrollFadeIn {
+    from {
+      opacity: 0.3;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 /* ==========================================================================
@@ -206,7 +226,7 @@ ul {
   padding: 0.5rem 1.25rem;
   border-radius: var(--radius-full);
   background: var(--primary);
-  color: #ffffff;
+  color: var(--text-white);
   font-size: var(--font-sm);
   font-weight: 500;
   transition: all var(--transition-fast);
@@ -256,7 +276,7 @@ ul {
   gap: var(--space-2);
   padding: var(--space-2) var(--space-4);
   border-radius: var(--radius-full);
-  background: #ffffff;
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
   color: var(--primary-dark);
   font-size: var(--font-xs);
@@ -336,7 +356,7 @@ ul {
 
 .btn-primary {
   background: var(--primary);
-  color: #ffffff;
+  color: var(--text-white);
   box-shadow: 0 4px 14px rgba(2, 132, 199, 0.25);
 }
 
@@ -347,7 +367,7 @@ ul {
 }
 
 .btn-secondary {
-  background: #ffffff;
+  background: var(--bg-card);
   border-color: var(--border-color);
   color: var(--text-main);
   box-shadow: var(--shadow-sm);
@@ -360,13 +380,17 @@ ul {
   transform: translateY(-2px);
 }
 
+.btn-full {
+  width: 100%;
+}
+
 /* ==========================================================================
-   STATS COUNTER / METRICS SECTION
+   STATS COUNTER (<dl class="stats-grid">) - CHUẨN SEMANTIC HTML5
    ========================================================================== */
 .stats-section {
   padding: var(--space-8) 0;
   border-bottom: 1px solid var(--border-color);
-  background: #ffffff;
+  background: var(--bg-card);
 }
 
 .stats-grid {
@@ -390,6 +414,7 @@ ul {
   font-weight: 900;
   color: var(--primary);
   line-height: 1.2;
+  margin: 0;
 }
 
 .stat-label {
@@ -465,7 +490,7 @@ ul {
 }
 
 .value-card {
-  background: #ffffff;
+  background: var(--bg-card);
   padding: 1.5rem 1.5rem;
   border-radius: var(--radius-md);
   border: 1px solid var(--border-color);
@@ -498,7 +523,7 @@ ul {
 }
 
 .about-banner {
-  background: #ffffff;
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 1.5rem;
@@ -506,14 +531,21 @@ ul {
 }
 
 .code-preview-box {
-  background: #0f172a;
+  background: var(--code-bg);
   border-radius: var(--radius-md);
   padding: 1.5rem;
-  font-family: 'Roboto', monospace;
+  font-family: var(--font-mono);
   font-size: var(--font-xs);
-  color: #38bdf8;
+  color: var(--code-text);
   line-height: 1.8;
   overflow-x: auto;
+  margin: 0;
+  white-space: pre;
+}
+
+.code-preview-box code {
+  font-family: inherit;
+  color: inherit;
 }
 
 /* ==========================================================================
@@ -567,7 +599,7 @@ ul {
 
 /* Front Face */
 .card-front {
-  background: #ffffff;
+  background: var(--bg-card);
   display: flex;
   flex-direction: column;
 }
@@ -577,7 +609,7 @@ ul {
   height: 300px;
   position: relative;
   overflow: hidden;
-  background-color: #e2e8f0;
+  background-color: var(--border-color);
 }
 
 .member-photo {
@@ -611,12 +643,37 @@ ul {
   top: var(--space-3);
   left: var(--space-3);
   background: var(--primary);
-  color: #ffffff;
+  color: var(--text-white);
   padding: 3px 12px;
   border-radius: var(--radius-full);
   font-size: var(--font-xs);
   font-weight: 700;
   box-shadow: 0 2px 8px rgba(2, 132, 199, 0.35);
+}
+
+.member-badge-advisor {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-3);
+  background: var(--primary);
+  color: var(--text-white);
+  padding: 3px 12px;
+  border-radius: var(--radius-full);
+  font-size: var(--font-xs);
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.35);
+}
+
+.member-badge-modal-leader,
+.member-badge-modal-advisor {
+  display: inline-block;
+  margin-bottom: var(--space-2);
+  background: var(--primary);
+  color: var(--text-white);
+  padding: 3px 12px;
+  border-radius: var(--radius-full);
+  font-size: var(--font-xs);
+  font-weight: 700;
 }
 
 .member-info-front {
@@ -655,13 +712,14 @@ ul {
 
 /* Back Face */
 .card-back {
-  background: #ffffff;
+  background: var(--bg-card);
   transform: rotateY(180deg);
   padding: var(--space-6);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   border-color: var(--primary-light);
+  overflow-y: auto;
 }
 
 .back-header {
@@ -709,7 +767,7 @@ ul {
 .skill-tag {
   font-size: var(--font-xs);
   background: var(--accent-soft);
-  border: 1px solid #bae6fd;
+  border: 1px solid var(--border-badge);
   padding: 3px 10px;
   border-radius: var(--radius-full);
   color: var(--primary-dark);
@@ -722,7 +780,7 @@ ul {
   text-align: center;
   padding: 0.65rem;
   background: var(--primary);
-  color: #ffffff;
+  color: var(--text-white);
   border-radius: var(--radius-md);
   font-size: var(--font-sm);
   font-weight: 600;
@@ -736,7 +794,7 @@ ul {
 }
 
 /* ==========================================================================
-   PURE CSS MODAL POPUP (:target PSEUDO-CLASS - ZERO JS)
+   PURE CSS MODAL (<dialog class="modal-overlay"> - :target ZERO JS)
    ========================================================================== */
 .modal-overlay {
   position: fixed;
@@ -744,7 +802,7 @@ ul {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(15, 23, 42, 0.6);
+  background: var(--modal-backdrop);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   z-index: 999;
@@ -756,6 +814,7 @@ ul {
   visibility: hidden;
   pointer-events: none;
   transition: opacity var(--transition-normal), visibility var(--transition-normal);
+  border: none;
 }
 
 .modal-overlay:target {
@@ -765,7 +824,7 @@ ul {
 }
 
 .modal-box {
-  background: #ffffff;
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   max-width: 640px;
@@ -800,8 +859,8 @@ ul {
 }
 
 .modal-close-btn:hover {
-  background: #ef4444;
-  color: #ffffff;
+  background: var(--danger);
+  color: var(--text-white);
 }
 
 .modal-content-grid {
@@ -821,11 +880,10 @@ ul {
 
 /* ==========================================================================
    REAL PROJECTS SECTION (<section class="showcase-section">)
-   Projects Loaded from User D Drive
    ========================================================================== */
 .showcase-section {
   padding: var(--space-24) 0;
-  background: #ffffff;
+  background: var(--bg-card);
 }
 
 .projects-grid {
@@ -835,7 +893,7 @@ ul {
 }
 
 .project-card {
-  background: #ffffff;
+  background: var(--bg-card);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-color);
   overflow: hidden;
@@ -869,7 +927,7 @@ ul {
   border-radius: var(--radius-full);
   background: var(--accent-soft);
   color: var(--primary-dark);
-  border: 1px solid #bae6fd;
+  border: 1px solid var(--border-badge);
   white-space: nowrap;
   letter-spacing: 0.02em;
   flex-shrink: 0;
@@ -949,7 +1007,7 @@ ul {
 }
 
 .faq-item {
-  background: #ffffff;
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   margin-bottom: var(--space-4);
@@ -960,7 +1018,7 @@ ul {
 }
 
 .faq-item[open] {
-  border-color: #bae6fd;
+  border-color: var(--border-badge);
   box-shadow: 0 4px 20px rgba(2, 132, 199, 0.08);
 }
 
@@ -982,7 +1040,7 @@ ul {
 }
 
 .faq-summary:hover {
-  background-color: #f8fafc;
+  background-color: var(--bg-main);
 }
 
 .faq-summary:focus-visible {
@@ -1017,7 +1075,7 @@ ul {
 .faq-item[open] .faq-summary::after {
   content: '−';
   background: var(--primary);
-  color: #ffffff;
+  color: var(--text-white);
 }
 
 .faq-content {
@@ -1025,7 +1083,7 @@ ul {
   color: var(--text-muted);
   font-size: var(--font-sm);
   line-height: 1.75;
-  border-top: 1px solid #f1f5f9;
+  border-top: 1px solid var(--border-separator);
 }
 
 /* ==========================================================================
@@ -1033,11 +1091,11 @@ ul {
    ========================================================================== */
 .contact-section {
   padding: var(--space-24) 0;
-  background: #ffffff;
+  background: var(--bg-card);
 }
 
 .contact-card {
-  background: #ffffff;
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: var(--space-12);
@@ -1061,19 +1119,20 @@ ul {
 }
 
 .info-item {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-4);
+  position: relative;
+  padding-left: var(--space-6);
   margin-bottom: var(--space-4);
 }
 
-.info-bullet {
-  width: 10px;
-  height: 10px;
+.info-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background: var(--primary);
-  margin-top: 6px;
-  flex-shrink: 0;
+  background-color: var(--primary);
 }
 
 .form-group {
@@ -1093,7 +1152,7 @@ ul {
   width: 100%;
   padding: 0.85rem 1rem;
   border-radius: var(--radius-md);
-  background: #ffffff;
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
   color: var(--text-main);
   font-family: inherit;
@@ -1111,8 +1170,8 @@ ul {
    FOOTER (<footer>)
    ========================================================================== */
 .site-footer {
-  background: #0f172a;
-  color: #f8fafc;
+  background: var(--footer-bg);
+  color: var(--bg-main);
   padding: var(--space-16) 0 var(--space-8);
   margin-top: auto;
 }
@@ -1125,11 +1184,11 @@ ul {
 }
 
 .footer-brand .brand-logo {
-  color: #ffffff;
+  color: var(--text-white);
 }
 
 .footer-brand p {
-  color: #94a3b8;
+  color: var(--footer-text-muted);
   font-size: var(--font-sm);
   margin-top: var(--space-4);
   max-width: 320px;
@@ -1140,7 +1199,7 @@ ul {
   font-size: var(--font-base);
   font-weight: 700;
   margin-bottom: var(--space-4);
-  color: #ffffff;
+  color: var(--text-white);
 }
 
 .footer-link-list li {
@@ -1148,7 +1207,7 @@ ul {
 }
 
 .footer-link-list a {
-  color: #94a3b8;
+  color: var(--footer-text-muted);
   font-size: var(--font-sm);
 }
 
@@ -1158,33 +1217,30 @@ ul {
 }
 
 .footer-bottom {
-  border-top: 1px solid #1e293b;
+  border-top: 1px solid var(--footer-border);
   padding-top: var(--space-8);
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: var(--font-xs);
-  color: #64748b;
+  color: var(--footer-bottom-text);
 }
 
 /* ==========================================================================
-   FLOATING ACTION BUTTON (FAB - WEEK 5 HOMEWORK)
+   FLOATING ACTION BUTTON (FAB LINK - WEEK 5 HOMEWORK)
    ========================================================================== */
-.fab-container {
+.fab-btn {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
   z-index: 90;
-}
-
-.fab-btn {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0.75rem 1.25rem;
   border-radius: var(--radius-full);
   background: var(--primary);
-  color: #ffffff;
+  color: var(--text-white);
   font-size: var(--font-sm);
   font-weight: 600;
   box-shadow: 0 4px 16px rgba(2, 132, 199, 0.35);
@@ -1205,7 +1261,7 @@ ul {
 }
 
 /* ==========================================================================
-   RESPONSIVE DESIGN (MEDIA QUERIES - MOBILE FIRST / ADAPTIVE)
+   RESPONSIVE DESIGN (BREAKPOINTS: 1024px, 768px, 480px - MOBILE FIRST)
    ========================================================================== */
 @media (max-width: 1024px) {
   .team-grid {
@@ -1242,7 +1298,7 @@ ul {
     left: 0;
     width: 100%;
     height: calc(100vh - var(--header-height));
-    background: #ffffff;
+    background: var(--bg-card);
     flex-direction: column;
     padding: var(--space-8);
     transform: translateX(-100%);
@@ -1317,5 +1373,48 @@ ul {
   
   .modal-avatar {
     margin: 0 auto;
+  }
+}
+
+/* Mốc Breakpoint Điện Thoại Nhỏ (<480px) */
+@media (max-width: 480px) {
+  :root {
+    --font-5xl: 1.85rem;
+    --font-4xl: 1.6rem;
+    --font-2xl: 1.25rem;
+  }
+  
+  .value-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .team-card-wrapper {
+    height: 520px; /* Tăng chiều cao để mặt sau không bị tràn chữ */
+  }
+
+  .card-back {
+    padding: var(--space-4);
+  }
+
+  .skill-tags {
+    gap: 4px;
+  }
+
+  .skill-tag {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+  }
+
+  .faq-summary {
+    padding: 1rem 1.25rem;
+  }
+
+  .faq-content {
+    padding: var(--space-3) 1.25rem 1.25rem 1.25rem;
+  }
+
+  .btn {
+    padding: 0.75rem 1.25rem;
+    font-size: var(--font-sm);
   }
 }

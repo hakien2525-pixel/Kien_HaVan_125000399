@@ -9,22 +9,21 @@
   
   <title>ADLEY Team | Đội Ngũ Sáng Tạo & Đột Phá Công Nghệ</title>
 
-  <!-- Google Font Roboto Chuẩn 100% -->
+  <!-- Google Fonts: Roboto & Roboto Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
-  <!-- External Animation Library (Tuần 5 Giáo Trình) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <!-- Thư viện Animate.css (Theo chuẩn Tuần 5 & Barem chấm thi) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
   <!-- Internal Cascading Style Sheets (MVC Architecture - Pure CSS) -->
-  <link rel="stylesheet" href="assets/css/variables.css">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
   <!-- ==========================================================================
-       PURE CSS INTERACTION CONTROLS (HAMBURGER DRAWER - ZERO JAVASCRIPT)
+       PURE CSS CONTROLS (HAMBURGER DRAWER - ZERO JAVASCRIPT)
        ========================================================================== -->
   <input type="checkbox" id="nav-toggle" class="css-control-input" aria-label="Toggle Mobile Navigation Drawer">
 
@@ -36,14 +35,14 @@
     <!-- ========================================================================
          HEADER COMPONENT (<header>, <nav>)
          ======================================================================== -->
-    <header class="site-header" role="banner">
+    <header class="site-header">
       <div class="container header-container">
         <a href="#hero" class="brand-logo" title="ADLEY Innovation Studio">
           ADLEY <span class="brand-badge">STUDIO</span>
         </a>
 
         <!-- Desktop & Mobile Navigation (Pure CSS Checkbox Hack) -->
-        <nav class="nav-desktop" role="navigation" aria-label="Main Navigation">
+        <nav class="nav-desktop" aria-label="Main Navigation">
           <ul class="nav-links">
             <li><a href="#hero" class="nav-link">Trang Chủ</a></li>
             <li><a href="#about" class="nav-link">Giới Thiệu</a></li>
@@ -70,7 +69,7 @@
     <!-- ========================================================================
          MAIN CONTENT AREA (<main>)
          ======================================================================== -->
-    <main role="main">
+    <main>
 
       <!-- HERO SECTION -->
       <section id="hero" class="hero-section" aria-labelledby="hero-title">
@@ -90,7 +89,7 @@
             Chúng tôi định hình các chuẩn mực thiết kế hiện đại trên nền tảng HTML5 ngữ nghĩa và CSS thuần khiết.
           </p>
 
-          <div class="hero-cta-group animate__animated animate__fadeInUp">
+          <div class="hero-cta-group animate__animated animate__fadeInUp animate__delay-1s">
             <a href="#team" class="btn btn-primary">
               Khám Phá Thành Viên
             </a>
@@ -101,27 +100,27 @@
         </div>
       </section>
 
-      <!-- STATS COUNTER SECTION -->
+      <!-- STATS COUNTER (<dl class="stats-grid">) -->
       <section class="stats-section" aria-label="Key Team Statistics">
         <div class="container">
-          <div class="stats-grid">
+          <dl class="stats-grid">
             <div class="stat-item">
-              <div class="stat-value">09</div>
-              <div class="stat-label">Thành Viên Sáng Tạo</div>
+              <dt class="stat-value">09</dt>
+              <dd class="stat-label">Thành Viên Sáng Tạo</dd>
             </div>
             <div class="stat-item">
-              <div class="stat-value">06</div>
-              <div class="stat-label">Dự Án Trọng Điểm</div>
+              <dt class="stat-value">06</dt>
+              <dd class="stat-label">Dự Án Trọng Điểm</dd>
             </div>
             <div class="stat-item">
-              <div class="stat-value">100%</div>
-              <div class="stat-label">HTML5 & CSS3 Thuần</div>
+              <dt class="stat-value">100%</dt>
+              <dd class="stat-label">HTML5 & CSS3 Thuần</dd>
             </div>
             <div class="stat-item">
-              <div class="stat-value">0%</div>
-              <div class="stat-label">Phụ Thuộc Javascript</div>
+              <dt class="stat-value">0%</dt>
+              <dd class="stat-label">Phụ Thuộc Javascript</dd>
             </div>
-          </div>
+          </dl>
         </div>
       </section>
 
@@ -168,23 +167,19 @@
               </div>
             </div>
 
-            <aside class="about-banner" aria-label="Code Architecture Preview">
-              <div class="code-preview-box">
-                <code>
-                  /* ADLEY Architecture Stack */<br>
-                  :root {<br>
-                  &nbsp;&nbsp;--team: "ADLEY Crew";<br>
-                  &nbsp;&nbsp;--members: 9;<br>
-                  &nbsp;&nbsp;--advisor: "Thầy Bùi Xuân Cảnh";<br>
-                  &nbsp;&nbsp;--architecture: "MVC";<br>
-                  &nbsp;&nbsp;--theme: "Bright White & Ocean Blue";<br>
-                  &nbsp;&nbsp;--typography: "Roboto Font 100%";<br>
-                  &nbsp;&nbsp;--javascript: none !important;<br>
-                  &nbsp;&nbsp;--curriculum: "Week 1 to Week 6";<br>
-                  }
-                </code>
-              </div>
-            </aside>
+            <div class="about-banner" aria-label="Code Architecture Preview">
+              <pre class="code-preview-box"><code>/* ADLEY Architecture Stack */
+:root {
+  --team: "ADLEY Crew";
+  --members: 9;
+  --advisor: "Thầy Bùi Xuân Cảnh";
+  --architecture: "MVC";
+  --theme: "Bright White & Ocean Blue";
+  --typography: "Roboto Font 100%";
+  --javascript: none !important;
+  --curriculum: "Week 1 to Week 6";
+}</code></pre>
+            </div>
           </div>
         </div>
       </section>
@@ -207,13 +202,13 @@
               <div class="team-card">
                 <div class="card-front">
                   <figure class="member-image-box">
-                    <img src="assets/images/Bùi Xuân Cảnh - Giáo Viên Hướng Dẫn .png" alt="Thầy Bùi Xuân Cảnh - Giáo Viên Hướng Dẫn" class="member-photo" loading="lazy">
-                    <span class="member-badge-leader" style="background: #0284c7;">ADVISOR</span>
+                    <img src="assets/images/bui-xuan-canh.png" alt="Thầy Bùi Xuân Cảnh - Giảng Viên Hướng Dẫn" class="member-photo" loading="lazy">
+                    <span class="member-badge-advisor">ADVISOR</span>
                     <span class="member-badge-role">Giảng Viên Hướng Dẫn</span>
                   </figure>
                   <div class="member-info-front">
                     <h3 class="member-name">Bùi Xuân Cảnh</h3>
-                    <div class="member-mssv" style="color: #0284c7;">Khoa Công Nghệ Thông Tin - LHU</div>
+                    <div class="member-mssv">Khoa Công Nghệ Thông Tin - LHU</div>
                     <p class="member-headline">Giảng Viên Phụ Trách Học Phần Thiết Kế Web</p>
                     <div class="flip-hint"><span>Lật thẻ xem định hướng →</span></div>
                   </div>
@@ -247,7 +242,7 @@
               <div class="team-card">
                 <div class="card-front">
                   <figure class="member-image-box">
-                    <img src="assets/images/Hà Văn Kiên - 25CT111 ( tôi ).png" alt="Chân dung Hà Văn Kiên" class="member-photo" loading="lazy">
+                    <img src="assets/images/ha-van-kien.png" alt="Chân dung Hà Văn Kiên" class="member-photo" loading="lazy">
                     <span class="member-badge-leader">LEADER</span>
                     <span class="member-badge-role">Tech Lead</span>
                   </figure>
@@ -287,12 +282,12 @@
               <div class="team-card">
                 <div class="card-front">
                   <figure class="member-image-box">
-                    <img src="assets/images/Hoàng Minh Phát -25CT111.png" alt="Chân dung Hoàng Minh Phát" class="member-photo" loading="lazy">
+                    <img src="assets/images/hoang-minh-phat.png" alt="Chân dung Hoàng Minh Phát" class="member-photo" loading="lazy">
                     <span class="member-badge-role">UI/UX Specialist</span>
                   </figure>
                   <div class="member-info-front">
                     <h3 class="member-name">Hoàng Minh Phát</h3>
-                    <div class="member-mssv">MSSV: 25CT111</div>
+                    <div class="member-mssv">MSSV: 25CT112</div>
                     <p class="member-headline">Design System, Visual Interaction & Animations</p>
                     <div class="flip-hint"><span>Lật thẻ xem năng lực →</span></div>
                   </div>
@@ -326,7 +321,7 @@
               <div class="team-card">
                 <div class="card-front">
                   <figure class="member-image-box">
-                    <img src="assets/images/Nguyễn Đinh Khánh Trang - 25 EC111.png" alt="Chân dung Nguyễn Đinh Khánh Trang" class="member-photo" loading="lazy">
+                    <img src="assets/images/nguyen-dinh-khanh-trang.png" alt="Chân dung Nguyễn Đinh Khánh Trang" class="member-photo" loading="lazy">
                     <span class="member-badge-role">Creative Director</span>
                   </figure>
                   <div class="member-info-front">
@@ -365,7 +360,7 @@
               <div class="team-card">
                 <div class="card-front">
                   <figure class="member-image-box">
-                    <img src="assets/images/Đặng Thị Tố Ngân - 24MC112.png" alt="Chân dung Đặng Thị Tố Ngân" class="member-photo" loading="lazy">
+                    <img src="assets/images/dang-thi-to-ngan.png" alt="Chân dung Đặng Thị Tố Ngân" class="member-photo" loading="lazy">
                     <span class="member-badge-role">Product Designer</span>
                   </figure>
                   <div class="member-info-front">
@@ -404,7 +399,7 @@
               <div class="team-card">
                 <div class="card-front">
                   <figure class="member-image-box">
-                    <img src="assets/images/Nguyễn Hoàng Anh - CT111.png" alt="Chân dung Nguyễn Hoàng Anh" class="member-photo" loading="lazy">
+                    <img src="assets/images/nguyen-hoang-anh.png" alt="Chân dung Nguyễn Hoàng Anh" class="member-photo" loading="lazy">
                     <span class="member-badge-role">Semantic Engineer</span>
                   </figure>
                   <div class="member-info-front">
@@ -443,12 +438,12 @@
               <div class="team-card">
                 <div class="card-front">
                   <figure class="member-image-box">
-                    <img src="assets/images/Ngô Võ Nam - 25CT111.png" alt="Chân dung Ngô Võ Nam" class="member-photo" loading="lazy">
+                    <img src="assets/images/ngo-vo-nam.png" alt="Chân dung Ngô Võ Nam" class="member-photo" loading="lazy">
                     <span class="member-badge-role">Layout Architect</span>
                   </figure>
                   <div class="member-info-front">
                     <h3 class="member-name">Ngô Võ Nam</h3>
-                    <div class="member-mssv">MSSV: 25CT111</div>
+                    <div class="member-mssv">MSSV: 25CT113</div>
                     <p class="member-headline">CSS Grid Specialist & Multi-breakpoint Align</p>
                     <div class="flip-hint"><span>Lật thẻ xem năng lực →</span></div>
                   </div>
@@ -482,7 +477,7 @@
               <div class="team-card">
                 <div class="card-front">
                   <figure class="member-image-box">
-                    <img src="assets/images/Phan Văn Trận - 23EC111.png" alt="Chân dung Phan Văn Trận" class="member-photo" loading="lazy">
+                    <img src="assets/images/phan-van-tran.png" alt="Chân dung Phan Văn Trận" class="member-photo" loading="lazy">
                     <span class="member-badge-role">QA & Device Profiler</span>
                   </figure>
                   <div class="member-info-front">
@@ -521,7 +516,7 @@
               <div class="team-card">
                 <div class="card-front">
                   <figure class="member-image-box">
-                    <img src="assets/images/Trần Hoài Phương - 25MC111.png" alt="Chân dung Trần Hoài Phương" class="member-photo" loading="lazy">
+                    <img src="assets/images/tran-hoai-phuong.png" alt="Chân dung Trần Hoài Phương" class="member-photo" loading="lazy">
                     <span class="member-badge-role">Media Optimizer</span>
                   </figure>
                   <div class="member-info-front">
@@ -560,12 +555,12 @@
               <div class="team-card">
                 <div class="card-front">
                   <figure class="member-image-box">
-                    <img src="assets/images/Trần Quang Huy - 25CT111.png" alt="Chân dung Trần Quang Huy" class="member-photo" loading="lazy">
+                    <img src="assets/images/tran-quang-huy.png" alt="Chân dung Trần Quang Huy" class="member-photo" loading="lazy">
                     <span class="member-badge-role">Git & Audit Lead</span>
                   </figure>
                   <div class="member-info-front">
                     <h3 class="member-name">Trần Quang Huy</h3>
-                    <div class="member-mssv">MSSV: 25CT111</div>
+                    <div class="member-mssv">MSSV: 25CT114</div>
                     <p class="member-headline">Version Control, Prompt Log & Compliance</p>
                     <div class="flip-hint"><span>Lật thẻ xem năng lực →</span></div>
                   </div>
@@ -813,27 +808,18 @@
               </p>
 
               <div class="info-item">
-                <div class="info-bullet"></div>
-                <div>
-                  <strong>Địa Điểm Học Tập & Làm Việc</strong>
-                  <p>Khoa Công nghệ Thông tin - Trường Đại học Lạc Hồng (LHU)</p>
-                </div>
+                <strong>Địa Điểm Học Tập & Làm Việc</strong>
+                <p>Khoa Công nghệ Thông tin - Trường Đại học Lạc Hồng (LHU)</p>
               </div>
 
               <div class="info-item">
-                <div class="info-bullet"></div>
-                <div>
-                  <strong>Hộp Thư Đội Ngũ</strong>
-                  <p>adleyteam.lhu@gmail.com</p>
-                </div>
+                <strong>Hộp Thư Đội Ngũ</strong>
+                <p>adleyteam.lhu@gmail.com</p>
               </div>
 
               <div class="info-item">
-                <div class="info-bullet"></div>
-                <div>
-                  <strong>Trưởng Nhóm Liên Hệ</strong>
-                  <p>Hà Văn Kiên (Lớp 25CT111)</p>
-                </div>
+                <strong>Trưởng Nhóm Liên Hệ</strong>
+                <p>Hà Văn Kiên (Lớp 25CT111)</p>
               </div>
             </div>
 
@@ -854,7 +840,7 @@
                 <textarea id="contact-message" class="form-textarea" rows="4" placeholder="Mô tả ý tưởng hoặc yêu cầu của bạn..." required></textarea>
               </div>
 
-              <button type="submit" class="btn btn-primary" style="width: 100%;">
+              <button type="submit" class="btn btn-primary btn-full">
                 Gửi Tin Nhắn Ngay
               </button>
             </form>
@@ -867,11 +853,11 @@
     <!-- ========================================================================
          FOOTER COMPONENT (<footer>)
          ======================================================================== -->
-    <footer class="site-footer" role="contentinfo">
+    <footer class="site-footer">
       <div class="container">
         <div class="footer-grid">
           <div class="footer-brand">
-            <div class="brand-logo" style="color:#ffffff;">ADLEY STUDIO</div>
+            <div class="brand-logo">ADLEY STUDIO</div>
             <p>
               Đội ngũ thiết kế & phát triển giải pháp giao diện hàng đầu LHU. 
               Sản phẩm phục vụ bài thi Giữa kỳ Học phần Thiết kế Web - Kỹ năng Vibe Coding & Prompt Engineering.
@@ -917,35 +903,33 @@
     </footer>
 
     <!-- ========================================================================
-         FLOATING ACTION BUTTON (FAB) - WEEK 5 CURRICULUM
+         FLOATING ACTION BUTTON (FAB LINK - WEEK 5 CURRICULUM)
          ======================================================================== -->
-    <aside class="fab-container" aria-label="Quick Action">
-      <a href="#contact" class="fab-btn" title="Liên hệ nhanh với Trưởng nhóm ADLEY">
-        Liên Hệ Ngay
-      </a>
-    </aside>
+    <a href="#contact" class="fab-btn" title="Liên hệ nhanh với Trưởng nhóm ADLEY">
+      Liên Hệ Ngay
+    </a>
 
   </div> <!-- End .site-wrapper -->
 
 
   <!-- ==========================================================================
-       PURE CSS MODALS FOR TEAM MEMBERS & MENTOR (:target pseudo-class - ZERO JS)
+       PURE CSS MODALS (<dialog class="modal-overlay"> - :target ZERO JS)
        ========================================================================== -->
 
   <!-- Modal Advisor: Thầy Bùi Xuân Cảnh -->
-  <div id="modal-canh" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-canh-title">
+  <dialog id="modal-canh" class="modal-overlay">
     <div class="modal-box">
       <a href="#team" class="modal-close-btn" aria-label="Đóng popup">&times;</a>
       <div class="modal-content-grid">
-        <img src="assets/images/Bùi Xuân Cảnh - Giáo Viên Hướng Dẫn .png" alt="Thầy Bùi Xuân Cảnh" class="modal-avatar">
+        <img src="assets/images/bui-xuan-canh.png" alt="Thầy Bùi Xuân Cảnh" class="modal-avatar">
         <div>
-          <span class="member-badge-leader" style="position:static; display:inline-block; margin-bottom:8px; background: #0284c7;">GIẢNG VIÊN HƯỚNG DẪN</span>
-          <h3 id="modal-canh-title" class="member-name">Thầy Bùi Xuân Cảnh</h3>
-          <p class="member-mssv" style="color: #0284c7;">Khoa Công Nghệ Thông Tin - Đại Học Lạc Hồng</p>
-          <p class="member-headline" style="margin-top:8px;">
+          <span class="member-badge-modal-advisor">GIẢNG VIÊN HƯỚNG DẪN</span>
+          <h3 class="member-name">Thầy Bùi Xuân Cảnh</h3>
+          <p class="member-mssv">Khoa Công Nghệ Thông Tin - Đại Học Lạc Hồng</p>
+          <p class="member-headline">
             Giảng viên hướng dẫn trực tiếp học phần Thiết kế Web. Định hướng sinh viên phương pháp Vibe Coding, làm chủ các công cụ AI, tuân thủ chặt chẽ tiêu chuẩn Semantic HTML5, CSS Variables và rèn luyện kỹ năng phân tầng dự án chuyên nghiệp.
           </p>
-          <div class="skills-wrapper" style="margin-top:12px;">
+          <div class="skills-wrapper">
             <div class="skill-tags">
               <span class="skill-tag">Web Technologies</span>
               <span class="skill-tag">Vibe Coding Mentorship</span>
@@ -955,22 +939,22 @@
         </div>
       </div>
     </div>
-  </div>
+  </dialog>
 
   <!-- Modal 1: Hà Văn Kiên -->
-  <div id="modal-kien" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-kien-title">
+  <dialog id="modal-kien" class="modal-overlay">
     <div class="modal-box">
       <a href="#team" class="modal-close-btn" aria-label="Đóng popup">&times;</a>
       <div class="modal-content-grid">
-        <img src="assets/images/Hà Văn Kiên - 25CT111 ( tôi ).png" alt="Hà Văn Kiên" class="modal-avatar">
+        <img src="assets/images/ha-van-kien.png" alt="Hà Văn Kiên" class="modal-avatar">
         <div>
-          <span class="member-badge-leader" style="position:static; display:inline-block; margin-bottom:8px;">LEADER</span>
-          <h3 id="modal-kien-title" class="member-name">Hà Văn Kiên</h3>
+          <span class="member-badge-modal-leader">LEADER</span>
+          <h3 class="member-name">Hà Văn Kiên</h3>
           <p class="member-mssv">Lớp: 25CT111 • Vai trò: Tech Lead & Architect</p>
-          <p class="member-headline" style="margin-top:8px;">
+          <p class="member-headline">
             Đảm nhiệm vai trò Trưởng nhóm, người khởi tạo cấu trúc dự án MVC, hoạch định toàn bộ luồng Semantic HTML5, hệ màu CSS Variables, loại bỏ triệt để Javascript theo đúng đề bài và quản lý file PROMPT_LOG.md.
           </p>
-          <div class="skills-wrapper" style="margin-top:12px;">
+          <div class="skills-wrapper">
             <div class="skill-tags">
               <span class="skill-tag">MVC Design</span>
               <span class="skill-tag">HTML5 Semantics</span>
@@ -981,21 +965,21 @@
         </div>
       </div>
     </div>
-  </div>
+  </dialog>
 
   <!-- Modal 2: Hoàng Minh Phát -->
-  <div id="modal-phat" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-phat-title">
+  <dialog id="modal-phat" class="modal-overlay">
     <div class="modal-box">
       <a href="#team" class="modal-close-btn" aria-label="Đóng popup">&times;</a>
       <div class="modal-content-grid">
-        <img src="assets/images/Hoàng Minh Phát -25CT111.png" alt="Hoàng Minh Phát" class="modal-avatar">
+        <img src="assets/images/hoang-minh-phat.png" alt="Hoàng Minh Phát" class="modal-avatar">
         <div>
-          <h3 id="modal-phat-title" class="member-name">Hoàng Minh Phát</h3>
-          <p class="member-mssv">Lớp: 25CT111 • Vai trò: UI/UX Specialist</p>
-          <p class="member-headline" style="margin-top:8px;">
+          <h3 class="member-name">Hoàng Minh Phát</h3>
+          <p class="member-mssv">Lớp: 25CT112 • Vai trò: UI/UX Specialist</p>
+          <p class="member-headline">
             Phụ trách nghiên cứu giao diện người dùng, lựa chọn các sắc độ màu chuyển tiếp trong variables.css, hiệu chỉnh bóng đổ đổ khối nhẹ nhàng và tối ưu tỷ lệ Typography Roboto chuẩn xác trên máy tính.
           </p>
-          <div class="skills-wrapper" style="margin-top:12px;">
+          <div class="skills-wrapper">
             <div class="skill-tags">
               <span class="skill-tag">Color Theory</span>
               <span class="skill-tag">Roboto Typography</span>
@@ -1005,21 +989,21 @@
         </div>
       </div>
     </div>
-  </div>
+  </dialog>
 
   <!-- Modal 3: Nguyễn Đinh Khánh Trang -->
-  <div id="modal-trang" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-trang-title">
+  <dialog id="modal-trang" class="modal-overlay">
     <div class="modal-box">
       <a href="#team" class="modal-close-btn" aria-label="Đóng popup">&times;</a>
       <div class="modal-content-grid">
-        <img src="assets/images/Nguyễn Đinh Khánh Trang - 25 EC111.png" alt="Nguyễn Đinh Khánh Trang" class="modal-avatar">
+        <img src="assets/images/nguyen-dinh-khanh-trang.png" alt="Nguyễn Đinh Khánh Trang" class="modal-avatar">
         <div>
-          <h3 id="modal-trang-title" class="member-name">Nguyễn Đinh Khánh Trang</h3>
+          <h3 class="member-name">Nguyễn Đinh Khánh Trang</h3>
           <p class="member-mssv">Lớp: 25EC111 • Vai trò: Creative Director</p>
-          <p class="member-headline" style="margin-top:8px;">
+          <p class="member-headline">
             Xây dựng câu chuyện thương hiệu ADLEY, định hướng hình ảnh sáng sủa, đột phá, truyền cảm hứng đam mê công nghệ cho tập thể và phối hợp xây dựng kịch bản nội dung các mục trên website.
           </p>
-          <div class="skills-wrapper" style="margin-top:12px;">
+          <div class="skills-wrapper">
             <div class="skill-tags">
               <span class="skill-tag">Creative Concept</span>
               <span class="skill-tag">Brand Strategy</span>
@@ -1029,21 +1013,21 @@
         </div>
       </div>
     </div>
-  </div>
+  </dialog>
 
   <!-- Modal 4: Đặng Thị Tố Ngân -->
-  <div id="modal-ngan" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-ngan-title">
+  <dialog id="modal-ngan" class="modal-overlay">
     <div class="modal-box">
       <a href="#team" class="modal-close-btn" aria-label="Đóng popup">&times;</a>
       <div class="modal-content-grid">
-        <img src="assets/images/Đặng Thị Tố Ngân - 24MC112.png" alt="Đặng Thị Tố Ngân" class="modal-avatar">
+        <img src="assets/images/dang-thi-to-ngan.png" alt="Đặng Thị Tố Ngân" class="modal-avatar">
         <div>
-          <h3 id="modal-ngan-title" class="member-name">Đặng Thị Tố Ngân</h3>
+          <h3 class="member-name">Đặng Thị Tố Ngân</h3>
           <p class="member-mssv">Lớp: 24MC112 • Vai trò: Product Designer</p>
-          <p class="member-headline" style="margin-top:8px;">
+          <p class="member-headline">
             Đảm nhiệm thiết kế trợ năng và khả năng phản hồi trực quan. Chuyên trách thử nghiệm khả năng điều hướng bằng bàn phím (tabindex, :focus) và tỷ lệ tương phản chữ.
           </p>
-          <div class="skills-wrapper" style="margin-top:12px;">
+          <div class="skills-wrapper">
             <div class="skill-tags">
               <span class="skill-tag">Accessibility a11y</span>
               <span class="skill-tag">WCAG Standards</span>
@@ -1053,21 +1037,21 @@
         </div>
       </div>
     </div>
-  </div>
+  </dialog>
 
   <!-- Modal 5: Nguyễn Hoàng Anh -->
-  <div id="modal-anh" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-anh-title">
+  <dialog id="modal-anh" class="modal-overlay">
     <div class="modal-box">
       <a href="#team" class="modal-close-btn" aria-label="Đóng popup">&times;</a>
       <div class="modal-content-grid">
-        <img src="assets/images/Nguyễn Hoàng Anh - CT111.png" alt="Nguyễn Hoàng Anh" class="modal-avatar">
+        <img src="assets/images/nguyen-hoang-anh.png" alt="Nguyễn Hoàng Anh" class="modal-avatar">
         <div>
-          <h3 id="modal-anh-title" class="member-name">Nguyễn Hoàng Anh</h3>
+          <h3 class="member-name">Nguyễn Hoàng Anh</h3>
           <p class="member-mssv">Lớp: CT111 • Vai trò: Semantic Engineer</p>
-          <p class="member-headline" style="margin-top:8px;">
+          <p class="member-headline">
             Chuyên gia cấu trúc thẻ ngữ nghĩa HTML5, cam kết không dùng các thẻ div bừa bãi. Ứng dụng xuất sắc các thẻ header, main, section, article, figure, summary vào dự án.
           </p>
-          <div class="skills-wrapper" style="margin-top:12px;">
+          <div class="skills-wrapper">
             <div class="skill-tags">
               <span class="skill-tag">Semantic HTML5</span>
               <span class="skill-tag">SEO Schema</span>
@@ -1077,21 +1061,21 @@
         </div>
       </div>
     </div>
-  </div>
+  </dialog>
 
   <!-- Modal 6: Ngô Võ Nam -->
-  <div id="modal-nam" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-nam-title">
+  <dialog id="modal-nam" class="modal-overlay">
     <div class="modal-box">
       <a href="#team" class="modal-close-btn" aria-label="Đóng popup">&times;</a>
       <div class="modal-content-grid">
-        <img src="assets/images/Ngô Võ Nam - 25CT111.png" alt="Ngô Võ Nam" class="modal-avatar">
+        <img src="assets/images/ngo-vo-nam.png" alt="Ngô Võ Nam" class="modal-avatar">
         <div>
-          <h3 id="modal-nam-title" class="member-name">Ngô Võ Nam</h3>
-          <p class="member-mssv">Lớp: 25CT111 • Vai trò: Layout Architect</p>
-          <p class="member-headline" style="margin-top:8px;">
+          <h3 class="member-name">Ngô Võ Nam</h3>
+          <p class="member-mssv">Lớp: 25CT113 • Vai trò: Layout Architect</p>
+          <p class="member-headline">
             Xây dựng bộ khung dàn trang CSS Grid thông minh theo tuần 3 & 4. Xử lý các điểm ngắt Responsive mượt mà giúp card 9 thành viên hiển thị hoàn hảo ở mọi độ rộng màn hình.
           </p>
-          <div class="skills-wrapper" style="margin-top:12px;">
+          <div class="skills-wrapper">
             <div class="skill-tags">
               <span class="skill-tag">CSS Grid System</span>
               <span class="skill-tag">Adaptive Layout</span>
@@ -1101,21 +1085,21 @@
         </div>
       </div>
     </div>
-  </div>
+  </dialog>
 
   <!-- Modal 7: Phan Văn Trận -->
-  <div id="modal-tran" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-tran-title">
+  <dialog id="modal-tran" class="modal-overlay">
     <div class="modal-box">
       <a href="#team" class="modal-close-btn" aria-label="Đóng popup">&times;</a>
       <div class="modal-content-grid">
-        <img src="assets/images/Phan Văn Trận - 23EC111.png" alt="Phan Văn Trận" class="modal-avatar">
+        <img src="assets/images/phan-van-tran.png" alt="Phan Văn Trận" class="modal-avatar">
         <div>
-          <h3 id="modal-tran-title" class="member-name">Phan Văn Trận</h3>
+          <h3 class="member-name">Phan Văn Trận</h3>
           <p class="member-mssv">Lớp: 23EC111 • Vai trò: QA & Device Profiler</p>
-          <p class="member-headline" style="margin-top:8px;">
+          <p class="member-headline">
             Thực hiện kiểm thử tương thích hiển thị trên nhiều thiết bị iPhone, Android và các trình duyệt Chrome, Safari, Firefox. Bảo đảm không có lỗi giật lag hay vỡ bố cục.
           </p>
-          <div class="skills-wrapper" style="margin-top:12px;">
+          <div class="skills-wrapper">
             <div class="skill-tags">
               <span class="skill-tag">Cross Browser QA</span>
               <span class="skill-tag">DevTools Profiling</span>
@@ -1125,21 +1109,21 @@
         </div>
       </div>
     </div>
-  </div>
+  </dialog>
 
   <!-- Modal 8: Trần Hoài Phương -->
-  <div id="modal-phuong" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-phuong-title">
+  <dialog id="modal-phuong" class="modal-overlay">
     <div class="modal-box">
       <a href="#team" class="modal-close-btn" aria-label="Đóng popup">&times;</a>
       <div class="modal-content-grid">
-        <img src="assets/images/Trần Hoài Phương - 25MC111.png" alt="Trần Hoài Phương" class="modal-avatar">
+        <img src="assets/images/tran-hoai-phuong.png" alt="Trần Hoài Phương" class="modal-avatar">
         <div>
-          <h3 id="modal-phuong-title" class="member-name">Trần Hoài Phương</h3>
+          <h3 class="member-name">Trần Hoài Phương</h3>
           <p class="member-mssv">Lớp: 25MC111 • Vai trò: Media Optimizer</p>
-          <p class="member-headline" style="margin-top:8px;">
+          <p class="member-headline">
             Chuẩn hóa hệ thống hình ảnh thành viên trong folder assets/images, căn chỉnh tỷ lệ khung hình cân đối, hiệu ứng trượt zoom hình ảnh khi người dùng tương tác lật thẻ.
           </p>
-          <div class="skills-wrapper" style="margin-top:12px;">
+          <div class="skills-wrapper">
             <div class="skill-tags">
               <span class="skill-tag">Asset Processing</span>
               <span class="skill-tag">Responsive Media</span>
@@ -1149,21 +1133,21 @@
         </div>
       </div>
     </div>
-  </div>
+  </dialog>
 
   <!-- Modal 9: Trần Quang Huy -->
-  <div id="modal-huy" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-huy-title">
+  <dialog id="modal-huy" class="modal-overlay">
     <div class="modal-box">
       <a href="#team" class="modal-close-btn" aria-label="Đóng popup">&times;</a>
       <div class="modal-content-grid">
-        <img src="assets/images/Trần Quang Huy - 25CT111.png" alt="Trần Quang Huy" class="modal-avatar">
+        <img src="assets/images/tran-quang-huy.png" alt="Trần Quang Huy" class="modal-avatar">
         <div>
-          <h3 id="modal-huy-title" class="member-name">Trần Quang Huy</h3>
-          <p class="member-mssv">Lớp: 25CT111 • Vai trò: Git & Audit Lead</p>
-          <p class="member-headline" style="margin-top:8px;">
+          <h3 class="member-name">Trần Quang Huy</h3>
+          <p class="member-mssv">Lớp: 25CT114 • Vai trò: Git & Audit Lead</p>
+          <p class="member-headline">
             Theo dõi nhật ký commit Git, kiểm tra tài liệu PROMPT_LOG.md và README.md, đối chiếu với barem 10 điểm của đề thi giữa kỳ nhằm đảm bảo chất lượng bài thi đạt điểm tuyệt đối.
           </p>
-          <div class="skills-wrapper" style="margin-top:12px;">
+          <div class="skills-wrapper">
             <div class="skill-tags">
               <span class="skill-tag">Git Management</span>
               <span class="skill-tag">Rubric Audit</span>
@@ -1173,7 +1157,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </dialog>
 
 </body>
 </html>

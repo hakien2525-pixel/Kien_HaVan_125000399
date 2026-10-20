@@ -1,11 +1,7 @@
 /* ==========================================================================
-   DESIGN SYSTEM - LIGHT BLUE PALETTE (TRẮNG SÁNG XANH DƯƠNG THANH LỊCH)
-   Form chữ: 100% Roboto chuẩn
-   Màu chủ đạo: Nền trắng tuyết/xanh nhạt, Điểm nhấn Xanh Dương Cyan/Ocean Blue
-   Hoàn toàn không JavaScript - Kiến trúc CSS3 Variables Buổi 1 - 6
+   DESIGN SYSTEM - LIGHT BLUE PALETTE & CSS VARIABLES
+   Chuẩn mực CSS3 Variables theo Giáo trình Buổi 1 - 6
    ========================================================================== */
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 
 :root {
   /* Color Palette - Sáng Trắng Xanh Dương (Bright White & Ocean Blue) */
@@ -17,15 +13,30 @@
   --accent-glow: rgba(37, 99, 235, 0.15);
   --secondary: #0ea5e9;
 
+  /* Neutral & Dark Accents */
+  --code-bg: #0f172a;            /* Nền code đen phiến đá */
+  --code-text: #38bdf8;          /* Màu chữ code neon sky */
+  --danger: #ef4444;             /* Màu nút đóng / cảnh báo */
+  --pulse-color: #0284c7;        /* Màu chấm nhịp tim pulse */
+
   /* Background Colors - Tông Sáng Trắng Thanh Khiết */
   --bg-main: #f8fafc;            /* Nền trắng xám băng tinh khiết */
   --bg-card: #ffffff;            /* Thẻ trắng tinh */
   --bg-card-hover: #ffffff;
   --bg-surface: #f0f9ff;         /* Bề mặt xanh nhạt thanh mát */
-  --bg-header: rgba(255, 255, 255, 0.92);
+  --bg-header: rgba(255, 255, 255, 0.94);
+  --modal-backdrop: rgba(15, 23, 42, 0.6);
+  --footer-bg: #0f172a;
+  --footer-border: #1e293b;
+  --footer-text-muted: #94a3b8;
+  --footer-bottom-text: #64748b;
+
+  /* Border Colors */
   --border-color: #e2e8f0;       /* Đường viền xám sáng nhẹ */
   --border-focus: #38bdf8;
   --border-glow: rgba(2, 132, 199, 0.25);
+  --border-badge: #bae6fd;
+  --border-separator: #f1f5f9;
 
   /* Typography Colors - Độ Tương Phản Chuẩn WCAG */
   --text-main: #0f172a;          /* Màu chữ đen phiến đá đậm dễ đọc */
@@ -33,8 +44,9 @@
   --text-accent: #0284c7;        /* Xanh dương nhận diện */
   --text-white: #ffffff;
 
-  /* Typography Scale - 100% Roboto */
+  /* Typography Scale - 100% Roboto & Roboto Mono */
   --font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'Roboto Mono', 'Fira Code', Consolas, monospace;
   --font-xs: 0.75rem;
   --font-sm: 0.875rem;
   --font-base: 1rem;
@@ -45,16 +57,18 @@
   --font-4xl: 2.5rem;
   --font-5xl: 3.25rem;
 
-  /* Spacing System */
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-6: 1.5rem;
-  --space-8: 2rem;
-  --space-12: 3rem;
-  --space-16: 4rem;
-  --space-24: 5.5rem;
+  /* Spacing System - Đầy Đủ Từng Mức (Khắc Phục Lỗ Hổng Biến Chưa Khai Báo) */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px - FIX: Khai báo đầy đủ cho .value-list gap */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px - FIX: Khai báo đầy đủ cho .faq-section padding */
+  --space-24: 5.5rem;   /* 88px */
 
   /* Layout & Corners */
   --container-max: 1200px;
@@ -74,13 +88,4 @@
   --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 0.55s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Chế độ Tương phản Cao / Xanh Biển Đậm (Toggle bằng Pure CSS) */
-#contrast-toggle:checked ~ .site-wrapper {
-  --bg-main: #f0fdf4;
-  --bg-surface: #ecfeff;
-  --primary: #0369a1;
-  --accent: #1d4ed8;
-  --border-color: #cbd5e1;
 }

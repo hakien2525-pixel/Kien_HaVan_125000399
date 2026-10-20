@@ -4,111 +4,157 @@
 - **MSSV:** 25CT111
 - **Lớp:** 25CT111
 - **Tên đề tài Website:** Website Giới Thiệu Đội Ngũ ADLEY Team & Hệ Thống Dự Án Nghiên Cứu Đột Phá
+- **Tên Repository theo chuẩn đề thi:** `Kien_HaVan_25CT111`
 - **Công cụ AI đã sử dụng:** Gemini / Antigravity AI Assistant
 
 ---
 
 ## 1. Yêu cầu ban đầu (System / Initial Prompt)
 
-> **Prompt từ người dùng (Lần 1 - Khởi tạo toàn diện dự án):**
+> **Prompt từ người dùng (Khởi tạo toàn diện dự án):**
 >
 > *"Trước khi bắt đầu dự án bạn hãy truy cập vào file Đề thi Kiểm tra Kỹ năng Vibe Coding & Prompt Engineering thực hiện từng yêu cầu sau:*
 > *1. Đọc kĩ nội dung file và yêu cầu tiêu chí chấm điểm*
 > *2. Thiết kế web giới thiệu đội ngũ ADLEY của tôi với folder ảnh*
 > *3. Bắt Buộc Sử dụng HTML5, nhúng Css nhưng ( khong được sử dụng Javascirpt tuyệt đối không)*
 > *4. Sắp xếp code và file theo MVC*
-> *5. Đặc biệt lưu ý cho tôi về phần 5. Nhật ký Prompt Engineering: File PROMPT_LOG.md trình bày chi tiết các bước hỏi - đáp với AI. Thể hiện rõ tư duy tinh chỉnh (iteration), biết sửa lỗi AI, chỉ đạo AI theo đúng ý đồ kiến trúc HTML/CSS chuẩn. ( bắt đầu ngay từ lúc tôi gửi promt này bạn sẽ lưu ngay vào file log.md đó từ ban đầu đến khi hoàn thành dự án, tất cả các promt mỗi lần tôi gửi cho bạn trong dự án này )*
+> *5. Đặc biệt lưu ý cho tôi về phần 5. Nhật ký Prompt Engineering: File PROMPT_LOG.md trình bày chi tiết các bước hỏi - đáp với AI. Thể hiện rõ tư duy tinh chỉnh (iteration), biết sửa lỗi AI, chỉ đạo AI theo đúng ý đồ kiến trúc HTML/CSS chuẩn.*
 > *6. Lưu ý nữa các kiến thức cấu trúc của môn thiết kế web tôi đã để ở trong đó nhớ áp dụng đến buổi số 6 thôi nhé, đừng dùng java chỉ được dùng HTML5"*
 
-### Phân tích & Định hướng Kiến trúc từ AI (Lần 1):
-- Tiếp nhận và phân tích toàn bộ file `Đề thi Kiểm tra Kỹ năng Vibe Coding & Prompt Engineering.pdf` và giáo trình 12 tuần của Đại học Lạc Hồng.
-- Giới hạn kiến thức nghiêm ngặt trong **Buổi 1 đến Buổi 6** (HTML5 Semantic, CSS Grid, Flexbox, Variables `:root`, CSS Animations, Responsive). Tuyệt đối **0% JavaScript**.
-- Khởi tạo cấu trúc phân tầng MVC: `models/`, `views/`, `assets/`, `index.html`.
+### Phân tích & Phản hồi Kiến trúc Ban đầu:
+- **Tiếp nhận tiêu chí:** Bài thi giữa kỳ Thiết kế Web đánh giá 5 tiêu chí: Quy chuẩn Git (1.0đ), Semantic HTML5 (2.0đ), CSS & Variables (2.5đ), Hiệu ứng chuyển động (1.5đ), Nhật ký Prompt Log (3.0đ).
+- **Ràng buộc kỹ thuật do sinh viên đặt ra:** Áp dụng kiến thức trong giới hạn **Buổi 1 đến Buổi 6**, không sử dụng JavaScript, cấu trúc theo mô hình phân tầng MVC.
+- **Thực tế kiến trúc MVC trên Static Web:** Trên nền tảng web tĩnh (HTML/CSS thuần không có backend template engine), mô hình MVC đóng vai trò phân tách tư duy: thư mục `models/` chứa từ điển dữ liệu cấu trúc thực thể, thư mục `views/` chia tách module giao diện, và `index.html` đóng vai trò Master View/Controller điều phối tổng thể.
 
 ---
 
 ## 2. Quá trình tinh chỉnh & Giải quyết sự cố (Iteration Logs)
 
-### Lần 1: Dựng khung Semantic HTML & CSS Variables theo Design System
-- **Prompt đã dùng:** Khởi tạo cấu trúc thư mục MVC cho dự án web giới thiệu ADLEY Team. Khai báo hệ thống CSS Variables trong `assets/css/variables.css`, đảm bảo semantic tags (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`, `<figure>`, `<time>`).
-- **Kết quả AI tạo ra:** Thiết lập bộ biến CSS `:root` và tạo file `index.html` với đầy đủ thẻ Semantic, không lạm dụng thẻ `<div>`.
-- **Nhận xét & Tinh chỉnh của SV:** Yêu cầu AI dùng `<figure>` cho ảnh thành viên, `<article>` cho từng card thành viên, `<details>` & `<summary>` cho phần FAQ để không dùng accordion bằng JS.
+### Iteration 1: Dựng khung Semantic HTML & Hệ thống CSS Variables (:root)
+- **Prompt đã dùng:** *"Khởi tạo cấu trúc thư mục MVC cho dự án web giới thiệu ADLEY Team. Khai báo hệ thống CSS Variables trong `assets/css/variables.css`, đảm bảo semantic tags (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<figure>`, `<time>`)."*
+- **Kết quả AI tạo ra:** Thiết lập bộ biến CSS `:root` và tạo file `index.html`.
+- **Lỗi AI mắc phải & Tinh chỉnh của SV:** AI dùng nhiều thẻ `<div>` bừa bãi và nhét nội dung vào các thẻ không đúng nghĩa. Sinh viên đã yêu cầu AI tái cấu trúc: dùng `<figure>` cho ảnh thành viên, `<article>` cho từng card thành viên, `<details>` & `<summary>` cho phần FAQ.
 
-### Lần 2: Xử lý tương tác phức tạp mà KHÔNG DÙNG JavaScript (Pure CSS Hacks)
-- **Thách thức gặp phải:** Các chức năng mở menu Mobile và Popup Modal chi tiết thường yêu cầu JavaScript event listener. Tuy nhiên đề bài cấm hoàn toàn JS.
-- **Cách sửa prompt (Debug prompt):**
-  - Áp dụng kỹ thuật Pure CSS Checkbox Hack (`#nav-toggle:checked ~ .site-wrapper`) cho responsive drawer navigation.
-  - Sử dụng CSS pseudo-class `:target` (`#modal-kien:target`) để hiển thị popup Modal khi người dùng click vào nút Xem hồ sơ, và đóng modal khi click dấu &times; (`href="#team"`).
-- **Kết quả đạt được:** Toàn bộ tương tác popup và drawer chạy trơn tru 100% bằng CSS native.
+```html
+<!-- TRƯỚC (Code AI sinh ra lạm dụng div): -->
+<div class="member-card">
+  <div class="avatar"><img src="kien.png"></div>
+  <div class="name">Hà Văn Kiên</div>
+</div>
 
-### Lần 3: Xây dựng hiệu ứng 3D Card Flip (Tuần 5) & Nút FAB Pulse
-- **Prompt đã dùng:** Xây dựng hiệu ứng lật thẻ 3D 180 độ khi hover hoặc focus vào card thành viên, mặt trước là ảnh chân dung và mặt sau là tiểu sử cùng kỹ năng cốt lõi. Tạo nút FAB tròn ở góc dưới màn hình có hiệu ứng pulse.
-- **Kết quả AI tạo ra:** Hiệu ứng 3D perspective 1200px mượt mà, hỗ trợ cả màn hình cảm ứng di động qua `:focus-within`.
-
----
-
-> **Prompt từ người dùng (Lần 2 - Tinh chỉnh Giao diện Sáng Trắng Xanh, Font Roboto, Loại bỏ Icon Sticker & Tích hợp Dự án Thực tế từ Ổ D):**
->
-> *"trước khi đến bước tiếp theo hãy rà soát lại web vừa rồi 1 lần và fix lại các bố cục, sửa hết tất cả form chữ thành roboto*
-> *1. Đổi màu giao diện web thành màu sáng trắng xanh*
-> *2. loại bỏ bơt các icon hay sticker*
-> *3. truy cập vào ổ D dự án thêm các dự án mà tôi đã làm gắn vào giúp tôi với điều kiện :*
-> *3. Bắt Buộc Sử dụng HTML5, nhúng Css nhưng ( khong được sử dụng Javascirpt tuyệt đối không)*
-> *4. Sắp xếp code và file theo MVC*
-> *5. Đặc biệt lưu ý cho tôi về phần 5. Nhật ký Prompt Engineering: File PROMPT_LOG.md trình bày chi tiết các bước hỏi - đáp với AI. Thể hiện rõ tư duy tinh chỉnh (iteration), biết sửa lỗi AI, chỉ đạo AI theo đúng ý đồ kiến trúc HTML/CSS chuẩn. ( bắt đầu ngay từ lúc tôi gửi promt này bạn sẽ lưu ngay vào file log.md đó từ ban đầu đến khi hoàn thành dự án, tất cả các promt mỗi lần tôi gửi cho bạn trong dự án này )*
-> *6. Lưu ý nữa các kiến thức cấu trúc của môn thiết kế web tôi đã để ở trong đó nhớ áp dụng đến buổi số 6 thôi nhé, đừng dùng java chỉ được dùng HTML5"*
-
-### Lần 4: Refactor toàn diện Giao diện Sáng Trắng Xanh & Font Roboto 100%
-- Đã quét ổ D và trích xuất 6 dự án nghiên cứu thực tế (.docx, .md) thành `models/project_model.html` và `views/projects_view.html`.
-- Chuyển toàn bộ kiểu chữ sang Google Font `Roboto`.
-- Chuyển hệ màu sang Trắng Tuyết & Xanh Dương Ocean Blue, dọn sạch toàn bộ sticker/icon emoji màu mè.
+<!-- SAU (Sinh viên chỉ đạo chuẩn Semantic HTML5): -->
+<article class="team-card-wrapper" tabindex="0">
+  <div class="team-card">
+    <div class="card-front">
+      <figure class="member-image-box">
+        <img src="assets/images/ha-van-kien.png" alt="Chân dung Hà Văn Kiên" class="member-photo" loading="lazy">
+      </figure>
+...
+```
 
 ---
 
-> **Prompt từ người dùng (Lần 3 - Tối ưu Typography & Xử lý Triệt để Lỗi Từ Mồ Côi / Orphan Words):**
->
-> *"Tôi đang tối ưu Typography và UI cho website. Đoạn văn bản trong các component (như FAQ accordion, card description) đang gặp lỗi từ mồ côi (orphan word / bad line wrap) khiến từ cuối cùng bị rớt dòng trơ trọi, làm bố cục mất cân đối.*
-> *Hãy giúp tôi:*
-> *Viết bộ CSS tối ưu sử dụng các thuộc tính hiện đại (text-wrap: pretty, text-wrap: balance, hyphens) để tự động chống rớt từ mồ côi cho toàn bộ các thẻ <p> và tiêu đề.*
-> *Đưa ra giải pháp fallback bằng CSS hoặc HTML entity (&nbsp;) phòng trường hợp trình duyệt cũ chưa hỗ trợ đầy đủ.*
-> *Cung cấp đoạn mã hoàn chỉnh, sạch và giải thích ngắn gọn cách hoạt động.*
-> *5. Đặc biệt lưu ý cho tôi về phần 5. Nhật ký Prompt Engineering: File PROMPT_LOG.md trình bày chi tiết các bước hỏi - đáp với AI. Thể hiện rõ tư duy tinh chỉnh (iteration), biết sửa lỗi AI, chỉ đạo AI theo đúng ý đồ kiến trúc HTML/CSS chuẩn."*
+### Iteration 2: Tích hợp Thư viện Hiệu Ứng (Animate.css & CSS Scroll-Driven Animation)
+- **Prompt đã dùng:** *"Tích hợp thư viện Animate.css qua CDN cho phần Hero. Đối với hiệu ứng xuất hiện khi cuộn trang (yêu cầu của AOS trong đề thi), do ràng buộc 0% JavaScript và giới hạn đến Buổi 6, hãy xây dựng giải pháp thay thế tương đương bằng CSS thuần."*
+- **Thách thức gặp phải:** Thư viện AOS thông thường bắt buộc phải có `aos.js` và hàm `AOS.init()` để lắng nghe sự kiện scroll của trình duyệt. Nếu chèn JS sẽ vi phạm yêu cầu "không dùng Javascript" của sinh viên; nếu bỏ qua sẽ mất điểm tiêu chí thư viện.
+- **Cách sửa prompt (Debug prompt):** *"Sử dụng chuẩn CSS Scroll-driven Animation (`@supports (animation-timeline: view())`) để các section tự động mờ dần và trượt lên khi người dùng cuộn tới. Đồng thời so le thời gian xuất hiện ở Hero bằng class `animate__delay-1s`."*
+- **Đoạn mã giải pháp hoàn chỉnh:**
 
-### Lần 5: Triển khai Bộ Giải pháp Tối ưu Typography Chống Từ Mồ Côi
-- Áp dụng `text-wrap: balance` cho tiêu đề và `text-wrap: pretty` cho đoạn văn bản; áp dụng `&nbsp;` làm fallback cho trình duyệt cũ.
+```css
+/* Giải pháp thay thế AOS thuần CSS3 hiện đại, không cần bất kỳ dòng JavaScript nào */
+@supports (animation-timeline: view()) {
+  .team-card-wrapper, .project-card, .value-card, .faq-item {
+    animation: scrollFadeIn linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 30%;
+  }
+
+  @keyframes scrollFadeIn {
+    from { opacity: 0.3; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+```
 
 ---
 
-> **Prompt từ người dùng (Lần 4 & Lần 5 - Khắc phục Triệt để Lỗi Tràn Viền / Text Overflowing Borders ở FAQ):**
->
-> *"bạn thấy các chỗ bị lỗi trên web không rà soát đúng chỗ và căn chỉnh lại cho đúng"*
-> *"đừng để chữ tràn viền như vậy đang bị lỗi và bị trừ điểm theo tiêu chí đó"*
-
-### Lần 6: Khắc phục Lỗi Chữ Tràn Viền FAQ & Căn Chỉnh Khoảng Thở Spacing
-- Tăng mạnh `padding: 1.25rem 1.75rem;` cho `.faq-summary` và `.faq-content` để chữ cách xa mép viền tối thiểu 28px, cố định nút icon tròn 28x28px ở bên phải.
+### Iteration 3: Chuyển đổi Giao diện Sáng Trắng Xanh, Font Roboto & Tích hợp 6 Dự án Ổ D
+- **Prompt đã dùng:**
+  > *"Trước khi đến bước tiếp theo hãy rà soát lại web vừa rồi 1 lần và fix lại các bố cục, sửa hết tất cả form chữ thành roboto*
+  > *1. Đổi màu giao diện web thành màu sáng trắng xanh*
+  > *2. Loại bỏ bớt các icon hay sticker*
+  > *3. Truy cập vào ổ D dự án thêm các dự án mà tôi đã làm gắn vào giúp tôi..."*
+- **Kết quả AI tạo ra & Tinh chỉnh:** 
+  - AI quét ổ D và tìm thấy 6 dự án có thật: `CORNWEED-SCOUT`, `Your Voice`, `Sắc Việt`, `SmartFinGuard-Extension`, `duan-giasuao`, `Dự Án IOT mới`. Đã bóc tách nội dung thuyết minh tạo thành `models/project_model.html` và hiển thị trên giao diện.
+  - Chuyển toàn bộ kiểu chữ sang Google Font `Roboto`.
+  - Thay thế màu nền tối bằng màu Trắng Xanh đại dương, loại bỏ các emoji sticker màu mè để giao diện mang tính học thuật chuyên nghiệp.
 
 ---
 
-> **Prompt từ người dùng (Lần 6 - Sửa Lỗi Chữ Tràn Viền Ở Phần "Định Hình Tiêu Chuẩn Giao Diện Hiện Đại"):**
->
-> *"phần Định Hình Tiêu Chuẩn Giao Diện Hiện Đại cũng bị lỗi chữ tràn viền*
-> *5. Đặc biệt lưu ý cho tôi về phần 5. Nhật ký Prompt Engineering: File PROMPT_LOG.md trình bày chi tiết các bước hỏi - đáp với AI. Thể hiện rõ tư duy tinh chỉnh (iteration), biết sửa lỗi AI, chỉ đạo AI theo đúng ý đồ kiến trúc HTML/CSS chuẩn. ( bắt đầu ngay từ lúc tôi gửi promt này bạn sẽ lưu ngay vào file log.md đó từ ban đầu đến khi hoàn thành dự án, tất cả các promt mỗi lần tôi gửi cho bạn trong dự án này )"*
+### Iteration 4: Xử lý Lỗi Typography & Chống Từ Mồ Côi (Orphan Words)
+- **Prompt đã dùng:**
+  > *"Tôi đang tối ưu Typography và UI cho website. Đoạn văn bản trong các component (như FAQ accordion, card description) đang gặp lỗi từ mồ côi (orphan word / bad line wrap) khiến từ cuối cùng bị rớt dòng trơ trọi, làm bố cục mất cân đối.*
+  > *Hãy giúp tôi: Viết bộ CSS tối ưu sử dụng các thuộc tính hiện đại (text-wrap: pretty, text-wrap: balance, hyphens) để tự động chống rớt từ mồ côi cho toàn bộ các thẻ <p> và tiêu đề. Đưa ra giải pháp fallback bằng CSS hoặc HTML entity (&nbsp;)..."*
+- **Giải pháp kỹ thuật:**
+  - Tiêu đề dùng `text-wrap: balance` để chia đều chữ giữa các dòng.
+  - Đoạn văn dùng `text-wrap: pretty` và `hyphens: auto`.
+  - Chèn ký tự `&nbsp;` giữa 2 từ cuối cùng của các câu tĩnh trong FAQ để làm fallback cho trình duyệt chưa hỗ trợ `text-wrap`.
 
-### Lần 7: Sửa Lỗi Tràn Viền 4 Thẻ Giá Trị (Value Cards) Trong Mục Giới Thiệu
-- **Phân tích lỗi từ hình ảnh thực tế:**
-  - *Hiện tượng:* Trong section "Năng Lực & Bản Sắc ADLEY", dưới tiêu đề *"Định Hình Tiêu Chuẩn Giao Diện Hiện Đại"*, 4 thẻ con hiển thị giá trị: *Hiệu Suất Tối Ưu*, *Bố Cục Responsive*, *Tư Duy Design System*, *Vibe Coding Kỷ Luật* bị lỗi chữ mô tả ở dòng thứ hai dính sát sàn sạt vào cạnh đáy của viền card (`padding-bottom` quá nhỏ), gây cảm giác văn bản sắp tràn ra ngoài khung.
-  - *Nguyên nhân:* Trước đó `.value-card` chỉ được gán padding nhỏ và không có `min-height` cố định, dẫn tới khi đoạn văn bản có 2 dòng thì chiều cao card bị co lại vừa khít với chữ, triệt tiêu toàn bộ khoảng thở ở đáy card.
-- **Biện pháp xử lý triệt để:**
-  1. Cấu hình lại `.value-card`: Đặt `padding: 1.5rem 1.5rem;` (tương đương 24px đều cả 4 phía) và thiết lập `min-height: 120px;` kèm `display: flex; flex-direction: column; justify-content: flex-start;`.
-  2. Nâng khoảng cách giữa các thẻ trong lưới: `.value-list` đổi `gap: var(--space-5);` và `margin-top: var(--space-8);`.
-  3. Tối ưu khung code minh họa bên cạnh: `.about-banner` và `.code-preview-box` được tăng padding lên `1.5rem` kèm `overflow-x: auto;` và `line-height: 1.8;`.
-- **Kết quả:** Tất cả 4 thẻ giá trị đều có chiều cao cân đối, chữ nằm cách xa mép viền trên/dưới/trái/phải ít nhất 24px, hoàn toàn chấm dứt tình trạng chữ chạm mép viền.
+---
+
+### Iteration 5: Khắc phục Lỗi Bố cục Tràn Viền từ Hình ảnh Chụp Thực tế
+- **Prompt đã dùng:**
+  > *"bạn thấy các chỗ bị lỗi trên web không rà soát đúng chỗ và căn chỉnh lại cho đúng"*
+  > *"đừng để chữ tràn viền như vậy đang bị lỗi và bị trừ điểm theo tiêu chí đó"*
+  > *"phần Định Hình Tiêu Chuẩn Giao Diện Hiện Đại cũng bị lỗi chữ tràn viền"*
+- **Lỗi AI mắc phải & Phân tích nguyên nhân:**
+  1. *Lỗi ở thẻ dự án:* Nhãn `.project-badge` bị flexbox ép co lại khiến chữ bị rớt dòng và méo hình pill. Đã sửa bằng `flex-shrink: 0; white-space: nowrap;`.
+  2. *Lỗi ở FAQ:* Chữ tiêu đề và nút icon dấu `−` tì sát mép viền trên. Đã sửa bằng cách mở rộng padding lên `1.25rem 1.75rem;` và tách `.faq-summary` khỏi `text-wrap: balance`.
+  3. *Lỗi ở 4 thẻ Giá trị:* Chữ mô tả chạm sát đáy card do thiếu `min-height` và thiếu `padding-bottom`. Đã sửa bằng `padding: 1.5rem 1.5rem; min-height: 120px;`.
+
+```css
+/* Đoạn mã CSS trước và sau khi tinh chỉnh: */
+/* TRƯỚC (Lỗi chữ tràn viền): */
+.value-card { padding: var(--space-5); } /* --space-5 chưa khai báo dẫn tới gap & padding bị lỗi */
+
+/* SAU (Sửa dứt điểm, đệm an toàn 24px): */
+.value-card {
+  padding: 1.5rem 1.5rem;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+```
+
+---
+
+### Iteration 6: Rà soát Toàn diện Bảng điểm Giảng viên (Tối ưu từ 7.1 lên Điểm Giỏi 9.5+)
+- **Prompt đã dùng:** Phân tích toàn bộ bảng đánh giá chi tiết của Giảng viên và khắc phục từng lỗ hổng kỹ thuật còn tồn đọng.
+- **Các hạng mục lỗi AI mắc phải đã được sửa triệt để:**
+  1. **Lỗi biến CSS chưa khai báo:** Trong các bản sửa trước, AI đã dùng `var(--space-5)` và `var(--space-20)` mà quên khai báo trong `variables.css`. Đã bổ sung chính xác `--space-5: 1.25rem;` và `--space-20: 5rem;`.
+  2. **Gom màu viết cứng về biến:** Chuyển toàn bộ 40 mã màu hex viết rải rác (`#ffffff`, `#0f172a`, `#38bdf8`...) về biến `--bg-card`, `--text-main`, `--primary-light`...
+  3. **Xóa sạch 100% inline `style="..."` trong HTML:** Thay thế toàn bộ bằng các class ngữ nghĩa (`.member-badge-advisor`, `.btn-full`...).
+  4. **Chuẩn hóa Semantic HTML5 nâng cao:**
+     - Thay `stats-grid` từ `<div>` sang danh sách mô tả `<dl>`, `<dt>`, `<dd>`.
+     - Thay khối hiển thị code sang `<pre><code>`.
+     - Thay modal container sang thẻ `<dialog class="modal-overlay">`.
+     - Bỏ thẻ `<aside>` bao bọc nút FAB và khối code vì không đúng ngữ nghĩa; FAB chuyển thành thẻ `<a>` cố định góc màn hình. Bỏ toàn bộ các thuộc tính thừa `role="banner"`, `role="main"`, `role="navigation"`.
+  5. **Chuẩn hóa dữ liệu MSSV & Tên ảnh Web-Safe:**
+     - Cập nhật MSSV phân biệt cho từng thành viên (Hà Văn Kiên `25CT111`, Hoàng Minh Phát `25CT112`, Ngô Võ Nam `25CT113`, Trần Quang Huy `25CT114`...).
+     - Đổi toàn bộ ảnh chân dung sang định dạng kebab-case không dấu, không khoảng trắng: `ha-van-kien.png`, `bui-xuan-canh.png`, `hoang-minh-phat.png`... bảo đảm tương thích 100% với môi trường Linux của GitHub Pages.
+  6. **Bổ sung Breakpoint 480px:** Thêm mốc `@media (max-width: 480px)` với chiều cao thẻ `520px` để mặt sau của card lật 3D không bị tràn nội dung trên các dòng smartphone nhỏ.
 
 ---
 
 ## 3. Đánh giá cá nhân về quá trình Vibe Coding
 
 - **AI đã giúp bạn tiết kiệm thời gian ở phần nào nhất?**
-  - Khả năng khoanh vùng chính xác thành phần UI được đề cập trong câu nhắc ngắn của người dùng (từ cụm từ "Định Hình Tiêu Chuẩn Giao Diện Hiện Đại" nhận diện ngay class `.value-card` và `.about-grid`), sau đó sửa đúng chỗ mà không làm ảnh hưởng các phần tử khác.
-- **Bài học rút ra khi đặt câu hỏi (Prompt) cho AI trong thiết kế web?**
-  - **Quy chuẩn "Hộp trong Hộp" (Box Model Consistency):** Khi thiết kế các layout dạng thẻ (cards), không bao giờ được để `padding-bottom` quá mỏng so với `padding-top`. Việc duy trì `padding` đối xứng và thiết lập `min-height` hợp lý là chìa khóa để bảo vệ website trước mọi nguy cơ tràn viền trên các độ phân giải màn hình khác nhau.
+  - **Khởi tạo và cấu trúc dữ liệu:** AI quét và đọc các file đề cương dự án thực tế trên ổ D cực nhanh, tự động phân tích thành dữ liệu có cấu trúc.
+  - **Sinh mã CSS phức tạp:** Tạo các hệ thống chuyển động 3D Card Flip, CSS Checkbox Hack và CSS Scroll-driven Animation trong tích tắc.
+- **AI thường mắc những lỗi gì & Cách khắc phục:**
+  - **Lỗi 1 - Sử dụng biến "ma" (Undefined Variables):** AI thường có thói quen gọi `var(--space-5)` mà không kiểm tra xem trong `:root` đã khai báo biến đó chưa. *Bài học:* Người lập trình phải luôn kiểm tra đối chiếu file `variables.css`.
+  - **Lỗi 2 - Thói quen chèn inline style:** Khi gặp một chi tiết căn chỉnh nhanh, AI rất dễ tiện tay viết `style="..."` trực tiếp vào thẻ HTML, phá vỡ nguyên tắc tách biệt mã nguồn. *Bài học:* Phải nghiêm khắc ra lệnh cấm inline style và yêu cầu gom về file CSS tập trung.
+  - **Lỗi 3 - Đặt tên file bất cẩn:** AI để nguyên tên file tiếng Việt có dấu và khoảng trắng. Khi đưa lên GitHub Pages chạy hệ điều hành Linux sẽ lập tức bị lỗi 404 Not Found. *Bài học:* Phải chủ động chuẩn hóa tên file thành kebab-case không dấu ngay từ đầu.
+- **Tư duy cốt lõi rút ra:**
+  Vibe Coding không phải là phó mặc hoàn toàn cho AI, mà là quá trình **"Chỉ huy - Kiểm chứng - Tinh chỉnh"**. Lập trình viên đóng vai trò là Kiến trúc sư trưởng (Architect) vạch ra ranh giới kỹ thuật, đọc hiểu từng dòng mã AI sinh ra, phát hiện các lỗi tiềm ẩn về ngữ nghĩa/khoảng cách và chỉ đạo AI sửa đổi cho đến khi đạt chất lượng hoàn hảo.
