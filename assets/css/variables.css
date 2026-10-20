@@ -1,28 +1,40 @@
+/* ==========================================================================
+   DESIGN SYSTEM - LIGHT BLUE PALETTE (TRẮNG SÁNG XANH DƯƠNG THANH LỊCH)
+   Form chữ: 100% Roboto chuẩn
+   Màu chủ đạo: Nền trắng tuyết/xanh nhạt, Điểm nhấn Xanh Dương Cyan/Ocean Blue
+   Hoàn toàn không JavaScript - Kiến trúc CSS3 Variables Buổi 1 - 6
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
 :root {
-  /* Color Palette - Cyber Innovation & Modern Tech */
-  --primary: #4f46e5;
-  --primary-light: #6366f1;
-  --primary-dark: #3730a3;
-  --accent: #06b6d4;
-  --accent-glow: rgba(6, 182, 212, 0.4);
-  --secondary: #ec4899;
-  
-  /* Neutral Dark Mode (Default) */
-  --bg-main: #0b0f19;
-  --bg-card: rgba(17, 24, 39, 0.85);
-  --bg-card-hover: rgba(31, 41, 55, 0.95);
-  --bg-surface: #111827;
-  --border-color: rgba(255, 255, 255, 0.1);
-  --border-glow: rgba(99, 102, 241, 0.3);
-  
-  /* Typography Colors */
-  --text-main: #f9fafb;
-  --text-muted: #9ca3af;
-  --text-accent: #38bdf8;
-  
-  /* Typography Scale */
-  --font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
-  --font-code: 'Fira Code', monospace;
+  /* Color Palette - Sáng Trắng Xanh Dương (Bright White & Ocean Blue) */
+  --primary: #0284c7;            /* Ocean Sky Blue đậm */
+  --primary-light: #38bdf8;      /* Sky Blue tươi sáng */
+  --primary-dark: #0369a1;       /* Deep Marine Blue */
+  --accent: #2563eb;             /* Royal Electric Blue */
+  --accent-soft: #e0f2fe;        /* Xanh dương phấn pastel siêu nhẹ */
+  --accent-glow: rgba(37, 99, 235, 0.15);
+  --secondary: #0ea5e9;
+
+  /* Background Colors - Tông Sáng Trắng Thanh Khiết */
+  --bg-main: #f8fafc;            /* Nền trắng xám băng tinh khiết */
+  --bg-card: #ffffff;            /* Thẻ trắng tinh */
+  --bg-card-hover: #ffffff;
+  --bg-surface: #f0f9ff;         /* Bề mặt xanh nhạt thanh mát */
+  --bg-header: rgba(255, 255, 255, 0.92);
+  --border-color: #e2e8f0;       /* Đường viền xám sáng nhẹ */
+  --border-focus: #38bdf8;
+  --border-glow: rgba(2, 132, 199, 0.25);
+
+  /* Typography Colors - Độ Tương Phản Chuẩn WCAG */
+  --text-main: #0f172a;          /* Màu chữ đen phiến đá đậm dễ đọc */
+  --text-muted: #475569;         /* Màu chữ phụ xám trung tính rõ nét */
+  --text-accent: #0284c7;        /* Xanh dương nhận diện */
+  --text-white: #ffffff;
+
+  /* Typography Scale - 100% Roboto */
+  --font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-xs: 0.75rem;
   --font-sm: 0.875rem;
   --font-base: 1rem;
@@ -30,9 +42,9 @@
   --font-xl: 1.25rem;
   --font-2xl: 1.5rem;
   --font-3xl: 2rem;
-  --font-4xl: 2.75rem;
-  --font-5xl: 3.5rem;
-  
+  --font-4xl: 2.5rem;
+  --font-5xl: 3.25rem;
+
   /* Spacing System */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -42,42 +54,33 @@
   --space-8: 2rem;
   --space-12: 3rem;
   --space-16: 4rem;
-  --space-24: 6rem;
-  
-  /* Layout */
+  --space-24: 5.5rem;
+
+  /* Layout & Corners */
   --container-max: 1200px;
-  --header-height: 80px;
-  --radius-sm: 8px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
+  --header-height: 74px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
   --radius-full: 9999px;
-  
-  /* Shadows & Glassmorphism */
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.6);
-  --shadow-glow: 0 0 30px rgba(79, 70, 229, 0.4);
-  --glass-blur: blur(16px);
-  
+
+  /* Shadows (Nhẹ nhàng, sắc nét tông xanh) */
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 16px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 12px 32px rgba(2, 132, 199, 0.12);
+  --shadow-card: 0 2px 10px rgba(15, 23, 42, 0.05);
+
   /* Transitions */
   --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.55s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Light Theme Variables (Toggled via Pure CSS Checkbox Hack) */
-.light-mode-active {
-  --bg-main: #f8fafc;
-  --bg-card: rgba(255, 255, 255, 0.9);
-  --bg-card-hover: #ffffff;
-  --bg-surface: #f1f5f9;
-  --border-color: rgba(0, 0, 0, 0.08);
-  --border-glow: rgba(79, 70, 229, 0.2);
-  --text-main: #0f172a;
-  --text-muted: #64748b;
-  --text-accent: #0284c7;
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
-  --shadow-lg: 0 16px 40px rgba(15, 23, 42, 0.12);
-  --shadow-glow: 0 0 25px rgba(99, 102, 241, 0.2);
+/* Chế độ Tương phản Cao / Xanh Biển Đậm (Toggle bằng Pure CSS) */
+#contrast-toggle:checked ~ .site-wrapper {
+  --bg-main: #f0fdf4;
+  --bg-surface: #ecfeff;
+  --primary: #0369a1;
+  --accent: #1d4ed8;
+  --border-color: #cbd5e1;
 }

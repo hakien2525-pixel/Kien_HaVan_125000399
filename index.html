@@ -3,26 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ADLEY Team - Đội ngũ sáng tạo và phát triển giải pháp công nghệ kỹ thuật số hàng đầu. Giới thiệu 9 chuyên gia công nghệ và thiết kế.">
+  <meta name="description" content="ADLEY Team - Đội ngũ sáng tạo và phát triển giải pháp công nghệ kỹ thuật số hàng đầu Khoa CNTT - Đại học Lạc Hồng. Giới thiệu 9 chuyên gia và các dự án Edge AI, IoT, FinTech.">
   <meta name="keywords" content="ADLEY, ADLEY Team, Thiết kế Web, Vibe Coding, Prompt Engineering, HTML5, CSS3, LHU">
   <meta name="author" content="Hà Văn Kiên - 25CT111">
   
   <title>ADLEY Team | Đội Ngũ Sáng Tạo & Đột Phá Công Nghệ</title>
 
-  <!-- External Animation Libraries (Theo chuẩn tuần 5 & Đề thi) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <!-- Google Font Roboto Chuẩn 100% -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
-  <!-- Internal Cascading Style Sheets (MVC Architecture) -->
+  <!-- External Animation Library (Tuần 5 Giáo Trình) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <!-- Internal Cascading Style Sheets (MVC Architecture - Pure CSS) -->
   <link rel="stylesheet" href="assets/css/variables.css">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
   <!-- ==========================================================================
-       PURE CSS INTERACTION CONTROLS (THEME & HAMBURGER - ZERO JAVASCRIPT)
+       PURE CSS INTERACTION CONTROLS (HAMBURGER DRAWER - ZERO JAVASCRIPT)
        ========================================================================== -->
-  <input type="checkbox" id="theme-toggle" class="css-control-input" aria-label="Toggle Dark and Light Mode">
   <input type="checkbox" id="nav-toggle" class="css-control-input" aria-label="Toggle Mobile Navigation Drawer">
 
   <!-- Ambient Light Effect -->
@@ -39,24 +42,20 @@
           ADLEY <span class="brand-badge">STUDIO</span>
         </a>
 
-        <!-- Desktop & Mobile Navigation (Driven by CSS Checkbox Hack) -->
+        <!-- Desktop & Mobile Navigation (Pure CSS Checkbox Hack) -->
         <nav class="nav-desktop" role="navigation" aria-label="Main Navigation">
           <ul class="nav-links">
             <li><a href="#hero" class="nav-link">Trang Chủ</a></li>
             <li><a href="#about" class="nav-link">Giới Thiệu</a></li>
             <li><a href="#team" class="nav-link">Đội Ngũ ADLEY</a></li>
-            <li><a href="#projects" class="nav-link">Dự Án</a></li>
+            <li><a href="#projects" class="nav-link">Dự Án Nghiên Cứu</a></li>
             <li><a href="#faq" class="nav-link">Hỏi & Đáp</a></li>
             <li><a href="#contact" class="nav-link">Liên Hệ</a></li>
           </ul>
         </nav>
 
         <div class="header-actions">
-          <!-- Pure CSS Dark/Light Theme Button -->
-          <label for="theme-toggle" class="theme-btn" title="Chuyển chế độ Sáng / Tối (Pure CSS)">
-            <span class="theme-icon-moon">🌙</span>
-            <span class="theme-icon-sun">☀️</span>
-          </label>
+          <a href="#contact" class="btn-header-cta">Liên Hệ Hợp Tác</a>
 
           <!-- Mobile Hamburger Toggle Button -->
           <label for="nav-toggle" class="hamburger-btn" aria-label="Mở Menu Mobile">
@@ -78,7 +77,7 @@
         <div class="container">
           <div class="hero-tag animate__animated animate__fadeInDown">
             <span class="pulse-dot"></span>
-            ADLEY CREATIVE CREW • BỨT PHÁ GIỚI HẠN
+            ADLEY CREATIVE CREW • KHOA CÔNG NGHỆ THÔNG TIN LHU
           </div>
 
           <h1 id="hero-title" class="hero-title animate__animated animate__zoomIn">
@@ -87,17 +86,16 @@
           </h1>
 
           <p class="hero-description animate__animated animate__fadeInUp">
-            Tập hợp những tài năng sáng tạo, kỹ sư kiến trúc giao diện và chuyên gia trải nghiệm số tại LHU. 
+            Tập hợp những tài năng sáng tạo, kỹ sư kiến trúc giao diện và nghiên cứu giải pháp kỹ thuật số tại LHU. 
             Chúng tôi định hình các chuẩn mực thiết kế hiện đại trên nền tảng HTML5 ngữ nghĩa và CSS thuần khiết.
           </p>
 
           <div class="hero-cta-group animate__animated animate__fadeInUp">
             <a href="#team" class="btn btn-primary">
-              Khám Phá Thành Viên 
-              <span aria-hidden="true">→</span>
+              Khám Phá Thành Viên
             </a>
-            <a href="#about" class="btn btn-secondary">
-              Văn Hóa ADLEY
+            <a href="#projects" class="btn btn-secondary">
+              Xem Dự Án Nghiên Cứu
             </a>
           </div>
         </div>
@@ -109,7 +107,11 @@
           <div class="stats-grid">
             <div class="stat-item">
               <div class="stat-value">09</div>
-              <div class="stat-label">Chuyên Gia Tài Năng</div>
+              <div class="stat-label">Thành Viên Sáng Tạo</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">06</div>
+              <div class="stat-label">Dự Án Trọng Điểm</div>
             </div>
             <div class="stat-item">
               <div class="stat-value">100%</div>
@@ -118,10 +120,6 @@
             <div class="stat-item">
               <div class="stat-value">0%</div>
               <div class="stat-label">Phụ Thuộc Javascript</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-value">25+</div>
-              <div class="stat-label">Ý Tưởng Đột Phá 2026</div>
             </div>
           </div>
         </div>
@@ -134,42 +132,38 @@
             <div class="section-subtitle">VỀ CHÚNG TÔI</div>
             <h2 id="about-heading" class="section-title">Năng Lực & Bản Sắc ADLEY</h2>
             <p class="section-description">
-              Đội ngũ kết hợp hoàn hảo giữa thẩm mỹ tinh tế, tư duy logic cấu trúc và tinh thần kỷ luật cao trong phát triển web.
+              Đội ngũ kết hợp sự tinh tế trong thẩm mỹ giao diện, tư duy logic cấu trúc và tinh thần kỷ luật cao trong phát triển web.
             </p>
           </div>
 
           <div class="about-grid">
             <div class="about-content">
-              <h3>Định Hình Tiêu Chuẩn Giao Diện Thông Minh</h3>
+              <h3>Định Hình Tiêu Chuẩn Giao Diện Hiện Đại</h3>
               <p>
-                Được thành lập với sứ mệnh tiên phong làm chủ các kỹ thuật thiết kế web theo tiêu chuẩn học thuật hiện đại. 
-                Chúng tôi khai thác tối đa sức mạnh của <strong>Semantic HTML5</strong> để mang lại khả năng tiếp cận hoàn hảo cho công cụ tìm kiếm và trình đọc màn hình.
+                Được thành lập với định hướng tiên phong làm chủ các kỹ thuật thiết kế web theo phương pháp học đảo ngược (Flipped Classroom) và tư duy Vibe Coding. 
+                Chúng tôi khai thác triệt để sức mạnh của <strong>Semantic HTML5</strong> để mang lại trải nghiệm tiếp cận thân thiện cho mọi đối tượng người dùng.
               </p>
               <p>
-                Đặc biệt, hệ thống giao diện được kiểm soát chặt chẽ bằng <strong>CSS Variables (:root)</strong>, 
-                đảm bảo sự đồng bộ tuyệt đối về màu sắc, tỷ lệ typographic và trải nghiệm chuyển dịch tương tác mượt mà.
+                Hệ thống giao diện được kiểm soát chặt chẽ bằng <strong>CSS Variables (:root)</strong>, 
+                đảm bảo sự đồng bộ màu sắc trắng sáng xanh dương thanh lịch, font chữ Roboto rõ nét và khả năng co giãn bố cục tự nhiên.
               </p>
 
               <div class="value-list">
                 <article class="value-card">
-                  <span class="value-icon">⚡</span>
                   <h4 class="value-title">Hiệu Suất Tối Ưu</h4>
-                  <p class="value-desc">Loại bỏ hoàn toàn chi phí tải JS, phản hồi tức thời chỉ với CSS native.</p>
+                  <p class="value-desc">Loại bỏ chi phí xử lý JavaScript, tốc độ phản hồi tức thời chỉ với CSS native.</p>
                 </article>
                 <article class="value-card">
-                  <span class="value-icon">📐</span>
                   <h4 class="value-title">Bố Cục Responsive</h4>
-                  <p class="value-desc">Làm chủ CSS Grid 2 chiều kết hợp Flexbox cho mọi kích thước thiết bị.</p>
+                  <p class="value-desc">Làm chủ CSS Grid 2 chiều kết hợp Flexbox cho mọi thiết bị di động.</p>
                 </article>
                 <article class="value-card">
-                  <span class="value-icon">🎨</span>
                   <h4 class="value-title">Tư Duy Design System</h4>
-                  <p class="value-desc">Đồng bộ biến màu sắc, bóng mờ glassmorphism và nhịp điệu tương phản.</p>
+                  <p class="value-desc">Đồng bộ biến màu sắc trắng xanh, form chữ Roboto chuẩn mực và khoảng cách khoa học.</p>
                 </article>
                 <article class="value-card">
-                  <span class="value-icon">🤖</span>
                   <h4 class="value-title">Vibe Coding Kỷ Luật</h4>
-                  <p class="value-desc">Kiểm soát và điều phối AI chính xác, ghi lại tiến trình lặp chuẩn xác.</p>
+                  <p class="value-desc">Kiểm soát và điều phối AI chính xác, ghi lại tiến trình lặp hoàn chỉnh.</p>
                 </article>
               </div>
             </div>
@@ -181,11 +175,12 @@
                   :root {<br>
                   &nbsp;&nbsp;--team: "ADLEY Crew";<br>
                   &nbsp;&nbsp;--members: 9;<br>
+                  &nbsp;&nbsp;--advisor: "Thầy Bùi Xuân Cảnh";<br>
                   &nbsp;&nbsp;--architecture: "MVC";<br>
+                  &nbsp;&nbsp;--theme: "Bright White & Ocean Blue";<br>
+                  &nbsp;&nbsp;--typography: "Roboto Font 100%";<br>
                   &nbsp;&nbsp;--javascript: none !important;<br>
-                  &nbsp;&nbsp;--html-standard: "HTML5 Semantic";<br>
-                  &nbsp;&nbsp;--css-mastery: "Grid + Flexbox";<br>
-                  &nbsp;&nbsp;--status: "Ready for Midterm 10/10";<br>
+                  &nbsp;&nbsp;--curriculum: "Week 1 to Week 6";<br>
                   }
                 </code>
               </div>
@@ -201,7 +196,7 @@
             <div class="section-subtitle">GẶP GỠ NHỮNG GƯƠNG MẶT ĐẠI DIỆN</div>
             <h2 id="team-heading" class="section-title">Hội Đồng Thành Viên ADLEY</h2>
             <p class="section-description">
-              Rê chuột (hoặc chạm trên điện thoại) vào từng thẻ để khám phá chuyên môn, hoặc click "Chi Tiết" để mở bảng lý lịch độc lập.
+              Rê chuột (hoặc chạm trên điện thoại) vào từng thẻ để khám phá chuyên môn, hoặc chọn "Xem Hồ Sơ Đầy Đủ" để xem lý lịch chi tiết.
             </p>
           </div>
 
@@ -213,14 +208,14 @@
                 <div class="card-front">
                   <figure class="member-image-box">
                     <img src="assets/images/Bùi Xuân Cảnh - Giáo Viên Hướng Dẫn .png" alt="Thầy Bùi Xuân Cảnh - Giáo Viên Hướng Dẫn" class="member-photo" loading="lazy">
-                    <span class="member-badge-leader" style="background: linear-gradient(135deg, #10b981, #06b6d4);">👨‍🏫 ADVISOR</span>
+                    <span class="member-badge-leader" style="background: #0284c7;">ADVISOR</span>
                     <span class="member-badge-role">Giảng Viên Hướng Dẫn</span>
                   </figure>
                   <div class="member-info-front">
                     <h3 class="member-name">Bùi Xuân Cảnh</h3>
-                    <div class="member-mssv" style="color: #10b981;">Khoa Công Nghệ Thông Tin - LHU</div>
+                    <div class="member-mssv" style="color: #0284c7;">Khoa Công Nghệ Thông Tin - LHU</div>
                     <p class="member-headline">Giảng Viên Phụ Trách Học Phần Thiết Kế Web</p>
-                    <div class="flip-hint"><span>🔄 Lật thẻ xem định hướng</span></div>
+                    <div class="flip-hint"><span>Lật thẻ xem định hướng →</span></div>
                   </div>
                 </div>
                 <div class="card-back">
@@ -241,7 +236,7 @@
                     </div>
                   </div>
                   <div class="member-contact-links">
-                    <a href="#modal-canh" class="modal-open-link">Xem Thông Tin Cố Vấn →</a>
+                    <a href="#modal-canh" class="modal-open-link">Xem Thông Tin Cố Vấn</a>
                   </div>
                 </div>
               </div>
@@ -250,21 +245,19 @@
             <!-- MEMBER 1: Hà Văn Kiên (Leader) -->
             <article class="team-card-wrapper" tabindex="0">
               <div class="team-card">
-                <!-- Mặt trước -->
                 <div class="card-front">
                   <figure class="member-image-box">
                     <img src="assets/images/Hà Văn Kiên - 25CT111 ( tôi ).png" alt="Chân dung Hà Văn Kiên" class="member-photo" loading="lazy">
-                    <span class="member-badge-leader">👑 LEADER</span>
+                    <span class="member-badge-leader">LEADER</span>
                     <span class="member-badge-role">Tech Lead</span>
                   </figure>
                   <div class="member-info-front">
                     <h3 class="member-name">Hà Văn Kiên</h3>
                     <div class="member-mssv">MSSV: 25CT111</div>
                     <p class="member-headline">Full-Stack Architect & AI-First Engineer</p>
-                    <div class="flip-hint"><span>🔄 Lật thẻ xem năng lực</span></div>
+                    <div class="flip-hint"><span>Lật thẻ xem năng lực →</span></div>
                   </div>
                 </div>
-                <!-- Mặt sau -->
                 <div class="card-back">
                   <div class="back-header">
                     <h4 class="back-name">Hà Văn Kiên</h4>
@@ -283,7 +276,7 @@
                     </div>
                   </div>
                   <div class="member-contact-links">
-                    <a href="#modal-kien" class="modal-open-link">Xem Hồ Sơ Đầy Đủ →</a>
+                    <a href="#modal-kien" class="modal-open-link">Xem Hồ Sơ Đầy Đủ</a>
                   </div>
                 </div>
               </div>
@@ -301,7 +294,7 @@
                     <h3 class="member-name">Hoàng Minh Phát</h3>
                     <div class="member-mssv">MSSV: 25CT111</div>
                     <p class="member-headline">Design System, Visual Interaction & Animations</p>
-                    <div class="flip-hint"><span>🔄 Lật thẻ xem năng lực</span></div>
+                    <div class="flip-hint"><span>Lật thẻ xem năng lực →</span></div>
                   </div>
                 </div>
                 <div class="card-back">
@@ -309,7 +302,7 @@
                     <h4 class="back-name">Hoàng Minh Phát</h4>
                     <span class="back-title">Chuyên Viên Trải Nghiệm Giao Diện</span>
                     <p class="back-bio">
-                      Chuyên gia kiến tạo trải nghiệm thị giác tinh hoa, quản trị hệ màu, hiệu ứng ánh sáng Glassmorphism và chuyển động tương tác.
+                      Chuyên gia kiến tạo trải nghiệm thị giác tinh hoa, quản trị hệ màu, hiệu ứng ánh sáng trắng xanh và chuyển động tương tác.
                     </p>
                   </div>
                   <div class="skills-wrapper">
@@ -322,7 +315,7 @@
                     </div>
                   </div>
                   <div class="member-contact-links">
-                    <a href="#modal-phat" class="modal-open-link">Xem Hồ Sơ Đầy Đủ →</a>
+                    <a href="#modal-phat" class="modal-open-link">Xem Hồ Sơ Đầy Đủ</a>
                   </div>
                 </div>
               </div>
@@ -340,7 +333,7 @@
                     <h3 class="member-name">Nguyễn Đinh Khánh Trang</h3>
                     <div class="member-mssv">MSSV: 25EC111</div>
                     <p class="member-headline">Creative Branding & Digital User Flow</p>
-                    <div class="flip-hint"><span>🔄 Lật thẻ xem năng lực</span></div>
+                    <div class="flip-hint"><span>Lật thẻ xem năng lực →</span></div>
                   </div>
                 </div>
                 <div class="card-back">
@@ -361,7 +354,7 @@
                     </div>
                   </div>
                   <div class="member-contact-links">
-                    <a href="#modal-trang" class="modal-open-link">Xem Hồ Sơ Đầy Đủ →</a>
+                    <a href="#modal-trang" class="modal-open-link">Xem Hồ Sơ Đầy Đủ</a>
                   </div>
                 </div>
               </div>
@@ -379,7 +372,7 @@
                     <h3 class="member-name">Đặng Thị Tố Ngân</h3>
                     <div class="member-mssv">MSSV: 24MC112</div>
                     <p class="member-headline">Interaction Architecture & Accessibility</p>
-                    <div class="flip-hint"><span>🔄 Lật thẻ xem năng lực</span></div>
+                    <div class="flip-hint"><span>Lật thẻ xem năng lực →</span></div>
                   </div>
                 </div>
                 <div class="card-back">
@@ -400,7 +393,7 @@
                     </div>
                   </div>
                   <div class="member-contact-links">
-                    <a href="#modal-ngan" class="modal-open-link">Xem Hồ Sơ Đầy Đủ →</a>
+                    <a href="#modal-ngan" class="modal-open-link">Xem Hồ Sơ Đầy Đủ</a>
                   </div>
                 </div>
               </div>
@@ -418,7 +411,7 @@
                     <h3 class="member-name">Nguyễn Hoàng Anh</h3>
                     <div class="member-mssv">MSSV: CT111</div>
                     <p class="member-headline">HTML5 Semantics, Clean DOM & SEO</p>
-                    <div class="flip-hint"><span>🔄 Lật thẻ xem năng lực</span></div>
+                    <div class="flip-hint"><span>Lật thẻ xem năng lực →</span></div>
                   </div>
                 </div>
                 <div class="card-back">
@@ -439,7 +432,7 @@
                     </div>
                   </div>
                   <div class="member-contact-links">
-                    <a href="#modal-anh" class="modal-open-link">Xem Hồ Sơ Đầy Đủ →</a>
+                    <a href="#modal-anh" class="modal-open-link">Xem Hồ Sơ Đầy Đủ</a>
                   </div>
                 </div>
               </div>
@@ -457,7 +450,7 @@
                     <h3 class="member-name">Ngô Võ Nam</h3>
                     <div class="member-mssv">MSSV: 25CT111</div>
                     <p class="member-headline">CSS Grid Specialist & Multi-breakpoint Align</p>
-                    <div class="flip-hint"><span>🔄 Lật thẻ xem năng lực</span></div>
+                    <div class="flip-hint"><span>Lật thẻ xem năng lực →</span></div>
                   </div>
                 </div>
                 <div class="card-back">
@@ -465,7 +458,7 @@
                     <h4 class="back-name">Ngô Võ Nam</h4>
                     <span class="back-title">Chuyên Gia Dàn Trang CSS Grid</span>
                     <p class="back-bio">
-                      Thiết kế bố cục lưới ma trận đa chiều, thiết lập các khoảng ngắt thích ứng thích ứng linh hoạt từ màn hình 320px đến 4K.
+                      Thiết kế bố cục lưới ma trận đa chiều, thiết lập các khoảng ngắt thích ứng linh hoạt từ màn hình điện thoại đến màn hình máy tính lớn.
                     </p>
                   </div>
                   <div class="skills-wrapper">
@@ -478,7 +471,7 @@
                     </div>
                   </div>
                   <div class="member-contact-links">
-                    <a href="#modal-nam" class="modal-open-link">Xem Hồ Sơ Đầy Đủ →</a>
+                    <a href="#modal-nam" class="modal-open-link">Xem Hồ Sơ Đầy Đủ</a>
                   </div>
                 </div>
               </div>
@@ -496,7 +489,7 @@
                     <h3 class="member-name">Phan Văn Trận</h3>
                     <div class="member-mssv">MSSV: 23EC111</div>
                     <p class="member-headline">Cross-Browser Testing & Responsive QA</p>
-                    <div class="flip-hint"><span>🔄 Lật thẻ xem năng lực</span></div>
+                    <div class="flip-hint"><span>Lật thẻ xem năng lực →</span></div>
                   </div>
                 </div>
                 <div class="card-back">
@@ -504,7 +497,7 @@
                     <h4 class="back-name">Phan Văn Trận</h4>
                     <span class="back-title">Kỹ Sư Kiểm Định Tương Thích Thiết Bị</span>
                     <p class="back-bio">
-                      Rà soát lỗi vỡ layout trên đa nền tảng trình duyệt (Safari, Chromium, Firefox), kiểm tra cơ chế chống tràn ngang viewport.
+                      Rà soát lỗi bố cục trên đa nền tảng trình duyệt (Safari, Chromium, Firefox), kiểm tra cơ chế chống tràn ngang khung nhìn.
                     </p>
                   </div>
                   <div class="skills-wrapper">
@@ -517,7 +510,7 @@
                     </div>
                   </div>
                   <div class="member-contact-links">
-                    <a href="#modal-tran" class="modal-open-link">Xem Hồ Sơ Đầy Đủ →</a>
+                    <a href="#modal-tran" class="modal-open-link">Xem Hồ Sơ Đầy Đủ</a>
                   </div>
                 </div>
               </div>
@@ -535,7 +528,7 @@
                     <h3 class="member-name">Trần Hoài Phương</h3>
                     <div class="member-mssv">MSSV: 25MC111</div>
                     <p class="member-headline">High-DPI Asset Encoding & Aspect Ratios</p>
-                    <div class="flip-hint"><span>🔄 Lật thẻ xem năng lực</span></div>
+                    <div class="flip-hint"><span>Lật thẻ xem năng lực →</span></div>
                   </div>
                 </div>
                 <div class="card-back">
@@ -543,20 +536,20 @@
                     <h4 class="back-name">Trần Hoài Phương</h4>
                     <span class="back-title">Chuyên Gia Tối Ưu Hình Ảnh Đa Phương Tiện</span>
                     <p class="back-bio">
-                      Xử lý kích thước khung ảnh chân dung, căn chỉnh tỷ lệ khung hình cân xứng và thiết kế các lớp phủ chuyển sắc mờ ảo.
+                      Xử lý kích thước khung ảnh chân dung, căn chỉnh tỷ lệ khung hình cân xứng và thiết kế các lớp màu chuyển sắc trang nhã.
                     </p>
                   </div>
                   <div class="skills-wrapper">
                     <div class="skills-heading">Kỹ năng nòng cốt</div>
                     <div class="skill-tags">
-                      <span class="skill-tag">Asset Compression</span>
+                      <span class="skill-tag">Asset Processing</span>
                       <span class="skill-tag">Aspect Ratio</span>
-                      <span class="skill-tag">Gradient Filters</span>
+                      <span class="skill-tag">Clean Filters</span>
                       <span class="skill-tag">Retina Display</span>
                     </div>
                   </div>
                   <div class="member-contact-links">
-                    <a href="#modal-phuong" class="modal-open-link">Xem Hồ Sơ Đầy Đủ →</a>
+                    <a href="#modal-phuong" class="modal-open-link">Xem Hồ Sơ Đầy Đủ</a>
                   </div>
                 </div>
               </div>
@@ -574,7 +567,7 @@
                     <h3 class="member-name">Trần Quang Huy</h3>
                     <div class="member-mssv">MSSV: 25CT111</div>
                     <p class="member-headline">Version Control, Prompt Log & Compliance</p>
-                    <div class="flip-hint"><span>🔄 Lật thẻ xem năng lực</span></div>
+                    <div class="flip-hint"><span>Lật thẻ xem năng lực →</span></div>
                   </div>
                 </div>
                 <div class="card-back">
@@ -595,7 +588,7 @@
                     </div>
                   </div>
                   <div class="member-contact-links">
-                    <a href="#modal-huy" class="modal-open-link">Xem Hồ Sơ Đầy Đủ →</a>
+                    <a href="#modal-huy" class="modal-open-link">Xem Hồ Sơ Đầy Đủ</a>
                   </div>
                 </div>
               </div>
@@ -605,56 +598,163 @@
         </div>
       </section>
 
-      <!-- PROJECTS SHOWCASE SECTION -->
+      <!-- REAL PROJECTS SHOWCASE SECTION (Khai thác từ ổ D của bạn) -->
       <section id="projects" class="showcase-section" aria-labelledby="projects-heading">
         <div class="container">
           <div class="section-header">
-            <div class="section-subtitle">DỰ ÁN TIÊU BIỂU</div>
-            <h2 id="projects-heading" class="section-title">Những Thành Tựu Của ADLEY</h2>
+            <div class="section-subtitle">DỰ ÁN NGHIÊN CỨU & PHÁT TRIỂN</div>
+            <h2 id="projects-heading" class="section-title">Các Dự Án Trọng Điểm Của Đội Ngũ</h2>
             <p class="section-description">
-              Minh chứng năng lực thiết kế giao diện hiện đại và tính ứng dụng thực tiễn cao của toàn đội ngũ.
+              Hệ thống các công trình sáng tạo kỹ thuật số, giải pháp Edge AI, IoT và ứng dụng cộng đồng được phát triển bởi các thành viên ADLEY Team.
             </p>
           </div>
 
           <div class="projects-grid">
+
+            <!-- PROJECT 1: CORNWEED-SCOUT -->
             <article class="project-card">
-              <div class="project-thumb">🚀</div>
+              <div class="project-card-header">
+                <span class="project-badge">Edge AI & Agri-Robotics</span>
+                <span class="project-contest">Nông Nghiệp Thông Minh</span>
+              </div>
               <div class="project-body">
-                <span class="project-tag">Design System</span>
-                <h3 class="project-title">CyberGlass UI Kit</h3>
-                <p class="project-desc">Bộ giao diện CSS kính mờ đa tầng phục vụ các nền tảng phân tích tài chính số và Web3 Dashboard.</p>
+                <h3 class="project-title">CORNWEED-SCOUT: Xe Trinh Sát AI Ruộng Ngô</h3>
+                <p class="project-desc">
+                  Hệ thống xe tự hành thông minh lập bản đồ cỏ dại và giám sát sức khỏe cây ngô theo thời gian thực, tích hợp thị giác máy tính công nghiệp và định vị vệ tinh chính xác cao RTK GNSS.
+                </p>
+                <div class="project-tech-stack">
+                  <span class="tech-tag">Edge AI</span>
+                  <span class="tech-tag">Computer Vision</span>
+                  <span class="tech-tag">RTK GNSS</span>
+                  <span class="tech-tag">Agri-Robotics</span>
+                </div>
                 <div class="project-footer">
-                  <span>Stack: CSS Grid + Variables</span>
-                  <time datetime="2026-03">03/2026</time>
+                  <span>Trạng thái: Hoàn thiện hồ sơ giải pháp</span>
+                  <time datetime="2026-08">08/2026</time>
                 </div>
               </div>
             </article>
 
+            <!-- PROJECT 2: YOUR VOICE -->
             <article class="project-card">
-              <div class="project-thumb">🌐</div>
+              <div class="project-card-header">
+                <span class="project-badge">AI Trợ Năng Xã Hội</span>
+                <span class="project-contest">Sáng Tạo KT Đồng Nai 2026</span>
+              </div>
               <div class="project-body">
-                <span class="project-tag">E-Commerce</span>
-                <h3 class="project-title">Adley Storefront</h3>
-                <p class="project-desc">Trang thương mại điện tử chuyên ngành thiết bị công nghệ với tương tác lật sản phẩm 3D không dùng JS.</p>
+                <h3 class="project-title">YourVoice: Phiên Dịch Ngôn Ngữ Ký Hiệu</h3>
+                <p class="project-desc">
+                  Ứng dụng nhận diện và chuyển đổi ngôn ngữ ký hiệu Việt Nam (VSL) sang văn bản thời gian thực qua camera kết hợp mô hình AI 3D biểu diễn cử chỉ hỗ trợ người khiếm thính hòa nhập xã hội.
+                </p>
+                <div class="project-tech-stack">
+                  <span class="tech-tag">CNN-LSTM</span>
+                  <span class="tech-tag">3D Avatar</span>
+                  <span class="tech-tag">VSL Dataset</span>
+                  <span class="tech-tag">Accessibility</span>
+                </div>
                 <div class="project-footer">
-                  <span>Stack: HTML5 + CSS3</span>
-                  <time datetime="2026-02">02/2026</time>
+                  <span>Trạng thái: Đạt giải pháp đổi mới</span>
+                  <time datetime="2026-08">08/2026</time>
                 </div>
               </div>
             </article>
 
+            <!-- PROJECT 3: SẮC VIỆT -->
             <article class="project-card">
-              <div class="project-thumb">⚡</div>
+              <div class="project-card-header">
+                <span class="project-badge">Kinh Doanh Số & Di Sản</span>
+                <span class="project-contest">APEC Innovation II</span>
+              </div>
               <div class="project-body">
-                <span class="project-tag">AI Integration</span>
-                <h3 class="project-title">Vibe Coding Hub</h3>
-                <p class="project-desc">Hệ thống thư viện hướng dẫn kỹ nghệ ra lệnh AI (Prompt Engineering) chuyên sâu cho sinh viên ngành CNTT.</p>
+                <h3 class="project-title">Sắc Việt: Kết Nối Chợ Phiên Muôn Phương</h3>
+                <p class="project-desc">
+                  Nền tảng số hóa hỗ trợ đồng bào dân tộc thiểu số quảng bá sản phẩm thủ công thổ cẩm, gốm sứ và bảo tồn làng nghề truyền thống gắn kết văn hóa 54 dân tộc Việt Nam.
+                </p>
+                <div class="project-tech-stack">
+                  <span class="tech-tag">E-Commerce</span>
+                  <span class="tech-tag">Culture Tech</span>
+                  <span class="tech-tag">Digital Economy</span>
+                  <span class="tech-tag">UI/UX</span>
+                </div>
                 <div class="project-footer">
-                  <span>Stack: Semantic HTML + Docs</span>
-                  <time datetime="2026-01">01/2026</time>
+                  <span>Trạng thái: Thuyết minh APEC Innovation</span>
+                  <time datetime="2026-09">09/2026</time>
                 </div>
               </div>
             </article>
+
+            <!-- PROJECT 4: SMARTFINGUARD EXTENSION -->
+            <article class="project-card">
+              <div class="project-card-header">
+                <span class="project-badge">FinTech & An Toàn Số</span>
+                <span class="project-contest">Banking Security Solution</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">SmartFin-Guard: Giám Định Tài Chính AI</h3>
+                <p class="project-desc">
+                  Hệ thống tiện ích mở rộng tích hợp trí tuệ nhân tạo tự động hóa phê duyệt hồ sơ vay tín dụng, phân tích rủi ro tài chính gian lận và tối ưu quy trình bảo mật ngân hàng số.
+                </p>
+                <div class="project-tech-stack">
+                  <span class="tech-tag">Browser Extension</span>
+                  <span class="tech-tag">Groq API</span>
+                  <span class="tech-tag">NestJS</span>
+                  <span class="tech-tag">Risk Engine</span>
+                </div>
+                <div class="project-footer">
+                  <span>Trạng thái: Hoàn thiện tính năng mở rộng</span>
+                  <time datetime="2026-07">07/2026</time>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJECT 5: GIA SƯ ẢO (AI VIRTUAL TUTOR) -->
+            <article class="project-card">
+              <div class="project-card-header">
+                <span class="project-badge">EdTech & AI</span>
+                <span class="project-contest">Cá Nhân Hóa Học Tập</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">Gia Sư Ảo: Cá Nhân Hóa Dữ Liệu Học Tập</h3>
+                <p class="project-desc">
+                  Hệ sinh thái học tập tương tác thông minh cho phép bóc tách tài liệu sách giáo khoa, công thức toán học và đàm thoại giảng bài trực quan thích ứng theo năng lực từng học sinh.
+                </p>
+                <div class="project-tech-stack">
+                  <span class="tech-tag">FastAPI</span>
+                  <span class="tech-tag">Doc Parser</span>
+                  <span class="tech-tag">LLM Core</span>
+                  <span class="tech-tag">Audio Stream</span>
+                </div>
+                <div class="project-footer">
+                  <span>Trạng thái: Vận hành cơ chế cốt lõi</span>
+                  <time datetime="2026-07">07/2026</time>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJECT 6: THIẾT BỊ CẢNH BÁO KHÍ ĐỘC IOT -->
+            <article class="project-card">
+              <div class="project-card-header">
+                <span class="project-badge">IoT & An Toàn Lao Động</span>
+                <span class="project-contest">Nghiên Cứu KHKT 2026 - 2027</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">Thiết Bị Cảnh Báo Khí Độc Theo Độ Sâu</h3>
+                <p class="project-desc">
+                  Giải pháp phần cứng thông minh đo phân tầng khí và cảnh báo sớm nồng độ oxy thấp cùng các loại khí độc hại trước khi con người bước xuống hầm kín, bể ngầm hoặc không gian nguy hiểm.
+                </p>
+                <div class="project-tech-stack">
+                  <span class="tech-tag">Embedded IoT</span>
+                  <span class="tech-tag">Gas Sensor Suite</span>
+                  <span class="tech-tag">Depth Stratification</span>
+                  <span class="tech-tag">Audio Alert</span>
+                </div>
+                <div class="project-footer">
+                  <span>Trạng thái: Hoàn thiện kế hoạch dự án</span>
+                  <time datetime="2026-09">09/2026</time>
+                </div>
+              </div>
+            </article>
+
           </div>
         </div>
       </section>
@@ -666,7 +766,7 @@
             <div class="section-subtitle">HỎI VÀ ĐÁP</div>
             <h2 id="faq-heading" class="section-title">Giải Đáp Thắc Mắc Kỹ Thuật</h2>
             <p class="section-description">
-              Tất cả tương tác đóng/mở nội dung bên dưới sử dụng 100% thẻ ngữ nghĩa &lt;details&gt; và &lt;summary&gt; chuẩn HTML5.
+              Tất cả tương tác đóng mở nội dung sử dụng thẻ ngữ nghĩa chuẩn HTML5 details và summary.
             </p>
           </div>
 
@@ -674,7 +774,7 @@
             <details class="faq-item" open>
               <summary class="faq-summary">Website này có sử dụng JavaScript không?</summary>
               <div class="faq-content">
-                <strong>Hoàn toàn không.</strong> Tất cả tính năng: chuyển đổi Dark/Light mode, hiệu ứng mở menu Mobile, lật thẻ 3D Card Flip, mở cửa sổ Modal thông tin thành viên và thanh điều hướng đều được xây dựng bằng 100% CSS3 hiện đại kết hợp HTML5 Semantic.
+                Hoàn toàn không. Mọi tương tác từ mở menu Mobile, lật thẻ 3D Card Flip, mở cửa sổ Modal thông tin thành viên và các hiệu ứng giao diện đều được thực hiện bằng 100% CSS3 hiện đại kết hợp HTML5 Semantic.
               </div>
             </details>
 
@@ -683,17 +783,17 @@
               <div class="faq-content">
                 Dự án chia tách rành mạch:
                 <ul>
-                  <li><strong>Model:</strong> Được định nghĩa trong thư mục <code>models/team_model.html</code> chứa toàn bộ từ điển dữ liệu thực thể của 9 thành viên.</li>
-                  <li><strong>View:</strong> Các khối giao diện trực quan độc lập và các thành phần giao diện mẫu trong thư mục <code>views/</code>.</li>
-                  <li><strong>Controller (Master View):</strong> Tệp <code>index.html</code> đóng vai trò nhạc trưởng tích hợp và điều hướng toàn bộ trải nghiệm người dùng.</li>
+                  <li><strong>Model:</strong> Được định nghĩa trong thư mục <code>models/team_model.html</code> và <code>models/project_model.html</code> chứa toàn bộ từ điển dữ liệu thực thể thành viên và dự án.</li>
+                  <li><strong>View:</strong> Các khối giao diện trực quan độc lập trong thư mục <code>views/</code>.</li>
+                  <li><strong>Controller (Master View):</strong> Tệp <code>index.html</code> đóng vai trò nhạc trưởng tích hợp và điều phối toàn bộ trải nghiệm người dùng.</li>
                 </ul>
               </div>
             </details>
 
             <details class="faq-item">
-              <summary class="faq-summary">Làm thế nào để các thẻ card tự động thích ứng trên mọi màn hình?</summary>
+              <summary class="faq-summary">Các dự án nghiên cứu trên trang được khai thác từ nguồn nào?</summary>
               <div class="faq-content">
-                Nhóm ADLEY sử dụng hệ thống CSS Grid kết hợp Media Queries thông minh. Ở màn hình Desktop lớn, hệ thống hiển thị lưới 3 cột cân đối; trên tablet thu gọn về 2 cột và trên smartphone tự động xếp thành 1 cột trực quan dễ chạm lướt.
+                Toàn bộ 6 dự án đều là công trình nghiên cứu thực tế được trích xuất trực tiếp từ các thư mục làm việc của tác giả (CORNWEED-SCOUT, YourVoice, Sắc Việt, SmartFinGuard, Gia Sư Ảo, Thiết Bị Cảnh Báo Khí Độc IoT).
               </div>
             </details>
           </div>
@@ -713,7 +813,7 @@
               </p>
 
               <div class="info-item">
-                <div class="info-icon">📍</div>
+                <div class="info-bullet"></div>
                 <div>
                   <strong>Địa Điểm Học Tập & Làm Việc</strong>
                   <p>Khoa Công nghệ Thông tin - Trường Đại học Lạc Hồng (LHU)</p>
@@ -721,7 +821,7 @@
               </div>
 
               <div class="info-item">
-                <div class="info-icon">✉️</div>
+                <div class="info-bullet"></div>
                 <div>
                   <strong>Hộp Thư Đội Ngũ</strong>
                   <p>adleyteam.lhu@gmail.com</p>
@@ -729,7 +829,7 @@
               </div>
 
               <div class="info-item">
-                <div class="info-icon">👥</div>
+                <div class="info-bullet"></div>
                 <div>
                   <strong>Trưởng Nhóm Liên Hệ</strong>
                   <p>Hà Văn Kiên (Lớp 25CT111)</p>
@@ -771,9 +871,9 @@
       <div class="container">
         <div class="footer-grid">
           <div class="footer-brand">
-            <div class="brand-logo">ADLEY STUDIO</div>
+            <div class="brand-logo" style="color:#ffffff;">ADLEY STUDIO</div>
             <p>
-              Đội ngũ thiết kế & phát triển giao diện hàng đầu LHU. 
+              Đội ngũ thiết kế & phát triển giải pháp giao diện hàng đầu LHU. 
               Sản phẩm phục vụ bài thi Giữa kỳ Học phần Thiết kế Web - Kỹ năng Vibe Coding & Prompt Engineering.
             </p>
           </div>
@@ -783,15 +883,15 @@
             <ul class="footer-link-list">
               <li><a href="#hero">Trang Chủ</a></li>
               <li><a href="#about">Văn Hóa ADLEY</a></li>
-              <li><a href="#team">Hội Đồng 9 Thành Viên</a></li>
-              <li><a href="#projects">Dự Án Sáng Tạo</a></li>
+              <li><a href="#team">Hội Đồng Thành Viên</a></li>
+              <li><a href="#projects">Dự Án Nghiên Cứu</a></li>
             </ul>
           </div>
 
           <div>
             <h4 class="footer-col-title">Tiêu Chuẩn Kỹ Thuật</h4>
             <ul class="footer-link-list">
-              <li><a href="#about">Semantic HTML5 (No Divs)</a></li>
+              <li><a href="#about">Semantic HTML5</a></li>
               <li><a href="#about">Pure CSS3 Architecture</a></li>
               <li><a href="#about">CSS Variables (:root)</a></li>
               <li><a href="#about">Zero JavaScript Compliant</a></li>
@@ -802,8 +902,8 @@
             <h4 class="footer-col-title">Tài Liệu Học Phần</h4>
             <ul class="footer-link-list">
               <li><a href="PROMPT_LOG.md">Nhật Ký Prompt Log</a></li>
-              <li><a href="models/team_model.html">Model Dữ Liệu MVC</a></li>
-              <li><a href="https://github.com" target="_blank" rel="noopener">GitHub Repository</a></li>
+              <li><a href="models/project_model.html">Model Dữ Liệu Dự Án</a></li>
+              <li><a href="models/team_model.html">Model Dữ Liệu Nhân Sự</a></li>
               <li><a href="#hero">Lên Đầu Trang ↑</a></li>
             </ul>
           </div>
@@ -821,7 +921,7 @@
          ======================================================================== -->
     <aside class="fab-container" aria-label="Quick Action">
       <a href="#contact" class="fab-btn" title="Liên hệ nhanh với Trưởng nhóm ADLEY">
-        💬
+        Liên Hệ Ngay
       </a>
     </aside>
 
@@ -839,9 +939,9 @@
       <div class="modal-content-grid">
         <img src="assets/images/Bùi Xuân Cảnh - Giáo Viên Hướng Dẫn .png" alt="Thầy Bùi Xuân Cảnh" class="modal-avatar">
         <div>
-          <span class="member-badge-leader" style="position:static; display:inline-block; margin-bottom:8px; background: linear-gradient(135deg, #10b981, #06b6d4);">GIẢNG VIÊN HƯỚNG DẪN</span>
+          <span class="member-badge-leader" style="position:static; display:inline-block; margin-bottom:8px; background: #0284c7;">GIẢNG VIÊN HƯỚNG DẪN</span>
           <h3 id="modal-canh-title" class="member-name">Thầy Bùi Xuân Cảnh</h3>
-          <p class="member-mssv" style="color: #10b981;">Khoa Công Nghệ Thông Tin - Đại Học Lạc Hồng</p>
+          <p class="member-mssv" style="color: #0284c7;">Khoa Công Nghệ Thông Tin - Đại Học Lạc Hồng</p>
           <p class="member-headline" style="margin-top:8px;">
             Giảng viên hướng dẫn trực tiếp học phần Thiết kế Web. Định hướng sinh viên phương pháp Vibe Coding, làm chủ các công cụ AI, tuân thủ chặt chẽ tiêu chuẩn Semantic HTML5, CSS Variables và rèn luyện kỹ năng phân tầng dự án chuyên nghiệp.
           </p>
@@ -893,12 +993,12 @@
           <h3 id="modal-phat-title" class="member-name">Hoàng Minh Phát</h3>
           <p class="member-mssv">Lớp: 25CT111 • Vai trò: UI/UX Specialist</p>
           <p class="member-headline" style="margin-top:8px;">
-            Phụ trách nghiên cứu giao diện người dùng, lựa chọn các sắc độ màu chuyển tiếp trong variables.css, hiệu chỉnh bóng đổ đổ khối glassmorphism và tối ưu tỷ lệ Typography chuẩn xác trên máy tính.
+            Phụ trách nghiên cứu giao diện người dùng, lựa chọn các sắc độ màu chuyển tiếp trong variables.css, hiệu chỉnh bóng đổ đổ khối nhẹ nhàng và tối ưu tỷ lệ Typography Roboto chuẩn xác trên máy tính.
           </p>
           <div class="skills-wrapper" style="margin-top:12px;">
             <div class="skill-tags">
               <span class="skill-tag">Color Theory</span>
-              <span class="skill-tag">Glassmorphism</span>
+              <span class="skill-tag">Roboto Typography</span>
               <span class="skill-tag">Micro-transitions</span>
             </div>
           </div>
@@ -917,11 +1017,11 @@
           <h3 id="modal-trang-title" class="member-name">Nguyễn Đinh Khánh Trang</h3>
           <p class="member-mssv">Lớp: 25EC111 • Vai trò: Creative Director</p>
           <p class="member-headline" style="margin-top:8px;">
-            Xây dựng câu chuyện thương hiệu ADLEY, định hướng hình ảnh hiện đại, đột phá, truyền cảm hứng đam mê công nghệ cho tập thể và phối hợp xây dựng kịch bản nội dung các mục trên website.
+            Xây dựng câu chuyện thương hiệu ADLEY, định hướng hình ảnh sáng sủa, đột phá, truyền cảm hứng đam mê công nghệ cho tập thể và phối hợp xây dựng kịch bản nội dung các mục trên website.
           </p>
           <div class="skills-wrapper" style="margin-top:12px;">
             <div class="skill-tags">
-              <span class="skill-tag">Creative Direction</span>
+              <span class="skill-tag">Creative Concept</span>
               <span class="skill-tag">Brand Strategy</span>
               <span class="skill-tag">Digital Copywriting</span>
             </div>

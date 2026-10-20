@@ -3,7 +3,7 @@
 - **Họ và tên:** Hà Văn Kiên
 - **MSSV:** 25CT111
 - **Lớp:** 25CT111
-- **Tên đề tài Website:** Website Giới Thiệu Đội Ngũ ADLEY Team (Creative & Digital Innovation Agency)
+- **Tên đề tài Website:** Website Giới Thiệu Đội Ngũ ADLEY Team & Hệ Thống Dự Án Nghiên Cứu Đột Phá
 - **Công cụ AI đã sử dụng:** Gemini / Antigravity AI Assistant
 
 ---
@@ -20,49 +20,60 @@
 > *5. Đặc biệt lưu ý cho tôi về phần 5. Nhật ký Prompt Engineering: File PROMPT_LOG.md trình bày chi tiết các bước hỏi - đáp với AI. Thể hiện rõ tư duy tinh chỉnh (iteration), biết sửa lỗi AI, chỉ đạo AI theo đúng ý đồ kiến trúc HTML/CSS chuẩn. ( bắt đầu ngay từ lúc tôi gửi promt này bạn sẽ lưu ngay vào file log.md đó từ ban đầu đến khi hoàn thành dự án, tất cả các promt mỗi lần tôi gửi cho bạn trong dự án này )*
 > *6. Lưu ý nữa các kiến thức cấu trúc của môn thiết kế web tôi đã để ở trong đó nhớ áp dụng đến buổi số 6 thôi nhé, đừng dùng java chỉ được dùng HTML5"*
 
-### Phân tích & Định hướng Kiến trúc từ AI:
-- **Tiếp nhận & Trích xuất quy chuẩn:**
-  - Đã phân tích toàn bộ file PDF `Đề thi Kiểm tra Kỹ năng Vibe Coding & Prompt Engineering.pdf` và đối chiếu giáo trình giảng dạy 12 tuần của Đại học Lạc Hồng.
-  - Nhận diện phạm vi kiến thức khắt khe: **Chỉ áp dụng đến Buổi số 6** (CSS Layout, Flexbox, Grid, CSS Variables, CSS Keyframes animation, Mobile First responsive). **Tuyệt đối không sử dụng JavaScript** (không script tag, không inline event handlers như onclick).
-  - Khám phá 9 tệp ảnh chân dung thành viên trong thư mục `image/`: Hà Văn Kiên (Leader - 25CT111), Hoàng Minh Phát (25CT111), Nguyễn Hoàng Anh (CT111), Nguyễn Đinh Khánh Trang (25EC111), Ngô Võ Nam (25CT111), Phan Văn Trận (23EC111), Trần Hoài Phương (25MC111), Trần Quang Huy (25CT111), Đặng Thị Tố Ngân (24MC112).
-  - Phân tầng mã nguồn theo đúng mô hình MVC:
-    - **Model:** `models/team_model.html` (chứa dữ liệu semantic dạng thực thể data attributes).
-    - **View:** `views/header_view.html`, `views/team_view.html`, `views/footer_view.html`.
-    - **Controller / Master View:** `index.html` tích hợp tổng thể.
+### Phân tích & Định hướng Kiến trúc từ AI (Lần 1):
+- Tiếp nhận và phân tích toàn bộ file `Đề thi Kiểm tra Kỹ năng Vibe Coding & Prompt Engineering.pdf` và giáo trình 12 tuần của Đại học Lạc Hồng.
+- Giới hạn kiến thức nghiêm ngặt trong **Buổi 1 đến Buổi 6** (HTML5 Semantic, CSS Grid, Flexbox, Variables `:root`, CSS Animations, Responsive). Tuyệt đối **0% JavaScript**.
+- Khởi tạo cấu trúc phân tầng MVC: `models/`, `views/`, `assets/`, `index.html`.
 
 ---
 
 ## 2. Quá trình tinh chỉnh & Giải quyết sự cố (Iteration Logs)
 
-### Lần 1: Dựng khung Semantic HTML & CSS Variables theo Design System hiện đại
-- **Prompt đã dùng:** *"Khởi tạo cấu trúc thư mục MVC cho dự án web giới thiệu ADLEY Team. Khai báo hệ thống CSS Variables trong `assets/css/variables.css` bao gồm bảng màu sắc hiện đại (Cyber Innovation Indigo/Cyan/Dark Slate), typography scale và spacing system."*
-- **Kết quả AI tạo ra:** Thiết lập bộ biến CSS `:root` và tạo file `index.html` với đầy đủ thẻ Semantic: `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<figure>`, `<figcaption>`, `<details>`, `<summary>`, `<time>`, `<footer>`.
-- **Nhận xét & Tinh chỉnh của SV:** 
-  - Yêu cầu AI không được dùng thẻ `<div>` vô nghĩa ở các khối chứa nội dung chính.
-  - Phải dùng `<figure>` cho ảnh thành viên, `<article>` cho từng card thành viên, `<details>` & `<summary>` cho khu vực hỏi đáp (FAQ) để thay thế Accordion JavaScript.
+### Lần 1: Dựng khung Semantic HTML & CSS Variables theo Design System
+- **Prompt đã dùng:** Khởi tạo cấu trúc thư mục MVC cho dự án web giới thiệu ADLEY Team. Khai báo hệ thống CSS Variables trong `assets/css/variables.css`, đảm bảo semantic tags (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`, `<figure>`, `<time>`).
+- **Kết quả AI tạo ra:** Thiết lập bộ biến CSS `:root` và tạo file `index.html` với đầy đủ thẻ Semantic, không lạm dụng thẻ `<div>`.
+- **Nhận xét & Tinh chỉnh của SV:** Yêu cầu AI dùng `<figure>` cho ảnh thành viên, `<article>` cho từng card thành viên, `<details>` & `<summary>` cho phần FAQ để không dùng accordion bằng JS.
 
 ### Lần 2: Xử lý tương tác phức tạp mà KHÔNG DÙNG JavaScript (Pure CSS Hacks)
-- **Thách thức gặp phải:** Thông thường các tính năng như Chuyển đổi Dark/Light theme, Menu Hamburger trên điện thoại và Popup Modal chi tiết thành viên đều phải dùng JavaScript `addEventListener("click")`. Tuy nhiên đề bài cấm hoàn toàn JS.
+- **Thách thức gặp phải:** Các chức năng mở menu Mobile và Popup Modal chi tiết thường yêu cầu JavaScript event listener. Tuy nhiên đề bài cấm hoàn toàn JS.
 - **Cách sửa prompt (Debug prompt):**
-  - *"Hướng dẫn và áp dụng giải pháp Pure CSS Checkbox Hack (`#theme-toggle:checked ~ .site-wrapper`) để đổi toàn bộ theme màu mà không cần một dòng JS nào."*
-  - *"Sử dụng CSS pseudo-class `:target` (`#modal-kien:target`) để làm cửa sổ Modal chi tiết bật lên khi người dùng bấm vào nút Xem hồ sơ, và đóng lại khi bấm vào nút Đóng (`href="#team"`)."*
-- **Kết quả đạt được:** Cả 3 tính năng tương tác cao cấp (Theme switcher, Mobile Drawer Navigation, 9 Modal chi tiết thành viên) hoạt động mượt mà 100% bằng CSS native.
+  - Áp dụng kỹ thuật Pure CSS Checkbox Hack (`#nav-toggle:checked ~ .site-wrapper`) cho responsive drawer navigation.
+  - Sử dụng CSS pseudo-class `:target` (`#modal-kien:target`) để hiển thị popup Modal khi người dùng click vào nút Xem hồ sơ, và đóng modal khi click dấu &times; (`href="#team"`).
+- **Kết quả đạt được:** Toàn bộ tương tác popup và drawer chạy trơn tru 100% bằng CSS native.
 
-### Lần 3: Xây dựng hiệu ứng 3D Card Flip (Thẻ nhân sự lật mặt - Bài 2 Tuần 5) & Floating Action Button
-- **Prompt đã dùng:** *"Viết CSS cho thẻ card thành viên có hiệu ứng xoay lật 3D (rotateY 180deg) khi hover hoặc focus trên máy tính/điện thoại: mặt trước là ảnh chân dung bo viền và thông tin tóm tắt; mặt sau là mô tả chi tiết, kỹ năng nổi bật và nút mở modal. Đồng thời tạo nút FAB nổi ở góc màn hình có hiệu ứng pulse animation theo bài tập Tuần 5."*
-- **Kết quả AI tạo ra:** Cấu trúc `.team-card-wrapper` với `perspective: 1200px` và `.team-card` có `transform-style: preserve-3d; backface-visibility: hidden;`. Nút FAB góc phải có animation `fab-pulse 2.5s infinite`.
-- **Nhận xét & Tinh chỉnh của SV:** Đã kiểm tra tính năng phản hồi trên thiết bị di động (hỗ trợ cả `:focus-within` khi chạm trên màn hình cảm ứng).
+### Lần 3: Xây dựng hiệu ứng 3D Card Flip (Tuần 5) & Nút FAB Pulse
+- **Prompt đã dùng:** Xây dựng hiệu ứng lật thẻ 3D 180 độ khi hover hoặc focus vào card thành viên, mặt trước là ảnh chân dung và mặt sau là tiểu sử cùng kỹ năng cốt lõi. Tạo nút FAB tròn ở góc dưới màn hình có hiệu ứng pulse.
+- **Kết quả AI tạo ra:** Hiệu ứng 3D perspective 1200px mượt mà, hỗ trợ cả màn hình cảm ứng di động qua `:focus-within`.
 
-### Lần 4: Responsive Breakpoint Challenge & Kiểm tra Cross-Browser (Tuần 4 & Tuần 6)
-- **Prompt đã dùng:** *"Thiết lập Media Queries kiểm tra các breakpoint: Desktop (>1024px) lưới 3 cột, Tablet (768px - 1024px) lưới 2 cột, Mobile (<768px) lưới 1 cột. Tự động thu nhỏ Typography Scale để tránh tràn văn bản trên điện thoại nhỏ 375px."*
-- **Kết quả AI tạo ra:** Hệ thống lưới CSS Grid tự co giãn theo breakpoint, thanh navbar tự động giấu vào hamburger menu dạng trượt khi dưới 768px.
+---
+
+> **Prompt từ người dùng (Lần 2 - Tinh chỉnh Giao diện Sáng Trắng Xanh, Font Roboto, Loại bỏ Icon Sticker & Tích hợp Dự án Thực tế từ Ổ D):**
+>
+> *"trước khi đến bước tiếp theo hãy rà soát lại web vừa rồi 1 lần và fix lại các bố cục, sửa hết tất cả form chữ thành roboto*
+> *1. Đổi màu giao diện web thành màu sáng trắng xanh*
+> *2. loại bỏ bơt các icon hay sticker*
+> *3. truy cập vào ổ D dự án thêm các dự án mà tôi đã làm gắn vào giúp tôi với điều kiện :*
+> *3. Bắt Buộc Sử dụng HTML5, nhúng Css nhưng ( khong được sử dụng Javascirpt tuyệt đối không)*
+> *4. Sắp xếp code và file theo MVC*
+> *5. Đặc biệt lưu ý cho tôi về phần 5. Nhật ký Prompt Engineering: File PROMPT_LOG.md trình bày chi tiết các bước hỏi - đáp với AI. Thể hiện rõ tư duy tinh chỉnh (iteration), biết sửa lỗi AI, chỉ đạo AI theo đúng ý đồ kiến trúc HTML/CSS chuẩn. ( bắt đầu ngay từ lúc tôi gửi promt này bạn sẽ lưu ngay vào file log.md đó từ ban đầu đến khi hoàn thành dự án, tất cả các promt mỗi lần tôi gửi cho bạn trong dự án này )*
+> *6. Lưu ý nữa các kiến thức cấu trúc của môn thiết kế web tôi đã để ở trong đó nhớ áp dụng đến buổi số 6 thôi nhé, đừng dùng java chỉ được dùng HTML5"*
+
+### Lần 4: Refactor toàn diện Giao diện Sáng Trắng Xanh & Font Roboto 100%
+- **Hành động & Phân tích của AI:**
+  1. **Khảo sát ổ D:** AI quét trực tiếp thư mục `D:\` và tìm thấy các dự án nghiên cứu có thật của tác giả: `Dự Án CORNWEED-SCOUT`, `Dự Án Your Voice`, `Dự Án Sắc Việt`, `SmartFinGuard-Extension`, `duan-giasuao`, `Dự Án IOT mới`. Đã đọc các tài liệu thuyết minh (.docx, .md) để trích xuất thông tin kỹ thuật chính xác nhất.
+  2. **Tách tầng Model mới theo MVC:** Tạo file `models/project_model.html` để lưu trữ dữ liệu thực thể của 6 dự án thực tế; tạo `views/projects_view.html` và tích hợp vào `index.html`.
+  3. **Chuyển đổi Typography:** Nhúng font Google `Roboto` (các trọng lượng 300, 400, 500, 700, 900) vào `index.html` và thiết lập `--font-family: 'Roboto', sans-serif;` phủ sóng 100% tất cả các phần tử.
+  4. **Thiết kế lại Bảng màu Sáng Trắng Xanh Dương:** Cập nhật `assets/css/variables.css` với nền trắng tuyết (`#f8fafc`, `#ffffff`), xanh đại dương (`#0284c7`), xanh da trời (`#38bdf8`), viền sáng nhẹ (`#e2e8f0`).
+  5. **Loại bỏ Sticker/Emoji:** Dọn sạch toàn bộ các icon emoji màu mè (🚀, 🌐, 💬, ⚡, 🤖...) ở phần Showcase, Value Cards, nút FAB và Header. Thay bằng các khối nhãn chữ (badge/tags) tối giản, chuyên nghiệp và đúng chuẩn phong cách học thuật.
+  6. **Kiểm tra Zero JS:** Chạy công cụ rà soát mã nguồn tự động, khẳng định `index.html` và toàn bộ các view đạt **0 thẻ script** và **0 inline event**, tuyệt đối tuân thủ yêu cầu đề bài.
 
 ---
 
 ## 3. Đánh giá cá nhân về quá trình Vibe Coding
 
 - **AI đã giúp bạn tiết kiệm thời gian ở phần nào nhất?**
-  - AI giúp sinh nhanh khung dữ liệu semantic phức tạp cho toàn bộ 9 thành viên một cách tỉ mỉ, tạo sẵn các biến màu CSS Variables chuẩn xác và tính toán chính xác tọa độ 3D transform cho hiệu ứng lật thẻ (Card Flip) mà không tốn hàng giờ căn chỉnh thủ công.
+  - AI đọc hiểu cực nhanh các file tài liệu đồ án phức tạp (.docx) trên ổ D, trích xuất tức thì các giải pháp nghiên cứu (như CNN-LSTM, RTK GNSS, Groq API, Edge AI) và chuyển đổi thành giao diện thẻ card chuẩn Semantic HTML5.
+  - Tái cấu trúc (refactoring) toàn bộ hệ thống màu sắc và font chữ trong vài giây thông qua sức mạnh tập trung của CSS Variables.
 - **Bài học rút ra khi đặt câu hỏi (Prompt) cho AI trong thiết kế web?**
-  - **Phải có rào cản kỹ thuật rõ ràng:** Nếu không cấm JavaScript ngay từ Prompt đầu tiên, AI sẽ ngay lập tức sinh code `script` cho popup và navbar toggle. Khi ép buộc ràng buộc "Chỉ dùng HTML5/CSS3", AI sẽ vận dụng các kỹ thuật đỉnh cao như Checkbox Hack, `:target` và thẻ `<details>`.
-  - **Tư duy lặp (Iterative Refinement):** Không nên kỳ vọng AI làm xong tất cả trong một lần hỏi duy nhất; chia nhỏ từng bước (Khung MVC -> Semantic HTML -> CSS Variables -> Responsive Grid -> Animations -> Pure CSS Interactions) sẽ giúp kiểm soát chất lượng mã nguồn đạt điểm tuyệt đối 10/10.
+  - **Sự chặt chẽ trong rào cản kỹ thuật:** Việc liên tục nhắc lại "Zero JavaScript", "Tuân thủ Buổi 1 đến Buổi 6" giúp AI tập trung vào các giải pháp CSS tinh vi (như `:target`, checkbox hack, `:focus-within`) thay vì đi đường tắt bằng JS.
+  - **Kiến trúc phân tầng sạch sẽ:** Việc áp dụng MVC ngay từ đầu giúp khi bổ sung thêm các dự án mới từ ổ D, AI chỉ cần tạo `models/project_model.html` và `views/projects_view.html` mà không làm đảo lộn cấu trúc tổng thể.
