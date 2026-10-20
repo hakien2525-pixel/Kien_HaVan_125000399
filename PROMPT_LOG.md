@@ -341,6 +341,33 @@
 
 ---
 
+### Iteration 12: Chuẩn Hóa Nhãn Dán Thông Tin Thành Viên (Thay "MSSV" Thành "Lớp")
+- **Prompt đã dùng:**
+  > *"bạn thấy dòng chữ mssv không thay hết nó thành lớp đi"*
+
+- **Lỗi & Tình trạng ban đầu:**
+  1. *Nhầm lẫn giữa mã sinh viên và mã lớp chuyên ngành:* Trên mặt trước của các thẻ thành viên, AI hiển thị nhãn `MSSV: 25CT111`, `MSSV: 25EC111`, `MSSV: 24MC112`... Trong khi thực tế `25CT111`, `25EC111`, `24MC112`, `23EC111`, `25MC111` là **Mã Lớp niên khóa** của sinh viên tại Trường Đại học Lạc Hồng, không phải Mã số sinh viên cá nhân.
+  2. Điều này dẫn đến sự hiểu lầm về việc trùng lặp mã số sinh viên giữa các bạn cùng lớp `25CT111`.
+
+- **Chỉ đạo của Sinh viên & Cách xử lý chi tiết:**
+  - Rà soát toàn bộ 9 thẻ thành viên trên [index.html](file:///d:/TKweb/index.html).
+  - Thay thế toàn bộ nhãn `MSSV:` thành `Lớp:`, hiển thị chính xác lớp chuyên ngành của từng thành viên:
+    - Hà Văn Kiên: `Lớp: 25CT111`
+    - Hoàng Minh Phát: `Lớp: 25CT111`
+    - Nguyễn Đinh Khánh Trang: `Lớp: 25EC111`
+    - Đặng Thị Tố Ngân: `Lớp: 24MC112`
+    - Nguyễn Hoàng Anh: `Lớp: CT111`
+    - Ngô Võ Nam: `Lớp: 25CT111`
+    - Phan Văn Trận: `Lớp: 23EC111`
+    - Trần Hoài Phương: `Lớp: 25MC111`
+    - Trần Quang Huy: `Lớp: 25CT111`
+
+- **Kết quả đạt được:**
+  - Thông tin học vấn chuẩn xác 100% theo hồ sơ danh sách lớp khoa CNTT - Lạc Hồng.
+  - Loại bỏ hoàn toàn sự thắc mắc về trùng lặp MSSV, giao diện trực quan và mạch lạc.
+
+---
+
 ## 3. Đánh giá cá nhân về quá trình Vibe Coding
 
 - **AI đã giúp bạn tiết kiệm thời gian ở phần nào nhất?**
