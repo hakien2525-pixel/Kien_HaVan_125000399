@@ -331,6 +331,46 @@
 
 ---
 
+### Lần 13: Gỡ Bỏ Hoàn Toàn JavaScript, Chuyển Sang Kỹ Thuật CSS Checkbox Hack Để Giữ Trọn Ràng Buộc Đề Thi
+- **Prompt đã dùng:**
+  > *"Gỡ bỏ hoàn toàn JavaScript khỏi phần 'Hội Đồng Thành Viên ADLEY'. Dự án chỉ dùng HTML5 + CSS thuần cho phần này. Xóa file assets/js/team-flip.js và xóa thẻ <script> nạp nó trong index.html. Xóa mọi class is-flipped, role='button', aria-pressed liên quan. Thay bằng checkbox hack cho từng thẻ: input.flip-toggle (id duy nhất) đặt trước .team-card, bọc mặt trước bằng label, ở mặt sau thêm label.flip-back-btn 'Lật lại'. CSS: .flip-toggle:checked ~ .team-card { transform: rotateY(180deg); }. Ẩn checkbox bằng position:absolute; opacity:0; width:1px; height:1px (không dùng display:none) để vẫn tab được. Thêm :focus-visible. Link 'Xem Hồ Sơ Đầy Đủ' (#modal-xxx) vẫn bấm được. Không dùng :hover/:focus-within để lật thẻ. Nêu rõ giới hạn: CSS thuần không thể tự úp thẻ khi cuộn đi."*
+- **Kết quả AI tạo ra:**
+  - Xóa hoàn toàn file `assets/js/team-flip.js` và xóa thẻ `<script>` khỏi `index.html`.
+  - Cập nhật 10 thẻ thành viên với input `<input type="checkbox" id="flip-xxx" class="flip-toggle">` và `<label for="flip-xxx">`.
+  - Thêm nút `<label for="flip-xxx" class="flip-back-btn">Lật lại</label>` ở mặt sau của từng thẻ.
+  - Bộ chọn CSS Checkbox Hack: `.flip-toggle:checked ~ .team-card { transform: rotateY(180deg); }`.
+  - Ẩn input với `width: 1px; height: 1px; opacity: 0; position: absolute;` kết hợp `.flip-toggle:focus-visible ~ .team-card` để giữ trợ năng điều hướng bàn phím hoàn hảo.
+- **Lỗi / thách thức & Đánh đổi kỹ thuật:**
+  - **Mâu thuẫn giữa tính năng nâng cao và ràng buộc đề bài:** Ở Lần 12, giải pháp JavaScript với `IntersectionObserver` giải quyết trọn vẹn việc tự động úp thẻ khi cuộn ra khỏi màn hình. Tuy nhiên, việc xuất hiện file `.js` làm suy giảm tính toàn vẹn của mục tiêu ban đầu: **100% HTML5 & Pure CSS3 (0% JavaScript theo barem Tuần 1 - 6 của LHU)**.
+  - **Giới hạn đã biết của CSS thuần (Acknowledged Limitation):** CSS thuần **hoàn toàn không có khả năng nhận biết vị trí cuộn trang của phần tử so với viewport** để tự hủy trạng thái `:checked` của checkbox. Do đó, khi người dùng đã click lật thẻ sang mặt sau, thẻ sẽ giữ nguyên trạng thái xoay 180 độ cho đến khi người dùng click lại vào nút "Lật lại" (`<label for="flip-xxx" class="flip-back-btn">`).
+  ```html
+  <!-- TRƯỚC (Dùng JS để toggle class .is-flipped): -->
+  <article class="team-card-wrapper" tabindex="0" role="button" aria-pressed="false">
+    <div class="team-card">...</div>
+  </article>
+  <script defer src="assets/js/team-flip.js"></script>
+
+  <!-- SAU (100% Pure HTML5 + CSS3 Checkbox Hack, 0% JS): -->
+  <article class="team-card-wrapper">
+    <input type="checkbox" id="flip-canh" class="flip-toggle" aria-label="Lật thẻ Thầy Bùi Xuân Cảnh">
+    <div class="team-card">
+      <div class="card-front">
+        <label for="flip-canh" class="card-front-label">...</label>
+      </div>
+      <div class="card-back">
+        ...
+        <a href="#modal-canh" class="modal-open-link">Xem Hồ Sơ Đầy Đủ</a>
+        <label for="flip-canh" class="flip-back-btn">Lật lại</label>
+      </div>
+    </div>
+  </article>
+  <!-- 0 thẻ <script> trong toàn bộ trang web -->
+  ```
+- **Nhận xét & Tinh chỉnh của SV:**
+  Quyết định chủ động loại bỏ JavaScript và chấp nhận giới hạn của CSS thuần là minh chứng rõ nét cho năng lực ra quyết định kỹ thuật của sinh viên: luôn đặt **tiêu chí chấm thi và tính chuẩn mực học thuật** lên hàng đầu. Kỹ thuật Checkbox Hack vừa bảo đảm thẻ không tự ý lật khi rê chuột (`:hover` chỉ nâng thẻ nhẹ -4px), vừa hoạt động mượt mà trên cả máy tính lẫn màn hình cảm ứng điện thoại, hoàn toàn không phụ thuộc vào bất kỳ dòng mã JavaScript nào.
+
+---
+
 ## 3. Đánh giá cá nhân về quá trình Vibe Coding
 
 ### AI đã giúp tiết kiệm thời gian nhất ở đâu?

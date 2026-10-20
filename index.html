@@ -203,20 +203,23 @@
           <div class="team-grid">
 
             <!-- MENTOR / GIẢNG VIÊN HƯỚNG DẪN: Thầy Bùi Xuân Cảnh -->
-            <article class="team-card-wrapper" tabindex="0" role="button" aria-pressed="false">
+            <article class="team-card-wrapper">
+              <input type="checkbox" id="flip-canh" class="flip-toggle" aria-label="Lật thẻ Thầy Bùi Xuân Cảnh">
               <div class="team-card">
                 <div class="card-front">
-                  <figure class="member-image-box">
-                    <img src="assets/images/bui-xuan-canh.png" alt="Thầy Bùi Xuân Cảnh - Giảng Viên Hướng Dẫn" class="member-photo" loading="lazy">
-                    <span class="member-badge-advisor">ADVISOR</span>
-                    <span class="member-badge-role">Giảng Viên Hướng Dẫn</span>
-                  </figure>
-                  <div class="member-info-front">
-                    <h3 class="member-name">Bùi Xuân Cảnh</h3>
-                    <div class="member-mssv">Khoa Công Nghệ Thông Tin - LHU</div>
-                    <p class="member-headline">Giảng Viên Phụ Trách Học Phần Thiết Kế Web</p>
-                    <div class="flip-hint"><span>Nhấn để lật thẻ →</span></div>
-                  </div>
+                  <label for="flip-canh" class="card-front-label">
+                    <figure class="member-image-box">
+                      <img src="assets/images/bui-xuan-canh.png" alt="Thầy Bùi Xuân Cảnh - Giảng Viên Hướng Dẫn" class="member-photo" loading="lazy">
+                      <span class="member-badge-advisor">ADVISOR</span>
+                      <span class="member-badge-role">Giảng Viên Hướng Dẫn</span>
+                    </figure>
+                    <div class="member-info-front">
+                      <h3 class="member-name">Bùi Xuân Cảnh</h3>
+                      <div class="member-mssv">Khoa Công Nghệ Thông Tin - LHU</div>
+                      <p class="member-headline">Giảng Viên Phụ Trách Học Phần Thiết Kế Web</p>
+                      <div class="flip-hint"><span>Nhấn để lật thẻ →</span></div>
+                    </div>
+                  </label>
                 </div>
                 <div class="card-back">
                   <div class="back-header">
@@ -236,26 +239,30 @@
                   </div>
                   <div class="member-contact-links">
                     <a href="#modal-canh" class="modal-open-link">Xem Hồ Sơ Đầy Đủ</a>
+                    <label for="flip-canh" class="flip-back-btn">Lật lại</label>
                   </div>
                 </div>
               </div>
             </article>
 
             <!-- MEMBER 1: Hà Văn Kiên (Leader) -->
-            <article class="team-card-wrapper" tabindex="0" role="button" aria-pressed="false">
+            <article class="team-card-wrapper">
+              <input type="checkbox" id="flip-kien" class="flip-toggle" aria-label="Lật thẻ Hà Văn Kiên">
               <div class="team-card">
                 <div class="card-front">
-                  <figure class="member-image-box">
-                    <img src="assets/images/ha-van-kien.png" alt="Chân dung Hà Văn Kiên" class="member-photo" loading="lazy">
-                    <span class="member-badge-leader">LEADER</span>
-                    <span class="member-badge-role">Tech Lead</span>
-                  </figure>
-                  <div class="member-info-front">
-                    <h3 class="member-name">Hà Văn Kiên</h3>
-                    <div class="member-mssv">Lớp: 25CT111</div>
-                    <p class="member-headline">Full-Stack Architect & AI-First Engineer</p>
-                    <div class="flip-hint"><span>Nhấn để lật thẻ →</span></div>
-                  </div>
+                  <label for="flip-kien" class="card-front-label">
+                    <figure class="member-image-box">
+                      <img src="assets/images/ha-van-kien.png" alt="Chân dung Hà Văn Kiên" class="member-photo" loading="lazy">
+                      <span class="member-badge-leader">LEADER</span>
+                      <span class="member-badge-role">Tech Lead</span>
+                    </figure>
+                    <div class="member-info-front">
+                      <h3 class="member-name">Hà Văn Kiên</h3>
+                      <div class="member-mssv">Lớp: 25CT111</div>
+                      <p class="member-headline">Full-Stack Architect & AI-First Engineer</p>
+                      <div class="flip-hint"><span>Nhấn để lật thẻ →</span></div>
+                    </div>
+                  </label>
                 </div>
                 <div class="card-back">
                   <div class="back-header">
@@ -275,25 +282,29 @@
                   </div>
                   <div class="member-contact-links">
                     <a href="#modal-kien" class="modal-open-link">Xem Hồ Sơ Đầy Đủ</a>
+                    <label for="flip-kien" class="flip-back-btn">Lật lại</label>
                   </div>
                 </div>
               </div>
             </article>
 
             <!-- MEMBER 2: Hoàng Minh Phát -->
-            <article class="team-card-wrapper" tabindex="0" role="button" aria-pressed="false">
+            <article class="team-card-wrapper">
+              <input type="checkbox" id="flip-phat" class="flip-toggle" aria-label="Lật thẻ Hoàng Minh Phát">
               <div class="team-card">
                 <div class="card-front">
-                  <figure class="member-image-box">
-                    <img src="assets/images/hoang-minh-phat.png" alt="Chân dung Hoàng Minh Phát" class="member-photo" loading="lazy">
-                    <span class="member-badge-role">UI/UX Specialist</span>
-                  </figure>
-                  <div class="member-info-front">
-                    <h3 class="member-name">Hoàng Minh Phát</h3>
-                    <div class="member-mssv">Lớp: 25CT111</div>
-                    <p class="member-headline">Design System, Visual Interaction & Animations</p>
-                    <div class="flip-hint"><span>Nhấn để lật thẻ →</span></div>
-                  </div>
+                  <label for="flip-phat" class="card-front-label">
+                    <figure class="member-image-box">
+                      <img src="assets/images/hoang-minh-phat.png" alt="Chân dung Hoàng Minh Phát" class="member-photo" loading="lazy">
+                      <span class="member-badge-role">UI/UX Specialist</span>
+                    </figure>
+                    <div class="member-info-front">
+                      <h3 class="member-name">Hoàng Minh Phát</h3>
+                      <div class="member-mssv">Lớp: 25CT111</div>
+                      <p class="member-headline">Design System, Visual Interaction & Animations</p>
+                      <div class="flip-hint"><span>Nhấn để lật thẻ →</span></div>
+                    </div>
+                  </label>
                 </div>
                 <div class="card-back">
                   <div class="back-header">
@@ -313,25 +324,29 @@
                   </div>
                   <div class="member-contact-links">
                     <a href="#modal-phat" class="modal-open-link">Xem Hồ Sơ Đầy Đủ</a>
+                    <label for="flip-phat" class="flip-back-btn">Lật lại</label>
                   </div>
                 </div>
               </div>
             </article>
 
             <!-- MEMBER 3: Nguyễn Đinh Khánh Trang -->
-            <article class="team-card-wrapper" tabindex="0" role="button" aria-pressed="false">
+            <article class="team-card-wrapper">
+              <input type="checkbox" id="flip-trang" class="flip-toggle" aria-label="Lật thẻ Nguyễn Đinh Khánh Trang">
               <div class="team-card">
                 <div class="card-front">
-                  <figure class="member-image-box">
-                    <img src="assets/images/nguyen-dinh-khanh-trang.png" alt="Chân dung Nguyễn Đinh Khánh Trang" class="member-photo" loading="lazy">
-                    <span class="member-badge-role">Creative Director</span>
-                  </figure>
-                  <div class="member-info-front">
-                    <h3 class="member-name">Nguyễn Đinh Khánh Trang</h3>
-                    <div class="member-mssv">Lớp: 25EC111</div>
-                    <p class="member-headline">Creative Branding & Digital User Flow</p>
-                    <div class="flip-hint"><span>Nhấn để lật thẻ →</span></div>
-                  </div>
+                  <label for="flip-trang" class="card-front-label">
+                    <figure class="member-image-box">
+                      <img src="assets/images/nguyen-dinh-khanh-trang.png" alt="Chân dung Nguyễn Đinh Khánh Trang" class="member-photo" loading="lazy">
+                      <span class="member-badge-role">Creative Director</span>
+                    </figure>
+                    <div class="member-info-front">
+                      <h3 class="member-name">Nguyễn Đinh Khánh Trang</h3>
+                      <div class="member-mssv">Lớp: 25EC111</div>
+                      <p class="member-headline">Creative Branding & Digital User Flow</p>
+                      <div class="flip-hint"><span>Nhấn để lật thẻ →</span></div>
+                    </div>
+                  </label>
                 </div>
                 <div class="card-back">
                   <div class="back-header">
@@ -351,25 +366,29 @@
                   </div>
                   <div class="member-contact-links">
                     <a href="#modal-trang" class="modal-open-link">Xem Hồ Sơ Đầy Đủ</a>
+                    <label for="flip-trang" class="flip-back-btn">Lật lại</label>
                   </div>
                 </div>
               </div>
             </article>
 
             <!-- MEMBER 4: Đặng Thị Tố Ngân -->
-            <article class="team-card-wrapper" tabindex="0" role="button" aria-pressed="false">
+            <article class="team-card-wrapper">
+              <input type="checkbox" id="flip-ngan" class="flip-toggle" aria-label="Lật thẻ Đặng Thị Tố Ngân">
               <div class="team-card">
                 <div class="card-front">
-                  <figure class="member-image-box">
-                    <img src="assets/images/dang-thi-to-ngan.png" alt="Chân dung Đặng Thị Tố Ngân" class="member-photo" loading="lazy">
-                    <span class="member-badge-role">Product Designer</span>
-                  </figure>
-                  <div class="member-info-front">
-                    <h3 class="member-name">Đặng Thị Tố Ngân</h3>
-                    <div class="member-mssv">Lớp: 24MC112</div>
-                    <p class="member-headline">Interaction Architecture & Accessibility</p>
-                    <div class="flip-hint"><span>Nhấn để lật thẻ →</span></div>
-                  </div>
+                  <label for="flip-ngan" class="card-front-label">
+                    <figure class="member-image-box">
+                      <img src="assets/images/dang-thi-to-ngan.png" alt="Chân dung Đặng Thị Tố Ngân" class="member-photo" loading="lazy">
+                      <span class="member-badge-role">Product Designer</span>
+                    </figure>
+                    <div class="member-info-front">
+                      <h3 class="member-name">Đặng Thị Tố Ngân</h3>
+                      <div class="member-mssv">Lớp: 24MC112</div>
+                      <p class="member-headline">Interaction Architecture & Accessibility</p>
+                      <div class="flip-hint"><span>Nhấn để lật thẻ →</span></div>
+                    </div>
+                  </label>
                 </div>
                 <div class="card-back">
                   <div class="back-header">
@@ -389,25 +408,29 @@
                   </div>
                   <div class="member-contact-links">
                     <a href="#modal-ngan" class="modal-open-link">Xem Hồ Sơ Đầy Đủ</a>
+                    <label for="flip-ngan" class="flip-back-btn">Lật lại</label>
                   </div>
                 </div>
               </div>
             </article>
 
             <!-- MEMBER 5: Nguyễn Hoàng Anh -->
-            <article class="team-card-wrapper" tabindex="0" role="button" aria-pressed="false">
+            <article class="team-card-wrapper">
+              <input type="checkbox" id="flip-anh" class="flip-toggle" aria-label="Lật thẻ Nguyễn Hoàng Anh">
               <div class="team-card">
                 <div class="card-front">
-                  <figure class="member-image-box">
-                    <img src="assets/images/nguyen-hoang-anh.png" alt="Chân dung Nguyễn Hoàng Anh" class="member-photo" loading="lazy">
-                    <span class="member-badge-role">Semantic Engineer</span>
-                  </figure>
-                  <div class="member-info-front">
-                    <h3 class="member-name">Nguyễn Hoàng Anh</h3>
-                    <div class="member-mssv">Lớp: CT111</div>
-                    <p class="member-headline">HTML5 Semantics, Clean DOM & SEO</p>
-                    <div class="flip-hint"><span>Nhấn để lật thẻ →</span></div>
-                  </div>
+                  <label for="flip-anh" class="card-front-label">
+                    <figure class="member-image-box">
+                      <img src="assets/images/nguyen-hoang-anh.png" alt="Chân dung Nguyễn Hoàng Anh" class="member-photo" loading="lazy">
+                      <span class="member-badge-role">Semantic Engineer</span>
+                    </figure>
+                    <div class="member-info-front">
+                      <h3 class="member-name">Nguyễn Hoàng Anh</h3>
+                      <div class="member-mssv">Lớp: CT111</div>
+                      <p class="member-headline">HTML5 Semantics, Clean DOM & SEO</p>
+                      <div class="flip-hint"><span>Nhấn để lật thẻ →</span></div>
+                    </div>
+                  </label>
                 </div>
                 <div class="card-back">
                   <div class="back-header">
@@ -427,25 +450,29 @@
                   </div>
                   <div class="member-contact-links">
                     <a href="#modal-anh" class="modal-open-link">Xem Hồ Sơ Đầy Đủ</a>
+                    <label for="flip-anh" class="flip-back-btn">Lật lại</label>
                   </div>
                 </div>
               </div>
             </article>
 
             <!-- MEMBER 6: Ngô Võ Nam -->
-            <article class="team-card-wrapper" tabindex="0" role="button" aria-pressed="false">
+            <article class="team-card-wrapper">
+              <input type="checkbox" id="flip-nam" class="flip-toggle" aria-label="Lật thẻ Ngô Võ Nam">
               <div class="team-card">
                 <div class="card-front">
-                  <figure class="member-image-box">
-                    <img src="assets/images/ngo-vo-nam.png" alt="Chân dung Ngô Võ Nam" class="member-photo" loading="lazy">
-                    <span class="member-badge-role">Layout Architect</span>
-                  </figure>
-                  <div class="member-info-front">
-                    <h3 class="member-name">Ngô Võ Nam</h3>
-                    <div class="member-mssv">Lớp: 25CT111</div>
-                    <p class="member-headline">CSS Grid Specialist & Multi-breakpoint Align</p>
-                    <div class="flip-hint"><span>Nhấn để lật thẻ →</span></div>
-                  </div>
+                  <label for="flip-nam" class="card-front-label">
+                    <figure class="member-image-box">
+                      <img src="assets/images/ngo-vo-nam.png" alt="Chân dung Ngô Võ Nam" class="member-photo" loading="lazy">
+                      <span class="member-badge-role">Layout Architect</span>
+                    </figure>
+                    <div class="member-info-front">
+                      <h3 class="member-name">Ngô Võ Nam</h3>
+                      <div class="member-mssv">Lớp: 25CT111</div>
+                      <p class="member-headline">CSS Grid Specialist & Multi-breakpoint Align</p>
+                      <div class="flip-hint"><span>Nhấn để lật thẻ →</span></div>
+                    </div>
+                  </label>
                 </div>
                 <div class="card-back">
                   <div class="back-header">
@@ -465,25 +492,29 @@
                   </div>
                   <div class="member-contact-links">
                     <a href="#modal-nam" class="modal-open-link">Xem Hồ Sơ Đầy Đủ</a>
+                    <label for="flip-nam" class="flip-back-btn">Lật lại</label>
                   </div>
                 </div>
               </div>
             </article>
 
             <!-- MEMBER 7: Phan Văn Trận -->
-            <article class="team-card-wrapper" tabindex="0" role="button" aria-pressed="false">
+            <article class="team-card-wrapper">
+              <input type="checkbox" id="flip-tran" class="flip-toggle" aria-label="Lật thẻ Phan Văn Trận">
               <div class="team-card">
                 <div class="card-front">
-                  <figure class="member-image-box">
-                    <img src="assets/images/phan-van-tran.png" alt="Chân dung Phan Văn Trận" class="member-photo" loading="lazy">
-                    <span class="member-badge-role">QA & Device Profiler</span>
-                  </figure>
-                  <div class="member-info-front">
-                    <h3 class="member-name">Phan Văn Trận</h3>
-                    <div class="member-mssv">Lớp: 23EC111</div>
-                    <p class="member-headline">Cross-Browser Testing & Responsive QA</p>
-                    <div class="flip-hint"><span>Nhấn để lật thẻ →</span></div>
-                  </div>
+                  <label for="flip-tran" class="card-front-label">
+                    <figure class="member-image-box">
+                      <img src="assets/images/phan-van-tran.png" alt="Chân dung Phan Văn Trận" class="member-photo" loading="lazy">
+                      <span class="member-badge-role">QA & Device Profiler</span>
+                    </figure>
+                    <div class="member-info-front">
+                      <h3 class="member-name">Phan Văn Trận</h3>
+                      <div class="member-mssv">Lớp: 23EC111</div>
+                      <p class="member-headline">Cross-Browser Testing & Responsive QA</p>
+                      <div class="flip-hint"><span>Nhấn để lật thẻ →</span></div>
+                    </div>
+                  </label>
                 </div>
                 <div class="card-back">
                   <div class="back-header">
@@ -503,25 +534,29 @@
                   </div>
                   <div class="member-contact-links">
                     <a href="#modal-tran" class="modal-open-link">Xem Hồ Sơ Đầy Đủ</a>
+                    <label for="flip-tran" class="flip-back-btn">Lật lại</label>
                   </div>
                 </div>
               </div>
             </article>
 
             <!-- MEMBER 8: Trần Hoài Phương -->
-            <article class="team-card-wrapper" tabindex="0" role="button" aria-pressed="false">
+            <article class="team-card-wrapper">
+              <input type="checkbox" id="flip-phuong" class="flip-toggle" aria-label="Lật thẻ Trần Hoài Phương">
               <div class="team-card">
                 <div class="card-front">
-                  <figure class="member-image-box">
-                    <img src="assets/images/tran-hoai-phuong.png" alt="Chân dung Trần Hoài Phương" class="member-photo" loading="lazy">
-                    <span class="member-badge-role">Media Optimizer</span>
-                  </figure>
-                  <div class="member-info-front">
-                    <h3 class="member-name">Trần Hoài Phương</h3>
-                    <div class="member-mssv">Lớp: 25MC111</div>
-                    <p class="member-headline">High-DPI Asset Encoding & Aspect Ratios</p>
-                    <div class="flip-hint"><span>Nhấn để lật thẻ →</span></div>
-                  </div>
+                  <label for="flip-phuong" class="card-front-label">
+                    <figure class="member-image-box">
+                      <img src="assets/images/tran-hoai-phuong.png" alt="Chân dung Trần Hoài Phương" class="member-photo" loading="lazy">
+                      <span class="member-badge-role">Media Optimizer</span>
+                    </figure>
+                    <div class="member-info-front">
+                      <h3 class="member-name">Trần Hoài Phương</h3>
+                      <div class="member-mssv">Lớp: 25MC111</div>
+                      <p class="member-headline">High-DPI Asset Encoding & Aspect Ratios</p>
+                      <div class="flip-hint"><span>Nhấn để lật thẻ →</span></div>
+                    </div>
+                  </label>
                 </div>
                 <div class="card-back">
                   <div class="back-header">
@@ -541,25 +576,29 @@
                   </div>
                   <div class="member-contact-links">
                     <a href="#modal-phuong" class="modal-open-link">Xem Hồ Sơ Đầy Đủ</a>
+                    <label for="flip-phuong" class="flip-back-btn">Lật lại</label>
                   </div>
                 </div>
               </div>
             </article>
 
             <!-- MEMBER 9: Trần Quang Huy -->
-            <article class="team-card-wrapper" tabindex="0" role="button" aria-pressed="false">
+            <article class="team-card-wrapper">
+              <input type="checkbox" id="flip-huy" class="flip-toggle" aria-label="Lật thẻ Trần Quang Huy">
               <div class="team-card">
                 <div class="card-front">
-                  <figure class="member-image-box">
-                    <img src="assets/images/tran-quang-huy.png" alt="Chân dung Trần Quang Huy" class="member-photo" loading="lazy">
-                    <span class="member-badge-role">Git & Audit Lead</span>
-                  </figure>
-                  <div class="member-info-front">
-                    <h3 class="member-name">Trần Quang Huy</h3>
-                    <div class="member-mssv">Lớp: 25CT111</div>
-                    <p class="member-headline">Version Control, Prompt Log & Compliance</p>
-                    <div class="flip-hint"><span>Nhấn để lật thẻ →</span></div>
-                  </div>
+                  <label for="flip-huy" class="card-front-label">
+                    <figure class="member-image-box">
+                      <img src="assets/images/tran-quang-huy.png" alt="Chân dung Trần Quang Huy" class="member-photo" loading="lazy">
+                      <span class="member-badge-role">Git & Audit Lead</span>
+                    </figure>
+                    <div class="member-info-front">
+                      <h3 class="member-name">Trần Quang Huy</h3>
+                      <div class="member-mssv">Lớp: 25CT111</div>
+                      <p class="member-headline">Version Control, Prompt Log & Compliance</p>
+                      <div class="flip-hint"><span>Nhấn để lật thẻ →</span></div>
+                    </div>
+                  </label>
                 </div>
                 <div class="card-back">
                   <div class="back-header">
@@ -579,6 +618,7 @@
                   </div>
                   <div class="member-contact-links">
                     <a href="#modal-huy" class="modal-open-link">Xem Hồ Sơ Đầy Đủ</a>
+                    <label for="flip-huy" class="flip-back-btn">Lật lại</label>
                   </div>
                 </div>
               </div>
@@ -1182,9 +1222,6 @@
       </div>
     </div>
   </dialog>
-
-  <!-- Script tương tác lật thẻ & tự động úp bằng IntersectionObserver -->
-  <script defer src="assets/js/team-flip.js"></script>
 
 </body>
 </html>
