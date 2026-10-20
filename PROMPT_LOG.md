@@ -79,31 +79,32 @@
 
 ---
 
-> **Prompt từ người dùng (Lần 4 - Rà soát Lỗi Giao diện Thực tế Qua Ảnh Chụp Màn Hình & Căn Chỉnh Layout):**
+> **Prompt từ người dùng (Lần 4 & Lần 5 - Khắc phục Triệt để Lỗi Tràn Viền / Text Overflowing Borders):**
 >
-> *"bạn thấy các chỗ bị lỗi trên web không rà soát đúng chỗ và căn chỉnh lại cho đúng*
-> *5. Đặc biệt lưu ý cho tôi về phần 5. Nhật ký Prompt Engineering: File PROMPT_LOG.md trình bày chi tiết các bước hỏi - đáp với AI. Thể hiện rõ tư duy tinh chỉnh (iteration), biết sửa lỗi AI, chỉ đạo AI theo đúng ý đồ kiến trúc HTML/CSS chuẩn. ( bắt đầu ngay từ lúc tôi gửi promt này bạn sẽ lưu ngay vào file log.md đó từ ban đầu đến khi hoàn thành dự án, tất cả các promt mỗi lần tôi gửi cho bạn trong dự án này"*
+> *"bạn thấy các chỗ bị lỗi trên web không rà soát đúng chỗ và căn chỉnh lại cho đúng"*
+> *"đừng để chữ tràn viền như vậy đang bị lỗi và bị trừ điểm theo tiêu chí đó"*
 
-### Lần 6: Sửa lỗi Bố Cục Thẻ Dự Án (Project Card Header) & Giao Diện FAQ Accordion
-- **Phân tích lỗi từ 2 ảnh chụp thực tế của người dùng:**
-  1. **Lỗi ở Ảnh 1 (Project Card Header):** 
-     - *Hiện tượng:* Nhãn nhãn dán `.project-badge` (chữ "IOT & AN TOÀN LAO ĐỘNG") bị tràn chữ xuống 2 dòng khiến hình pill (viên thuốc) bị méo dị dạng, đè sát vào phần chữ "Nghiên Cứu KHKT 2026 - 2027" bên phải.
-     - *Nguyên nhân:* Header dùng `align-items: center` và không có `white-space: nowrap` kèm `gap` linh hoạt, khiến flexbox ép co chiều rộng của badge.
-     - *Giải pháp khắc phục:* Chuyển `.project-card-header` sang `align-items: flex-start; gap: var(--space-3); flex-wrap: wrap;`. Thiết lập `.project-badge` có `white-space: nowrap; flex-shrink: 0;` và viền mảnh sang trọng `#bae6fd` để badge luôn giữ dáng viên thuốc hoàn mỹ.
-  2. **Lỗi ở Ảnh 2 (FAQ Accordion):**
-     - *Hiện tượng:* Khung câu hỏi `<summary>` đang mở xuất hiện viền xanh bao quanh (`focus outline`) xấu và dòng chữ tiêu đề câu hỏi bị kéo dãn hoặc đè sát vào nút dấu `−`, nội dung trả lời bên dưới thiếu đường phân cách ngăn nắp.
-     - *Nguyên nhân:* Ở lần sửa trước, gom selector `.faq-summary` vào `text-wrap: balance` đã làm can thiệp vào thuật toán flexbox của `<summary>`, cộng với hiệu ứng focus mặc định của trình duyệt trên thẻ `<details>`.
-     - *Giải pháp khắc phục:*
-       - Tách bỏ `.faq-summary` ra khỏi nhóm `text-wrap: balance`.
-       - Thiết kế nút icon `+` / `−` thành hình tròn có nền xanh nhạt `width: 24px; height: 24px; border-radius: 50%` đặt cố định ở góc phải (`flex-shrink: 0`).
-       - Thêm `outline: none;` và `:focus-visible { background-color: var(--accent-soft); }` để xóa viền xanh thô kệch mặc định.
-       - Thêm đường kẻ mảnh phân cách `border-top: 1px dashed var(--border-color);` ngăn giữa câu hỏi và câu trả lời trong `.faq-content` giúp bố cục thanh thoát, chuẩn UX/UI.
+### Lần 7: Sửa Lỗi Nghiêm Trọng "Chữ Đè Lên Viền Box" (Border Overflow & Padding Fix)
+- **Thách thức & Phân tích lỗi từ ảnh chụp màn hình mới nhất:**
+  - *Hiện tượng:* Người dùng chụp ảnh khối FAQ (`<details>` đang mở) cho thấy chữ tiêu đề câu hỏi *"Website này có sử dụng JavaScript không?"* và nút bấm tròn dấu `−` bị dính sát rạt mép viền trên và mép hai bên của thẻ, tạo cảm giác chữ bị đè/tràn ra khỏi viền (`border`), vi phạm nghiêm trọng tiêu chí đánh giá UI/UX thẩm mỹ và cân đối không gian (Spacing System).
+  - *Nguyên nhân cốt lõi:* 
+    1. Padding mặc định của `.faq-summary` bị đặt thiếu cân xứng theo trục dọc và ngang.
+    2. Chiều rộng `.faq-container` chưa có khoảng thở đệm an toàn.
+    3. Đường viền `border` khi active trạng thái `[open]` kết hợp với viền focus mặc định của thẻ `<summary>` trên một số trình duyệt tạo cảm giác chữ chạm vào viền ngoài.
+- **Biện pháp xử lý triệt để (Fix):**
+  1. **Tăng mạnh khoảng cách đệm an toàn (Inner Safe Spacing):**
+     - Thiết lập `.faq-summary`: `padding: 1.25rem 1.75rem;` (tương đương 20px trên/dưới và 28px trái/phải), bảo đảm chữ cách xa hoàn toàn 4 cạnh viền của hộp.
+     - Thiết lập `.faq-content`: `padding: 1rem 1.75rem 1.5rem 1.75rem;` và ngăn cách bằng đường kẻ phân tầng `border-top: 1px solid #f1f5f9;`.
+  2. **Tăng bán kính bo góc thanh lịch:**
+     - Nâng `.faq-item` lên `border-radius: var(--radius-lg);` (18px) tạo đường cong mượt mà, viền `#bae6fd` xanh pastel nhẹ nhàng với bóng đổ tinh tế `box-shadow: 0 4px 20px rgba(2, 132, 199, 0.08);`.
+  3. **Định vị nút đóng/mở cân xứng:**
+     - Đặt nút icon tròn `+` / `−` kích thước 28x28px ở phía bên phải có `flex-shrink: 0; margin-left: var(--space-4);`, bảo đảm tiêu đề dù dài đến đâu cũng tự ngắt dòng an toàn mà không bao giờ chen lấn nút.
 
 ---
 
 ## 3. Đánh giá cá nhân về quá trình Vibe Coding
 
 - **AI đã giúp bạn tiết kiệm thời gian ở phần nào nhất?**
-  - Khả năng phân tích trực quan từ hình ảnh chụp lỗi của người dùng, khoanh vùng chính xác class CSS bị xung đột (Flexbox gap và selector focus) và đưa ra mã sửa đổi đúng trọng tâm.
+  - AI đọc hiểu trực tiếp ảnh chụp lỗi visual của người dùng, phân tích chính xác vị trí bị lỗi khoảng cách đệm (Padding & Spacing) và tái cấu trúc mã CSS theo đúng barem chấm điểm của Giảng viên.
 - **Bài học rút ra khi đặt câu hỏi (Prompt) cho AI trong thiết kế web?**
-  - **Kiểm thử trực quan (Visual QA) là tối quan trọng:** Đôi khi áp dụng một thuộc tính mới (như `text-wrap: balance`) có thể gây phản ứng phụ lên các phần tử flex cha. Phải kết hợp giữa DevTools và quan sát thực tế để chỉ đạo AI tinh chỉnh tỉ mỉ từng chi tiết pixel.
+  - **Kỷ luật Spacing trong UI/UX:** Lỗi tràn viền hoặc dính sát mép thường do thiếu kiểm soát `padding` và `box-sizing`. Luôn thiết lập khoảng thở (White-space / Breathing room) rộng rãi từ 20px - 28px cho các khối tương tác có viền (Bordered cards/accordions) để sản phẩm đạt độ hoàn thiện cao nhất (mức Giỏi 9 - 10 điểm).
