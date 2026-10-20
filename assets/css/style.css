@@ -1378,24 +1378,58 @@ p, .hero-description, .section-description, .project-desc, .faq-content, .back-b
   }
 }
 
-/* Mốc Breakpoint Điện Thoại Nhỏ (<480px) */
+/* Mốc Breakpoint Điện Thoại Nhỏ (<480px - Mobile First Guard) */
 @media (max-width: 480px) {
   :root {
     --font-5xl: 1.85rem;
-    --font-4xl: 1.6rem;
-    --font-2xl: 1.25rem;
+    --font-4xl: 1.5rem;
+    --font-3xl: 1.35rem;
+    --font-2xl: 1.2rem;
+    --font-xl: 1.1rem;
+    --container-padding: 1rem;
   }
   
+  html, body {
+    overflow-x: hidden;
+  }
+
+  .container {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+
+  /* 1. Value Card không tràn viền */
   .value-list {
     grid-template-columns: 1fr;
+    gap: var(--space-4);
   }
-  
+
+  .value-card {
+    padding: var(--space-4);
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* 2. Thẻ lật thành viên & Mặt sau */
   .team-card-wrapper {
-    height: 520px; /* Tăng chiều cao để mặt sau không bị tràn chữ */
+    height: 520px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .card-front, .card-back {
+    padding: var(--space-4);
   }
 
   .card-back {
-    padding: var(--space-4);
+    overflow-y: auto;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .back-bio {
+    font-size: var(--font-xs);
+    line-height: 1.5;
   }
 
   .skill-tags {
@@ -1407,16 +1441,52 @@ p, .hero-description, .section-description, .project-desc, .faq-content, .back-b
     padding: 2px 8px;
   }
 
+  /* 3. FAQ Accordion */
   .faq-summary {
-    padding: 1rem 1.25rem;
+    padding: 0.85rem 1rem;
+    font-size: var(--font-sm);
+    word-break: break-word;
   }
 
   .faq-content {
-    padding: var(--space-3) 1.25rem 1.25rem 1.25rem;
+    padding: var(--space-3) 1rem 1rem 1rem;
+    font-size: var(--font-sm);
+    line-height: 1.6;
+    word-break: break-word;
   }
 
-  .btn {
-    padding: 0.75rem 1.25rem;
+  /* 4. Form Liên hệ & Button */
+  .contact-card {
+    padding: var(--space-4);
+  }
+
+  .contact-form {
+    width: 100%;
+  }
+
+  .form-input, .form-textarea {
+    max-width: 100%;
     font-size: var(--font-sm);
   }
+
+  .btn, .btn-block, .btn-full {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: var(--font-sm);
+    text-align: center;
+  }
+
+  /* 5. Dialog Modal */
+  .modal-box {
+    padding: var(--space-6) var(--space-4);
+    width: calc(100vw - 2rem);
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .modal-avatar {
+    width: 100px;
+    height: 100px;
+  }
 }
+

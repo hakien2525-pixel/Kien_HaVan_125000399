@@ -232,6 +232,45 @@
 
 ---
 
+### Iteration 9: Tách Biệt Tuyệt Đối HTML/CSS (Eliminate 100% Inline Styles) & Gia Cố Breakpoint 480px
+- **Prompt đã dùng:**
+  > *"Xóa toàn bộ thuộc tính style="..." trong index.html (hiện có khoảng 27 chỗ, ví dụ màu #0284c7, width:100%, position:static).*
+  > *Yêu cầu:*
+  > *1. Chuyển từng style inline thành class trong style.css, dùng biến CSS thay cho mã màu cứng.*
+  > *2. Đặt tên class có ý nghĩa, ví dụ .badge-advisor, .btn-block, .badge-inline.*
+  > *3. Thêm breakpoint thứ ba (max-width: 480px) cho điện thoại nhỏ. Kiểm tra:*
+  > *   - không có chữ tràn viền ở thẻ lật (mặt sau), FAQ, value-card, form;*
+  > *   - không bị cuộn ngang toàn trang.*
+  > *4. Giữ nguyên giao diện và hành vi hiện tại.*
+  > *Kết thúc bằng danh sách các class mới và xác nhận không còn style="" trong index.html.*
+  > *Ghi vào PROMPT_LOG.md một Iteration mới về việc tách HTML/CSS."*
+
+- **Lỗi AI ban đầu:**
+  1. *Lạm dụng `style="..."` tiện tay (27 vị trí):* AI có thói quen chèn trực tiếp các thuộc tính như `style="color: #0284c7;"`, `style="width: 100%;"`, `style="position: static;"`, `style="margin-top: 12px;"`, `style="background: #0284c7;"` vào các thẻ HTML trong `index.html`. Việc này phá vỡ hoàn toàn nguyên tắc "Separation of Concerns" (Tách biệt cấu trúc và giao diện) và bỏ qua hệ biến CSS Variables đã xây dựng ở `:root`.
+  2. *Thiếu mốc Responsive cho thiết bị nhỏ (<480px):* Ban đầu CSS chỉ có 2 breakpoint (1024px và 768px), dẫn đến khi xem trên các dòng màn hình điện thoại nhỏ (iPhone SE, Galaxy A-series màn hình hẹp), nội dung mặt sau của thẻ lật 3D, form liên hệ và FAQ bị tràn chữ khỏi khung hoặc gây cuộn ngang (`overflow-x`).
+
+- **Chỉ đạo của Sinh viên & Cách sửa chi tiết:**
+  1. *Triệt tiêu 100% thuộc tính `style="..."`:*
+     - Rà soát toàn bộ tệp `index.html`, loại bỏ 27 vị trí inline style.
+     - Chuyển thành các class có ngữ nghĩa định danh rõ ràng trong `style.css`:
+       - `.member-badge-advisor`, `.member-badge-leader`: Huy hiệu chức vụ nổi bật trên ảnh thành viên.
+       - `.member-badge-modal-leader`, `.member-badge-modal-advisor`: Huy hiệu nhận diện vai trò trong cửa sổ modal.
+       - `.btn-full`: Nút bấm co giãn 100% chiều rộng (`width: 100%`).
+       - `.modal-open-link`: Nút liên kết xem chi tiết hồ sơ thành viên toàn độ rộng.
+       - `.code-preview-box`: Khối hộp hiển thị code kiến trúc font monospace.
+     - Sử dụng 100% biến màu từ `variables.css` (`var(--primary)`, `var(--text-white)`, `var(--shadow-sm)...`).
+  2. *Thiết lập Breakpoint 480px tối ưu toàn diện:*
+     - Bổ sung quy tắc `@media (max-width: 480px)` với cơ chế `html, body { overflow-x: hidden; }` chống triệt để lỗi cuộn ngang.
+     - Thêm `word-break: break-word` và `overflow-wrap: break-word` cho `.value-card`, `.card-back`, `.faq-content`, `.contact-form`.
+     - Tăng chiều cao `.team-card-wrapper { height: 520px; }` và hỗ trợ `overflow-y: auto` cho mặt sau thẻ lật, đảm bảo đọc trọn vẹn tiểu sử mà không bị đè nút bấm.
+     - Co giãn modal box: `width: calc(100vw - 2rem)` và `max-height: 90vh` tránh vượt khung nhìn trên mobile.
+
+- **Kết quả đạt được:**
+  - Lệnh kiểm tra Powershell `Select-String -Path "index.html" -Pattern 'style='` trả về đúng **0 kết quả** (Xác nhận 100% sạch inline style).
+  - Giao diện và tương tác hoạt động mượt mà, chuẩn mực trên mọi màn hình từ 320px đến Desktop 4K.
+
+---
+
 ## 3. Đánh giá cá nhân về quá trình Vibe Coding
 
 - **AI đã giúp bạn tiết kiệm thời gian ở phần nào nhất?**
